@@ -19,7 +19,16 @@ TOP
 				<?php
 
 					$social = ControladorPlantilla::ctrEstiloPlantilla();
-					var_dump($social);
+					$jsonRedesSociales = json_decode($social["redesSociales"],true);		
+
+					foreach ($jsonRedesSociales as $key => $value) {
+
+						echo '<li>
+								<a href="" target="_blank">
+									<i class="fa  redSocial " aria-hidden="true"></i>
+								</a>
+							</li>';
+					}
 
 				?>
 	
