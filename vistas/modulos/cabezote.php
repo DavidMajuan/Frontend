@@ -24,9 +24,9 @@ TOP
 					foreach ($jsonRedesSociales as $key => $value) {
 
 						echo '<li>
-								<a href="" target="_blank">
-									<i class="fa  redSocial " aria-hidden="true"></i>
-								</a>
+							<a href="'.$value["url"].'" target="_blank">
+								<i class="fa '.$value["red"].' redSocial '.$value["estilo"].'" aria-hidden="true"></i>
+							</a>
 							</li>';
 					}
 
