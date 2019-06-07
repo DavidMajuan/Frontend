@@ -24,6 +24,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet">
   
     <link rel="stylesheet" href="vistas/css/plantilla.css">
+
+    <link rel="stylesheet" href="vistas/css/cabezote.css">
     
     <script src="vistas/js/plugins/jquery.min.js"></script>
 
