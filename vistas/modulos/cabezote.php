@@ -99,7 +99,7 @@ HEADER
 					<img src="http://localhost:8080/backend/vistas/img/plantilla/logo.png" class="img-responsive">
 
 				</a>
-				
+				 
 			</div>
 
 			<!--=====================================
@@ -151,7 +151,7 @@ HEADER
 			</div>
 
 			<!--=====================================
-			CARRITO DE SUSCRIPTIONES
+			CARRITO DE SUSCRIPCIONES
 			======================================-->
 
 			<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="carrito">
