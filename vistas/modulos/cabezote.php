@@ -32,39 +32,7 @@ TOP
 
 				?>
 	
-
-						<li>
-								<a href="http://facebook.com" target="_blank">
-									<i class="fa fa-facebook redSocial facebookBlanco aria-hidden="true"></i>
-								</a>
-						</li>
-
-                        <li>
-								<a href="http://youtube.com" target="_blank">
-									<i class="fa fa-youtube redSocial facebookBlanco aria-hidden="true"></i>
-								</a>
-						</li>
-
-                        <li>
-								<a href="http://twitter.com" target="_blank">
-									<i class="fa fa-twitter redSocial facebookBlanco aria-hidden="true"></i>
-								</a>
-						</li>
-
-                        <li>
-								<a href="http://google.com" target="_blank">
-									<i class="fa fa-google-plus redSocial facebookBlanco aria-hidden="true"></i>
-								</a>
-						</li>
-
-                        <li>
-								<a href="http://instagram.com" target="_blank">
-									<i class="fa fa-instagram redSocial facebookBlanco aria-hidden="true"></i>
-								</a>
-						</li>
 				
-
-					
 			
 				</ul>
 
