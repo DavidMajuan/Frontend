@@ -16,6 +16,12 @@ TOP
 				
 				<ul>	
 
+				<?php
+
+					$social = ControladorPlantilla::ctrEstiloPlantilla();
+					var_dump($social);
+
+				?>
 	
 
 						<li>
