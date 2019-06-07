@@ -59,7 +59,6 @@ ALTER TABLE `plantilla`
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
---
 
 --
 -- AUTO_INCREMENT de la tabla `plantilla`
