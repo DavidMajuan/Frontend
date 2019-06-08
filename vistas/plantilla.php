@@ -36,6 +36,8 @@
     <link rel="stylesheet" href="vistas/css/plantilla.css">
 
     <link rel="stylesheet" href="vistas/css/cabezote.css">
+
+    <link rel="stylesheet" href="vistas/css/slide.css">
     
     <script src="vistas/js/plugins/jquery.min.js"></script>
 
@@ -51,10 +53,13 @@ CABEZOTE
 =============================================*/
 
 include "modulos/cabezote.php";
+include "modulos/slide.php";
+
 
 ?>
 
 <script src="vistas/js/cabezote.js"></script>
 <script src="vistas/js/plantilla.js"></script>
+<script src="vistas/js/slide.js"></script>
 </body>
 </html>
