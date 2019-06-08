@@ -11,6 +11,15 @@ $.ajax({
 		var colorTexto = JSON.parse(respuesta).colorTexto;
 		var barraSuperior = JSON.parse(respuesta).barraSuperior;
 		var textoSuperior = JSON.parse(respuesta).textoSuperior;
+    
+        $(".backColor, .backColor a").css({"background":colorFondo,
+                                            "color":colorTexto})
+        
+         $(".barraSuperior, .barraSuperior a").css({"background": barraSuperior, 
+                                            "color": textoSuperior})
+
+    
+    
     }
 
 })
