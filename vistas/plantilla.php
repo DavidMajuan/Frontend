@@ -15,7 +15,15 @@
 
     <title>ilidanNutrition</title>
 
-    <link rel="icon" href="http://localhost:8080/backend/vistas/img/plantilla/icono.png">
+    <?php
+
+    $icono = ControladorPlantilla::ctrEstiloPlantilla();
+
+    echo '<link rel="icon" href="http://localhost:8080/backend/'.$icono["icono"].'">';
+
+    ?>
+
+
 
     <link rel="stylesheet" href="vistas/css/plugins/bootstrap.min.css">
 
