@@ -70,6 +70,7 @@ include "modulos/slide.php";
 include "modulos/destacados.php";
 
 
+
 ?>
 
 
@@ -80,5 +81,6 @@ include "modulos/destacados.php";
 <script src="vistas/js/cabezote.js"></script>
 <script src="vistas/js/plantilla.js"></script>
 <script src="vistas/js/slide.js"></script>
+<script src="vistas/js/buscador.js"></script>
 </body>
 </html>
