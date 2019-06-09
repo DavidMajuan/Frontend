@@ -34,7 +34,7 @@ SLIDESHOW
 										
 										<button class="btn btn-default backColor text-uppercase">
 										
-										VER PRODUCTO <span class="fa fa-chevron-right "></span>
+										VER NUTRICIONISTA <span class="fa fa-chevron-right "></span>
 										
 										</button>
 									
@@ -68,7 +68,7 @@ SLIDESHOW
 							
 							<button class="btn btn-default backColor text-uppercase">
 							
-							VER PRODUCTO <span class="fa fa-chevron-right "></span>
+							VER NUTRICIONISTA <span class="fa fa-chevron-right "></span>
 							
 							</button>
 						
@@ -103,7 +103,7 @@ SLIDESHOW
 							
 							<button class="btn btn-default backColor text-uppercase">
 							
-							VER PRODUCTO<span class="fa fa-chevron-right "></span>
+							VER NUTRICIONISTA<span class="fa fa-chevron-right "></span>
 							
 							</button>
 						
@@ -137,7 +137,7 @@ SLIDESHOW
 							
 							<button class="btn btn-default backColor text-uppercase">
 							
-							VER PRODUCTO<span class="fa fa-chevron-right "></span>
+							VER NUTRICIONISTA<span class="fa fa-chevron-right "></span>
 							
 							</button>
 

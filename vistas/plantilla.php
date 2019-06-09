@@ -23,7 +23,9 @@
 
     ?>
 
-
+    <!--=====================================
+        PLUGINS DE CSS
+    ======================================-->
 
     <link rel="stylesheet" href="vistas/css/plugins/bootstrap.min.css">
 
@@ -33,11 +35,22 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet">
   
+    <!--=====================================
+        HOJAS DE ESTILOS PERSONALIZADAS
+    ======================================-->
+    
+    
     <link rel="stylesheet" href="vistas/css/plantilla.css">
 
     <link rel="stylesheet" href="vistas/css/cabezote.css">
 
     <link rel="stylesheet" href="vistas/css/slide.css">
+
+    <link rel="stylesheet" href="vistas/css/productos.css">
+
+    <!--=====================================
+        PLUGINS DE JAVASCRIPT
+    ======================================-->
     
     <script src="vistas/js/plugins/jquery.min.js"></script>
 
@@ -54,9 +67,15 @@ CABEZOTE
 
 include "modulos/cabezote.php";
 include "modulos/slide.php";
+include "modulos/destacados.php";
 
 
 ?>
+
+
+    <!--=====================================
+        JAVASCRIPT PERSONALIZADO
+    ======================================-->
 
 <script src="vistas/js/cabezote.js"></script>
 <script src="vistas/js/plantilla.js"></script>
