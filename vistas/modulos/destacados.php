@@ -86,7 +86,7 @@ VITRINA DE PRODUCTOS GRATIS
 
 				<div class="col-sm-6 col-xs-12">
 					
-					<a href="articulos-gratis">
+					<a href="#"><!--consultas-gratuitas-->
 						
 						<button class="btn btn-default backColor pull-right">
 							
@@ -124,7 +124,7 @@ VITRINA DE PRODUCTOS GRATIS
 					
 					<a href="#" class="pixelProducto">
 						
-						<img src="http://localhost:8080/backend/vistas/img/productos/accesorios/accesorio05.jpg" class="img-responsive">
+						<img src="http://localhost:8080/backend/vistas/img/productos/gratuitas/accesorio05.jpg" class="img-responsive">
 
 					</a>
 
@@ -192,7 +192,7 @@ VITRINA DE PRODUCTOS GRATIS
 					
 					<a href="#" class="pixelProducto">
 						
-						<img src="http://localhost:8080/backend/vistas/img/productos/accesorios/accesorio03.jpg" class="img-responsive">
+						<img src="http://localhost:8080/backend/vistas/img/productos/gratuitas/accesorio03.jpg" class="img-responsive">
 
 					</a>
 
@@ -260,7 +260,7 @@ VITRINA DE PRODUCTOS GRATIS
 					
 					<a href="#" class="pixelProducto">
 						
-						<img src="http://localhost:8080/backend/vistas/img/productos/accesorios/accesorio02.jpg" class="img-responsive">
+						<img src="http://localhost:8080/backend/vistas/img/productos/gratuitas/accesorio02.jpg" class="img-responsive">
 
 					</a>
 
@@ -328,7 +328,7 @@ VITRINA DE PRODUCTOS GRATIS
 					
 					<a href="#" class="pixelProducto">
 						
-						<img src="http://localhost:8080/backend/vistas/img/productos/accesorios/accesorio01.jpg" class="img-responsive">
+						<img src="http://localhost:8080/backend/vistas/img/productos/gratuitas/accesorio01.jpg" class="img-responsive">
 
 					</a>
 
@@ -406,7 +406,7 @@ VITRINA DE PRODUCTOS GRATIS
 					
 					<figure>
 					
-						<a href="#" class="pixelProducto"><img src="http://localhost:8080/backend/vistas/img/productos/accesorios/accesorio05.jpg" class="img-responsive"></a>
+						<a href="#" class="pixelProducto"><img src="http://localhost:8080/backend/vistas/img/productos/gratuitas/accesorio05.jpg" class="img-responsive"></a>
 
 					</figure>
 
@@ -473,7 +473,7 @@ VITRINA DE PRODUCTOS GRATIS
 					
 					<figure>
 					
-						<a href="#" class="pixelProducto"><img src="http://localhost:8080/backend/vistas/img/productos/accesorios/accesorio03.jpg" class="img-responsive"></a>
+						<a href="#" class="pixelProducto"><img src="http://localhost:8080/backend/vistas/img/productos/gratuitas/accesorio03.jpg" class="img-responsive"></a>
 
 					</figure>
 
@@ -540,7 +540,7 @@ VITRINA DE PRODUCTOS GRATIS
 					
 					<figure>
 					
-						<a href="#" class="pixelProducto"><img src="http://localhost:8080/backend/vistas/img/productos/accesorios/accesorio02.jpg" class="img-responsive"></a>
+						<a href="#" class="pixelProducto"><img src="http://localhost:8080/backend/vistas/img/productos/gratuitas/accesorio02.jpg" class="img-responsive"></a>
 
 					</figure>
 
@@ -607,7 +607,7 @@ VITRINA DE PRODUCTOS GRATIS
 					
 					<figure>
 					
-						<a href="#" class="pixelProducto"><img src="http://localhost:8080/backend/vistas/img/productos/accesorios/accesorio01.jpg" class="img-responsive"></a>
+						<a href="#" class="pixelProducto"><img src="http://localhost:8080/backend/vistas/img/productos/gratuitas/accesorio01.jpg" class="img-responsive"></a>
 
 					</figure>
 
@@ -738,7 +738,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 				<div class="col-sm-6 col-xs-12">
 					
-					<a href="lo-mas-vendido">
+					<a href="#"><!--lo-mas-solicitados-->
 						
 						<button class="btn btn-default backColor pull-right">
 							
@@ -764,7 +764,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 		VITRINA DE PRODUCTOS EN CUADRÍCULA
 		======================================-->
 
-		<ul class="grid1" style="display:none">
+		<ul class="grid1" style="">
 			
 			<!-- Producto 1 -->
 
@@ -776,7 +776,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 					
 					<a href="#" class="pixelProducto">
 						
-						<img src="http://localhost:8080/backend/vistas/img/productos/ropa/ropa03.jpg" class="img-responsive">
+						<img src="http://localhost:8080/backend/vistas/img/productos/nutricionista/n03.jpg" class="img-responsive">
 
 					</a>
 
@@ -858,7 +858,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 					
 					<a href="#" class="pixelProducto">
 						
-						<img src="http://localhost:8080/backend/vistas/img/productos/ropa/ropa04.jpg" class="img-responsive">
+						<img src="http://localhost:8080/backend/vistas/img/productos/nutricionista/n04.jpg" class="img-responsive">
 
 					</a>
 
@@ -938,7 +938,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 					
 					<a href="#" class="pixelProducto">
 						
-						<img src="http://localhost:8080/backend/vistas/img/productos/ropa/ropa02.jpg" class="img-responsive">
+						<img src="http://localhost:8080/backend/vistas/img/productos/nutricionista/n02.jpg" class="img-responsive">
 
 					</a>
 
@@ -1018,7 +1018,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 					
 					<a href="#" class="pixelProducto">
 						
-						<img src="http://localhost:8080/backend/vistas/img/productos/ropa/ropa06.jpg" class="img-responsive">
+						<img src="http://localhost:8080/backend/vistas/img/productos/nutricionista/n06.jpg" class="img-responsive">
 
 					</a>
 
@@ -1089,7 +1089,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 		VITRINA DE PRODUCTOS EN LISTA
 		======================================-->
 
-		<ul class="list1" style="">
+		<ul class="list1" style="display:none">
 			
 			<!-- PRODUCTO 1 -->
 
@@ -1103,7 +1103,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 					
 							<a href="#" class="pixelProducto">
 
-								<img src="http://localhost:8080/backend/vistas/img/productos/ropa/ropa03.jpg" class="img-responsive">
+								<img src="http://localhost:8080/backend/vistas/img/productos/nutricionista/n03.jpg" class="img-responsive">
 
 							</a>
 
@@ -1245,7 +1245,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 				<div class="col-sm-6 col-xs-12">
 					
-					<a href="lo-mas-visto">
+					<a href="#"><!--lo-mas-visto-->
 						
 						<button class="btn btn-default backColor pull-right">
 							
@@ -1271,7 +1271,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 		VITRINA DE PRODUCTOS EN CUADRÍCULA
 		======================================-->
 
-		<ul class="grid2" style="display:none">
+		<ul class="grid2" style="">
 			
 			<!-- Producto 1 -->
 
@@ -1623,7 +1623,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 		VITRINA DE PRODUCTOS EN LISTA
 		======================================-->
 
-		<ul class="list2" style="">
+		<ul class="list2" style="display:none">
 			
 			<!-- PRODUCTO 1 -->
 

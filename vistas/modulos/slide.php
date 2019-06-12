@@ -24,11 +24,11 @@ SLIDESHOW
 
 								<div class="textosSlide" style="top:20%; left:10%; width:40%">
 									
-									<h1 style="color:#333">lorem </h1>
+									<h1 style="color:#333">Alimentación </h1>
 
-									<h2 style="color:#777">lorem Ipsum dolor sit</h2>
+									<h2 style="color:#777">Nutricionistas especializados</h2>
 
-									<h3 style="color:#888">lorem Ipsum dolor sit</h3>
+									<h3 style="color:#888">Inscribete y obten descuentos</h3>
 
 									<a href="#">
 										
@@ -58,11 +58,11 @@ SLIDESHOW
 
 					<div class="textosSlide" style="top:20%; right:10%; width:40%">
 						
-						<h1 style="color:#333">lorem </h1>
+						<h1 style="color:#333">Maria Gutierrez </h1>
 
-						<h2 style="color:#777">lorem Ipsum dolor sit</h2>
+						<h2 style="color:#777">Profesional capacitada</h2>
 
-						<h3 style="color:#888">lorem Ipsum dolor sit</h3>
+						<h3 style="color:#888">Obten asesoria especializada</h3>
 
 						<a href="#">
 							
@@ -93,11 +93,11 @@ SLIDESHOW
 
 					<div class="textosSlide" style="top:20%; right:10%; width:40%">
 						
-						<h1 style="color:#fff">lorem </h1>
+						<h1 style="color:#333">Francisco Maldonado </h1>
 
-						<h2 style="color:#ccc">lorem Ipsum</h2>
+						<h2 style="color:#ccc">Obten su asesoria</h2>
 
-						<h3 style="color:#aaa">lorem Ipsum</h3>
+						<h3 style="color:#aaa">Nutricionista especializado</h3>
 
 						<a href="#">
 							
@@ -127,11 +127,11 @@ SLIDESHOW
 
 					<div class="textosSlide" style="top:20%; left:10%; width:40%">
 						
-					<h1 style="color:#333">lorem </h1>
+					<h1 style="color:#333">Sofía Montalvo </h1>
 
-					<h2 style="color:#777">lorem Ipsum</h2>
+					<h2 style="color:#777">Obten Asesoría</h2>
 
-					<h3 style="color:#888">lorem Ipsum</h3>
+					<h3 style="color:#888">Nutricionista con años de experiencia</h3>
 
 						<a href="#">
 							
