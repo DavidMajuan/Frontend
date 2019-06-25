@@ -86,7 +86,7 @@ VITRINA DE PRODUCTOS GRATIS
 
 				<div class="col-sm-6 col-xs-12">
 					
-					<a href="consultas-gratuitas"><!--consultas-gratuitas-->
+					<a href="#"><!--consultas-gratuitas-->
 						
 						<button class="btn btn-default backColor pull-right">
 							
@@ -738,7 +738,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 				<div class="col-sm-6 col-xs-12">
 					
-					<a href="lo-mas-solicitado"><!--lo-mas-solicitados-->
+					<a href="#"><!--lo-mas-solicitados-->
 						
 						<button class="btn btn-default backColor pull-right">
 							
@@ -776,7 +776,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 					
 					<a href="#" class="pixelProducto">
 						
-						<img src="http://localhost:8080/backend/vistas/img/productos/nutricionista/n03.jpg" class="img-responsive">
+						<img src="http://localhost:8080/backend/vistas/img/productos/nutricionista/nutricionista1.jpg" class="img-responsive">
 
 					</a>
 
@@ -792,9 +792,9 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 							
                             Alejandra López<br>
 
-							<span class="label label-warning fontSize">Nuevo</span> 
+							<!--<span class="label label-warning fontSize">Nuevo</span> -->
 
-							<span class="label label-warning fontSize">40% off</span>
+							<!--<span class="label label-warning fontSize">40% off</span> -->
 
 						</a>	
 
@@ -804,7 +804,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 				<!--===============================================-->
 				
-				<div class="col-xs-6 precio">
+				<!--<div class="col-xs-6 precio">
 					
 					<h2>
 
@@ -818,7 +818,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 					</h2>
 
-				</div>
+				</div> -->
 
 				<!--===============================================-->
 
@@ -826,7 +826,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 					
 					<div class="btn-group pull-right">
 						
-						<button type="button" class="btn btn-default btn-xs deseos" idProducto="470" data-toggle="tooltip" title="Agregar a mi lista de deseos">
+						<button type="button" class="btn btn-default btn-xs deseos" idProducto="470" data-toggle="tooltip" title="Agregar a mi lista de favoritos">
 							
 							<i class="fa fa-heart" aria-hidden="true"></i>
 
@@ -834,7 +834,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 						<a href="#" class="pixelProducto">
 						
-							<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
+							<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver perfil">
 								
 								<i class="fa fa-eye" aria-hidden="true"></i>
 
@@ -858,7 +858,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 					
 					<a href="#" class="pixelProducto">
 						
-						<img src="http://localhost:8080/backend/vistas/img/productos/nutricionista/n04.jpg" class="img-responsive">
+						<img src="http://localhost:8080/backend/vistas/img/productos/nutricionista/nutricionista2.jpg" class="img-responsive">
 
 					</a>
 
@@ -872,9 +872,9 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 						
 						<a href="#" class="pixelProducto">
 							
-							SOFIA CORDOVA<br>
+							HÉCTOR GOMEZ<br>
 
-							<span class="label label-warning fontSize">40% off</span>
+							<!--<span class="label label-warning fontSize">40% off</span>-->
 
 						</a>	
 
@@ -884,7 +884,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 				<!--===============================================-->
 				
-				<div class="col-xs-6 precio">
+				<!--<div class="col-xs-6 precio">
 					
 					<h2>
 
@@ -898,7 +898,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 					</h2>
 
-				</div>
+				</div> -->
 
 				<!--===============================================-->
 
@@ -906,7 +906,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 					
 					<div class="btn-group pull-right">
 						
-						<button type="button" class="btn btn-default btn-xs deseos" idProducto="470" data-toggle="tooltip" title="Agregar a mi lista de deseos">
+						<button type="button" class="btn btn-default btn-xs deseos" idProducto="470" data-toggle="tooltip" title="Agregar a mi lista de favoritos">
 							
 							<i class="fa fa-heart" aria-hidden="true"></i>
 
@@ -914,7 +914,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 						<a href="#" class="pixelProducto">
 						
-							<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
+							<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver perfil">
 								
 								<i class="fa fa-eye" aria-hidden="true"></i>
 
@@ -938,7 +938,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 					
 					<a href="#" class="pixelProducto">
 						
-						<img src="http://localhost:8080/backend/vistas/img/productos/nutricionista/n02.jpg" class="img-responsive">
+						<img src="http://localhost:8080/backend/vistas/img/productos/nutricionista/nutricionista3.jpg" class="img-responsive">
 
 					</a>
 
@@ -952,9 +952,9 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 						
 						<a href="#" class="pixelProducto">
 							
-                            Héctor Gómez<br>
+                            MICHELLE LEWIN<br>
 
-							<span class="label label-warning fontSize">40% off</span>
+							<!--<span class="label label-warning fontSize">40% off</span>-->
 
 						</a>	
 
@@ -964,7 +964,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 				<!--===============================================-->
 				
-				<div class="col-xs-6 precio">
+				<!--<div class="col-xs-6 precio">
 					
 					<h2>
 
@@ -978,7 +978,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 					</h2>
 
-				</div>
+				</div>-->
 
 				<!--===============================================-->
 
@@ -986,7 +986,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 					
 					<div class="btn-group pull-right">
 						
-						<button type="button" class="btn btn-default btn-xs deseos" idProducto="470" data-toggle="tooltip" title="Agregar a mi lista de deseos">
+						<button type="button" class="btn btn-default btn-xs deseos" idProducto="470" data-toggle="tooltip" title="Agregar a mi lista de favoritos">
 							
 							<i class="fa fa-heart" aria-hidden="true"></i>
 
@@ -994,7 +994,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 						<a href="#" class="pixelProducto">
 						
-							<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
+							<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver perfil">
 								
 								<i class="fa fa-eye" aria-hidden="true"></i>
 
@@ -1018,7 +1018,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 					
 					<a href="#" class="pixelProducto">
 						
-						<img src="http://localhost:8080/backend/vistas/img/productos/nutricionista/n06.jpg" class="img-responsive">
+						<img src="http://localhost:8080/backend/vistas/img/productos/nutricionista/nutricionista4.jpg" class="img-responsive">
 
 					</a>
 
@@ -1032,7 +1032,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 						
 						<a href="#" class="pixelProducto">
 							
-							MICHELLE LEWIN
+							NEIL CÉSAR
 							
 							<br>
 							<br>
@@ -1045,7 +1045,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 				<!--===============================================-->
 				
-				<div class="col-xs-6 precio">
+				<!--<div class="col-xs-6 precio">
 					
 					<h2>
 
@@ -1053,7 +1053,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 					</h2>
 
-				</div>
+				</div> -->
 
 				<!--===============================================-->
 
@@ -1061,7 +1061,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 					
 					<div class="btn-group pull-right">
 						
-						<button type="button" class="btn btn-default btn-xs deseos" idProducto="470" data-toggle="tooltip" title="Agregar a mi lista de deseos">
+						<button type="button" class="btn btn-default btn-xs deseos" idProducto="470" data-toggle="tooltip" title="Agregar a mi lista de favoritos">
 							
 							<i class="fa fa-heart" aria-hidden="true"></i>
 
@@ -1069,7 +1069,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 						<a href="#" class="pixelProducto">
 						
-							<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
+							<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver perfil">
 								
 								<i class="fa fa-eye" aria-hidden="true"></i>
 
@@ -1245,7 +1245,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 				<div class="col-sm-6 col-xs-12">
 					
-					<a href="lo-mas-visto"><!--lo-mas-visto-->
+					<a href="#"><!--lo-mas-visto-->
 						
 						<button class="btn btn-default backColor pull-right">
 							
@@ -1299,7 +1299,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 							
 							Rutina de ejercicios para hombres <br>
 
-							<span class="label label-warning fontSize">90% off</span>
+							<!--<span class="label label-warning fontSize">90% off</span> -->
 
 						</a>	
 
@@ -1309,7 +1309,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 				<!--===============================================-->
 				
-				<div class="col-xs-6 precio">
+				<!--<div class="col-xs-6 precio">
 					
 					<h2>
 
@@ -1323,7 +1323,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 					</h2>
 
-				</div>
+				</div> -->
 
 				<!--===============================================-->
 
@@ -1385,7 +1385,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 							
                             rutina de ejercicios para mujeres <br>
 
-							<span class="label label-warning fontSize">90% off</span>
+							<!--<span class="label label-warning fontSize">90% off</span> -->
 
 						</a>	
 
@@ -1395,7 +1395,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 				<!--===============================================-->
 				
-				<div class="col-xs-6 precio">
+				<!--<div class="col-xs-6 precio">
 					
 					<h2>
 
@@ -1409,7 +1409,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 					</h2>
 
-				</div>
+				</div> -->
 
 				<!--===============================================-->
 
@@ -1471,7 +1471,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 							
 							Aprende yoga <br>
 
-							<span class="label label-warning fontSize">90% off</span>
+							<!--<span class="label label-warning fontSize">90% off</span> -->
 
 						</a>	
 
@@ -1481,7 +1481,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 				<!--===============================================-->
 				
-				<div class="col-xs-6 precio">
+				<!--<div class="col-xs-6 precio">
 					
 					<h2>
 
@@ -1495,7 +1495,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 					</h2>
 
-				</div>
+				</div> -->
 
 				<!--===============================================-->
 
@@ -1557,7 +1557,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 							
 							Curso de cocina <br>
 
-							<span class="label label-warning fontSize">90% off</span>
+							<!--<span class="label label-warning fontSize">90% off</span> -->
 
 						</a>	
 
@@ -1567,7 +1567,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 				<!--===============================================-->
 				
-				<div class="col-xs-6 precio">
+				<!--<div class="col-xs-6 precio">
 					
 					<h2>
 
@@ -1581,7 +1581,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 					</h2>
 
-				</div>
+				</div>-->
 
 				<!--===============================================-->
 
@@ -1657,7 +1657,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
                                    Rutina de ejercicios para hombres
 
-									<span class="label label-warning">90% off</span>
+									<!--<span class="label label-warning">90% off</span>-->
 
 								</a>
 
