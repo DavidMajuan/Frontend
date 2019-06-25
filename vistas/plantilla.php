@@ -21,15 +21,26 @@
 
     echo '<link rel="icon" href="http://localhost:8080/backend/'.$icono["icono"].'">';
 
+    
+    /*=============================================
+		MANTENER LA RUTA FIJA DEL PROYECTO
+	=============================================*/
+		
+        $url = Ruta::ctrRuta();
+       
+    
+    
     ?>
+
+
 
     <!--=====================================
         PLUGINS DE CSS
     ======================================-->
 
-    <link rel="stylesheet" href="vistas/css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/bootstrap.min.css">
 
-    <link rel="stylesheet" href="vistas/css/plugins/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/font-awesome.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
@@ -40,21 +51,21 @@
     ======================================-->
     
     
-    <link rel="stylesheet" href="vistas/css/plantilla.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plantilla.css">
 
-    <link rel="stylesheet" href="vistas/css/cabezote.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/cabezote.css">
 
-    <link rel="stylesheet" href="vistas/css/slide.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/slide.css">
 
-    <link rel="stylesheet" href="vistas/css/productos.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/productos.css">
 
     <!--=====================================
         PLUGINS DE JAVASCRIPT
     ======================================-->
     
-    <script src="vistas/js/plugins/jquery.min.js"></script>
+    <script src="<?php echo $url; ?>vistas/js/plugins/jquery.min.js"></script>
 
-    <script src="vistas/js/plugins/bootstrap.min.js"></script>
+    <script src="<?php echo $url; ?>vistas/js/plugins/bootstrap.min.js"></script>
     
 </head>
 <body>
@@ -66,10 +77,27 @@ CABEZOTE
 =============================================*/
 
 include "modulos/cabezote.php";
-include "modulos/slide.php";
-include "modulos/destacados.php";
 
+/*=============================================
+PAGINAS
+=============================================*/
+if(isset($_GET["ruta"])){
 
+    if($_GET["ruta"] == "consultas-gratuitas"){
+        include "modulos/poductos.php";
+    }
+    if($_GET["ruta"] == "lo-mas-solicitado"){
+        include "modulos/poductos.php";
+    }
+    if($_GET["ruta"] == "lo-mas-visto"){
+        include "modulos/poductos.php";
+    }
+
+}else{
+    include "modulos/slide.php";
+    include "modulos/destacados.php";
+
+}
 
 ?>
 
@@ -78,9 +106,11 @@ include "modulos/destacados.php";
         JAVASCRIPT PERSONALIZADO
     ======================================-->
 
-<script src="vistas/js/cabezote.js"></script>
-<script src="vistas/js/plantilla.js"></script>
-<script src="vistas/js/slide.js"></script>
-<script src="vistas/js/buscador.js"></script>
+<script src="<?php echo $url; ?>vistas/js/cabezote.js"></script>
+<script src="<?php echo $url; ?>vistas/js/plantilla.js"></script>
+<script src="<?php echo $url; ?>vistas/js/slide.js"></script>
+<script src="<?php echo $url; ?>vistas/js/buscador.js"></script>
+
+
 </body>
 </html>

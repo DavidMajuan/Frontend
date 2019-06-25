@@ -86,7 +86,7 @@ VITRINA DE PRODUCTOS GRATIS
 
 				<div class="col-sm-6 col-xs-12">
 					
-					<a href="#"><!--consultas-gratuitas-->
+					<a href="consultas-gratuitas"><!--consultas-gratuitas-->
 						
 						<button class="btn btn-default backColor pull-right">
 							
@@ -738,7 +738,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 				<div class="col-sm-6 col-xs-12">
 					
-					<a href="#"><!--lo-mas-solicitados-->
+					<a href="lo-mas-solicitado"><!--lo-mas-solicitados-->
 						
 						<button class="btn btn-default backColor pull-right">
 							
@@ -1245,7 +1245,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 				<div class="col-sm-6 col-xs-12">
 					
-					<a href="#"><!--lo-mas-visto-->
+					<a href="lo-mas-visto"><!--lo-mas-visto-->
 						
 						<button class="btn btn-default backColor pull-right">
 							
