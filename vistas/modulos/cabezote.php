@@ -644,28 +644,35 @@ VENTANA MODAL PARA EL REGISTRO
 					</div>
 
 				</div>
+				<!--=====================================
+                ENTRADA TIPO DE USUARIO
+                ======================================-->
 
-				<div class="from-group">
-					<input type="radio" name="regSeleccion" value="Nutricionista" id="regSeleccion_0" onclick="mostrarReferencia();"/>Nutricionista 
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="radio" name="regSeleccion" value="Paciente" id="regSeleccion_1" onclick="mostrarReferencia();"/>Paciente
-				</div>
-
-				<div id="llenadoNut" style="display:none;" name="llenadoNut">
-
-					<div class="input-group">
-
-						<span class="input-group-addon">
-
-							<p>Codigo de Colegiatura: </p>
+                <div class="form-group row">
+                  
+                  <div class="col-xs-6" style="padding-right:0px">
+                    
+                     <div class="input-group">
+                  
+                      <select class="form-control" id="nuevoTipoUsuario" name="nuevoTipoUsuario" required>
+					    <option value="">Elija el Usuario</option>
+						<option value="Paciente">Paciente</option>                                        
+                        <option value="NT">Nutricionista</option>
 						
-						</span>
+                                       
+                      </select>    
 
-						<input type="text" class="form-control" id="regCodigo" name="regCodigo" placeholder="99999" required minlength="6" maxlength="6" pattern="[0-9]+" oninvalid="setCustomValidity('Inserte 6 números')">
+                    </div>
 
-					</div>
+                  </div>
 
-				</div>
+                  <div class="cajasTipoUsuario"></div>
+
+                  <input type="hidden" id="listaMetodoUsuario" name="listaMetodoUsuario">
+
+                </div>
+
+                <br>
 
 				<!--=====================================
 				https://www.iubenda.com/ CONDICIONES DE USO Y POLÍTICAS DE PRIVACIDAD
