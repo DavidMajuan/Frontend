@@ -8,17 +8,34 @@ class ModeloProductos{
     MOSTRAR CATEGORIAS
     =================================================================*/
 
-    static public function mdlMostrarCategorias($tabla){
+    static public function mdlMostrarCategorias($tabla, $item, $valor){
 
-        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+        if($item != null){
 
-        $stmt -> execute();
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 
-        return $stmt -> fetchAll();
+            $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+            $stmt -> execute();
+
+            return $stmt -> fetch();
+
+        }else{
+
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+
+            $stmt -> execute();
+
+            return $stmt -> fetchAll();
+
+           
+        }
 
         $stmt -> close();
 
         $stmt =null;
+
+        
 
 
 
