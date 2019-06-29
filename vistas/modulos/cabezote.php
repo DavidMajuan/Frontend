@@ -162,10 +162,15 @@ HEADER
 
 		<div class="col-xs-12 backColor" id="categorias">
 			
+			
 
 			<?php
 
-				$categorias = ControladorProductos::ctrMostrarCategorias();	
+				$item = null;
+
+				$valor= null;
+
+				$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);	
 				
 				foreach ($categorias as $key => $value) {
 					
