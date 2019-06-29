@@ -185,7 +185,11 @@ HEADER
 
 								<ul>';
 
-							$subcategorias = ControladorProductos::ctrMostrarSubcategorias($value["id"]);				
+								$item ="id_categoria";
+
+								$valor = $value["id"];
+
+							$subcategorias = ControladorProductos::ctrMostrarSubcategorias($item, $valor);				
 
 							 
 
