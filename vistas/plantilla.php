@@ -78,12 +78,19 @@ CABEZOTE
 
 include "modulos/cabezote.php";
 
+$rutas = array();
+
 /*=============================================
 PAGINAS
 =============================================*/
 if(isset($_GET["ruta"])){
 
-    if($_GET["ruta"] == "consultas-gratuitas"){
+    $rutas = explode("/", $_GET["ruta"]);
+
+
+    var_dump($rutas[0]);
+
+   /* if($_GET["ruta"] == "consultas-gratuitas"){
         include "modulos/poductos.php";
     }
     if($_GET["ruta"] == "lo-mas-solicitado"){
@@ -92,7 +99,7 @@ if(isset($_GET["ruta"])){
     if($_GET["ruta"] == "lo-mas-visto"){
         include "modulos/poductos.php";
     }
-
+*/
 }else{
     include "modulos/slide.php";
     include "modulos/destacados.php";
