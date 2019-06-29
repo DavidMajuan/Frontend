@@ -78,12 +78,14 @@ CABEZOTE
 
 include "modulos/cabezote.php";
 
+/*=============================================
+CONTENIDO DINAMICO
+=============================================*/
+
 $rutas = array();
 $ruta = null; 
 
-/*=============================================
-PAGINAS
-=============================================*/
+
 if(isset($_GET["ruta"])){
 
     $rutas = explode("/", $_GET["ruta"]);
@@ -91,6 +93,10 @@ if(isset($_GET["ruta"])){
     $item ="ruta";
 
     $valor = $rutas[0];
+
+    /*=============================================
+    URL'S AMIGABLES DE CATEGORIAS
+    =============================================*/
 
     $rutaCategorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
 
@@ -101,6 +107,29 @@ if(isset($_GET["ruta"])){
 
 
    }
+
+    /*=============================================
+     URL'S AMIGABLES DE SUBCATEGORIAS
+    =============================================*/
+
+    $rutasubCategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
+
+    foreach ($rutasubCategorias as $key => $value) {
+
+        if($rutas[0] == $value["ruta"]){
+
+            $ruta = $rutas[0];
+        
+        
+           }
+
+    }
+
+    
+
+   /*=============================================
+    LISTA BLANCA DE URL'S AMIGABLES (aqui se agregan todas la paginas)
+    =============================================*/
 
    if($rutas != null){
 
