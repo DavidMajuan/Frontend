@@ -24,11 +24,11 @@ class ControladorProductos{
     MOSTRAR SUBCATEGORIAS
     =================================================================*/
 
-   static public function ctrMostrarSubcategorias($id){
+   static public function ctrMostrarSubcategorias($item, $valor){
 
         $tabla = "subcategorias";
 
-        $respuesta = ModeloProductos::mdlMostrarSubCategorias($tabla, $id);
+        $respuesta = ModeloProductos::mdlMostrarSubCategorias($tabla, $item, $valor);
 
         return $respuesta;
 
