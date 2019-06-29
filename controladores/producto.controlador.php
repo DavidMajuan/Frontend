@@ -6,7 +6,7 @@ class ControladorProductos{
     MOSTRAR CATEGORIAS
     =================================================================*/
 
-    public function ctrMostrarCategorias($item, $valor){
+   static public function ctrMostrarCategorias($item, $valor){
 
         $tabla = "categorias";
 
@@ -24,7 +24,7 @@ class ControladorProductos{
     MOSTRAR SUBCATEGORIAS
     =================================================================*/
 
-    public function ctrMostrarSubcategorias($id){
+   static public function ctrMostrarSubcategorias($id){
 
         $tabla = "subcategorias";
 

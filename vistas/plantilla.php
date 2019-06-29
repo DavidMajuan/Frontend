@@ -79,6 +79,7 @@ CABEZOTE
 include "modulos/cabezote.php";
 
 $rutas = array();
+$ruta = null; 
 
 /*=============================================
 PAGINAS
@@ -87,8 +88,29 @@ if(isset($_GET["ruta"])){
 
     $rutas = explode("/", $_GET["ruta"]);
 
+    $item ="ruta";
 
-    var_dump($rutas[0]);
+    $valor = $rutas[0];
+
+    $rutaCategorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
+
+   
+    if($rutas[0] == $rutaCategorias["ruta"]){
+
+    $ruta = $rutas[0];
+
+
+   }
+
+   if($rutas != null){
+
+        include "modulos/poductos.php";
+
+   }else{
+   
+    include "modulos/error404.php";
+
+   }
 
    /* if($_GET["ruta"] == "consultas-gratuitas"){
         include "modulos/poductos.php";
