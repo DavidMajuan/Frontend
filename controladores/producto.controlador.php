@@ -6,11 +6,11 @@ class ControladorProductos{
     MOSTRAR CATEGORIAS
     =================================================================*/
 
-    public function ctrMostrarCategorias(){
+    public function ctrMostrarCategorias($item, $valor){
 
         $tabla = "categorias";
 
-        $respuesta = ModeloProductos::mdlMostrarCategorias($tabla);
+        $respuesta = ModeloProductos::mdlMostrarCategorias($tabla,$item,$valor);
 
         return $respuesta;
 
