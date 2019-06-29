@@ -144,13 +144,13 @@ HEADER
 
 					<button class="btn btn-default pull-left backColor"> 
 						
-						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+						<i class="fa fa-credit-card-alt" aria-hidden="true">&nbsp; &nbsp;&nbsp; &nbsp;SUSCRIPCION</i>
 					
 					</button>
-				
+					
 				</a>	
 
-				<p>TU SUSCRIPCION <span class="cantidadCesta">3</span> <br> USD $ <span class="sumaCesta">20</span></p>	
+			
 
 			</div>
 
@@ -163,79 +163,43 @@ HEADER
 		<div class="col-xs-12 backColor" id="categorias">
 			
 
-					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+			<?php
+
+				$categorias = ControladorProductos::ctrMostrarCategorias();	
+				
+				foreach ($categorias as $key => $value) {
+					
+
+					echo '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 							
-							<h4>
-								<p class="pixelCategorias">Secciones</a>
-							</h4>
-							
-							<hr>
+								<h4>
+									<p class="pixelCategorias">'.$value["categoria"].'</a>
+								</h4>
+								
+								<hr>
 
-							<ul>
+								<ul>';
 
-                                <li><a href="#" class="pixelSubcategorias">Videos</a></li>
-                                <li><a href="#" class="pixelSubcategorias">Suscribete</a></li>
-                                <li><a href="#" class="pixelSubcategorias">Manual</a></li>
-                                <li><a href="#" class="pixelSubcategorias">Contacta a Soporte</a></li>
-                                <li><a href="#" class="pixelSubcategorias">Login</a></li>
-                            </ul>
+							$subcategorias = ControladorProductos::ctrMostrarSubcategorias($value["id"]);				
 
-					</div>
+							 
 
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-							
-							<h4>
-								<p class="pixelCategorias">Sobre IlidanNutritiun</a>
-							</h4>
-							
-							<hr>
+							foreach ($subcategorias as $key => $value) {
 
-							<ul>
+								echo '<li><a href="#" class="pixelSubcategorias">'.$value["subcategoria"].'</a></li>';
+								
+							}
 
-                                <li><a href="#" class="pixelSubcategorias">Terminos y condiciones</a></li>
-                                <li><a href="#" class="pixelSubcategorias">Politica de privacidad</a></li>
-                                <li><a href="#" class="pixelSubcategorias">Quienes somos</a></li>
-                                <li><a href="#" class="pixelSubcategorias">Mision</a></li>
-                                <li><a href="#" class="pixelSubcategorias">Vision</a></li>
-                            </ul>
+					echo	'</ul>
 
-					</div>
+						</div>';
 
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-							
-							<h4>
-								<p class="pixelCategorias">Categoria de Nutricionistas</a>
-							</h4>
-							
-							<hr>
+				}
 
-							<ul>
 
-                                <li><a href="#" class="pixelSubcategorias">Deportistas</a></li>
-                                <li><a href="#" class="pixelSubcategorias">Embarazadas y Lactantes</a></li>
-                                <li><a href="#" class="pixelSubcategorias">Vegetarianos y Veganos</a></li>
-                                <li><a href="#" class="pixelSubcategorias">Alergias e Intolerancias</a></li>
-                                <li><a href="#" class="pixelSubcategorias">Pediatrico</a></li>
-                            </ul>
+			?>
 
-					</div>
-
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-							
-							<h4>
-								<p class="pixelCategorias">Contacto</a>
-							</h4>
-							
-							<hr>
-
-							<ul>
-
-                                <li><p class="pixelSubcategorias">ejemplo@gmail.com</a></li>
-                                <li><p class="pixelSubcategorias">(074)1234567</a></li>
-
-                            </ul>
-
-					</div>
+					
 		
 
 		</div>
@@ -655,8 +619,8 @@ VENTANA MODAL PARA EL REGISTRO
                      <div class="input-group">
                   
                       <select class="form-control" id="nuevoTipoUsuario" name="nuevoTipoUsuario" required>
-					    <option value="">Elija el Usuario</option>
-						<option value="Paciente">Paciente</option>                                        
+												<option disable selected>Elija el Usuario</option>
+												<option value="Paciente">Paciente</option>                                        
                         <option value="NT">Nutricionista</option>
 						
                                        
