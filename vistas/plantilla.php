@@ -17,9 +17,11 @@
 
     <?php
 
+    $servidor = Ruta::ctrRutaServidor();
+
     $icono = ControladorPlantilla::ctrEstiloPlantilla();
 
-    echo '<link rel="icon" href="http://localhost:8080/backend/'.$icono["icono"].'">';
+    echo '<link rel="icon" href="'.$servidor.$icono["icono"].'">';
 
     
     /*=============================================
