@@ -14,6 +14,8 @@ SLIDESHOW
 
 		<?php
 
+		$servidor = Ruta::ctrRutaServidor();
+
 		$slide = ControladorSlide::ctrMostrarSlide();
 
 		foreach ($slide as $key => $value) {
@@ -29,11 +31,11 @@ SLIDESHOW
 
 		echo '<li>
 				
-					<img src="http://localhost:8080/backend/'.$value["imgFondo"].'">
+					<img src="'.$servidor.$value["imgFondo"].'">
 
 					<div class="slideOpciones '.$value["tipoSlide"].'">
 						
-						<img class="imgProducto" src="http://localhost:8080/backend/'.$value["imgProducto"].'" style="top:'.$estiloImgProducto["top"].'; right:'.$estiloImgProducto["right"].'; width:'.$estiloImgProducto["width"].'; left:'.$estiloImgProducto["left"].'">
+						<img class="imgProducto" src="'.$servidor.$value["imgProducto"].'" style="top:'.$estiloImgProducto["top"].'; right:'.$estiloImgProducto["right"].'; width:'.$estiloImgProducto["width"].'; left:'.$estiloImgProducto["left"].'">
 
 						<div class="textosSlide" style="top:'.$estiloTextoSlide["top"].'; right:'.$estiloTextoSlide["right"].'; width:'.$estiloTextoSlide["width"].'; left:'.$estiloTextoSlide["left"].'">
 							
