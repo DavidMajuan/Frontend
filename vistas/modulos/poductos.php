@@ -19,7 +19,7 @@ BARRA PRODUCTOS
 					
 					 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-					  Ordenar Productos <span class="caret"></span></button>
+					  Ordenar Categoria <span class="caret"></span></button>
 
 					  <ul class="dropdown-menu" role="menu">
 
@@ -96,7 +96,7 @@ LISTAR PRODUCTOS
 
 						 <h1><small>¡Oops!</small></h1>
 
-						 <h2>Aún no hay productos en esta sección</h2>
+						 <h2>Aún no hay nada en esta sección</h2>
 
 				</div>
 
