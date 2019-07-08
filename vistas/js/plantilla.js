@@ -9,26 +9,23 @@ $('[data-toggle="tooltip"]').tooltip();
 
 $.ajax({
 
-    url:rutaOculta+"ajax/plantilla.ajax.php",
-    success:function(respuesta){
+	url:rutaOculta+"ajax/plantilla.ajax.php",
+	success:function(respuesta){
 
-        var colorFondo = JSON.parse(respuesta).colorFondo;
+		var colorFondo = JSON.parse(respuesta).colorFondo;
 		var colorTexto = JSON.parse(respuesta).colorTexto;
 		var barraSuperior = JSON.parse(respuesta).barraSuperior;
 		var textoSuperior = JSON.parse(respuesta).textoSuperior;
-    
-        $(".backColor, .backColor a").css({"background":colorFondo,
-                                            "color":colorTexto})
-        
-         $(".barraSuperior, .barraSuperior a").css({"background": barraSuperior, 
-                                            "color": textoSuperior})
+		
+		$(".backColor, .backColor a").css({"background": colorFondo,
+											"color": colorTexto})
 
-    
-    
-    }
+		$(".barraSuperior, .barraSuperior a").css({"background": barraSuperior, 
+			                                       "color": textoSuperior})
+
+	}
 
 })
-
 
 /*=============================================
 CUADRÍCULA O LISTA
@@ -95,7 +92,6 @@ $.scrollUp({
 
 });
 
-
 /*=============================================
 MIGAS DE PAN
 =============================================*/
@@ -110,7 +106,6 @@ if(pagActiva != null){
 
 }
 
-
 /*=============================================
 ENLACES PAGINACIÓN
 =============================================*/
@@ -120,3 +115,12 @@ var url = window.location.href;
 var indice = url.split("/");
 
 $("#item"+indice.pop()).addClass("active");
+
+
+
+
+
+
+
+
+

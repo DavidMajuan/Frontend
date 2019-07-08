@@ -125,7 +125,7 @@ HEADER
 
 					<span class="input-group-btn">
 						
-						<a href="#">
+						<a href="<?php echo $url; ?>buscador/1/recientes">
 
 							<button class="btn btn-default backColor" type="submit">
 								
