@@ -86,7 +86,7 @@ CONTENIDO DINAMICO
 
 $rutas = array();
 $ruta = null; 
-
+$infoProducto = null;
 
 if(isset($_GET["ruta"])){
 
@@ -127,32 +127,40 @@ if(isset($_GET["ruta"])){
 
     }
 
+    /*=============================================
+	URL'S AMIGABLES DE PRODUCTOS
+	=============================================*/
+
+	$rutaProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
+	
+	if($rutas[0] == $rutaProductos["ruta"]){
+
+		$infoProducto = $rutas[0];
+
+	}
     
 
    /*=============================================
     LISTA BLANCA DE URL'S AMIGABLES (aqui se agregan todas la paginas)
     =============================================*/
 
-   if($rutas != null){
-
-        include "modulos/poductos.php";
-
-   }else{
    
-    include "modulos/error404.php";
+	if($ruta != null || $rutas[0] == "consultas-gratuitas" || $rutas[0] == "nutricionistas-mas-solicitados" || $rutas[0] == "lo-mas-visto"){
 
-   }
+		include "modulos/poductos.php";
 
-   /* if($_GET["ruta"] == "consultas-gratuitas"){
-        include "modulos/poductos.php";
-    }
-    if($_GET["ruta"] == "lo-mas-solicitado"){
-        include "modulos/poductos.php";
-    }
-    if($_GET["ruta"] == "lo-mas-visto"){
-        include "modulos/poductos.php";
-    }
-*/
+	}else if($infoProducto != null){
+
+		include "modulos/infoproducto.php";
+
+	}else{
+
+		include "modulos/error404.php";
+
+	}
+
+
+  
 }else{
     include "modulos/slide.php";
     include "modulos/destacados.php";
