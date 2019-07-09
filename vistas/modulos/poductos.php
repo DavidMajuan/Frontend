@@ -342,7 +342,7 @@ LISTAR PRODUCTOS
 
 									echo '<a href="'.$url.$value["ruta"].'" class="pixelProducto">
 									
-										<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
+										<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver Perfil">
 											
 											<i class="fa fa-eye" aria-hidden="true"></i>
 
@@ -469,7 +469,7 @@ LISTAR PRODUCTOS
 
 						  		echo '<a href="'.$url.$value["ruta"].'" class="pixelProducto">
 
-							  		<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
+							  		<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver Perfil">
 
 							  		<i class="fa fa-eye" aria-hidden="true"></i>
 

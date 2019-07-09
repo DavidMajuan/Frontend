@@ -241,17 +241,17 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 										if($value["oferta"] != 0){
 
-											echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precioOferta"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
+											echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precioOferta"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Suscribete">
 
-											<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+											<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
 
 											</button>';
 
 										}else{
 
-											echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
+											echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Suscribete">
 
-											<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+											<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
 
 											</button>';
 
@@ -261,7 +261,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 									echo '<a href="'.$value["ruta"].'" class="pixelProducto">
 									
-										<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
+										<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver Perfil">
 											
 											<i class="fa fa-eye" aria-hidden="true"></i>
 
@@ -370,17 +370,17 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 										if($value["oferta"] != 0){
 
-											echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precioOferta"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
+											echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precioOferta"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Suscribete">
 
-											<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+											<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
 
 											</button>';
 
 										}else{
 
-											echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
+											echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Suscribete">
 
-											<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+											<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
 
 											</button>';
 
@@ -390,7 +390,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 						  		echo '<a href="'.$value["ruta"].'" class="pixelProducto">
 
-							  		<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
+							  		<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver Perfil">
 
 							  		<i class="fa fa-eye" aria-hidden="true"></i>
 

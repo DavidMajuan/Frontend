@@ -123,7 +123,7 @@ INFOPRODUCTOS
 						
 						<a href="javascript:history.back()" class="text-muted">
 							
-							<i class="fa fa-reply"></i> Continuar Comprando
+							<i class="fa fa-reply"></i> Continuar Explorando
 
 						</a>
 
@@ -295,7 +295,7 @@ INFOPRODUCTOS
 
 						if($infoproducto["tipo"] == "fisico"){
 
-							if($detalles["Talla"]!=null){
+						/*	if($detalles["Talla"]!=null){
 
 								echo '<div class="col-md-3 col-xs-12">
 
@@ -329,11 +329,13 @@ INFOPRODUCTOS
 
 										}
 
-									echo '</select>
+									echo '</select> 
 
 								</div>';
 
-							}
+							}*/
+
+
 
 							if($detalles["Marca"]!=null){
 
@@ -398,10 +400,10 @@ INFOPRODUCTOS
 
 								<span class="label label-default" style="font-weight:100">
 
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
+<!--									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									Entrega inmediata | 
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									'.$infoproducto["ventasGratis"].' inscritos |
+									'.$infoproducto["ventasGratis"].' inscritos |   				-->
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].'</span> personas
 
@@ -434,10 +436,10 @@ INFOPRODUCTOS
 
 								<span class="label label-default" style="font-weight:100">
 
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
+<!--										<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									Entrega inmediata |
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									'.$infoproducto["ventas"].' ventas |
+									'.$infoproducto["ventas"].' ventas |							-->
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistas"].' </span> personas
 
@@ -474,10 +476,10 @@ INFOPRODUCTOS
 
 								<span class="label label-default" style="font-weight:100">
 								
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									'.$infoproducto["entrega"].' días hábiles para la entrega  |
+<!--								<i class="fa fa-clock-o" style="margin-right:5px"></i>
+									'.$infoproducto["entrega"].' días hábiles para la entrega  |    
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									'.$infoproducto["ventasGratis"].' solicitudes  |
+									'.$infoproducto["ventasGratis"].' solicitudes  |                -->
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].'</span> personas  
 
@@ -491,10 +493,10 @@ INFOPRODUCTOS
 
 								<small>
 								
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
+<!--								<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									'.$infoproducto["entrega"].' días hábiles para la entrega  <br>
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									'.$infoproducto["ventasGratis"].' solicitudes  <br>
+									'.$infoproducto["ventasGratis"].' solicitudes  <br>                       -->
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].' </span> personas 
 
@@ -510,10 +512,10 @@ INFOPRODUCTOS
 
 								<span class="label label-default" style="font-weight:100">
 
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
+<!--									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									'.$infoproducto["entrega"].' días hábiles para la entrega |
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									'.$infoproducto["ventas"].' ventas |
+									'.$infoproducto["ventas"].' ventas |							-->
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistas"].' </span> personas
 
@@ -527,10 +529,10 @@ INFOPRODUCTOS
 
 								<small>
 
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
+<!--								<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									'.$infoproducto["entrega"].' días hábiles para la entrega <br>
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									'.$infoproducto["ventas"].' ventas <br>
+									'.$infoproducto["ventas"].' ventas <br>							-->
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistas"].'</span> personas
 
@@ -564,7 +566,7 @@ INFOPRODUCTOS
 
 							}else{
 
-								echo '<button class="btn btn-default btn-block btn-lg backColor">SOLICITAR AHORA</button>';
+							/*	echo '<button class="btn btn-default btn-block btn-lg backColor">SOLICITAR AHORA</button>';   */
 
 							}
 
@@ -574,7 +576,7 @@ INFOPRODUCTOS
 
 						if($infoproducto["tipo"]=="virtual"){
 
-							echo '<div class="col-md-6 col-xs-12">
+						/*	echo '<div class="col-md-6 col-xs-12">
 							
 									<button class="btn btn-default btn-block btn-lg">
 									<small>COMPRAR AHORA</small></button>
@@ -585,22 +587,22 @@ INFOPRODUCTOS
 									
 									<button class="btn btn-default btn-block btn-lg backColor">
 
-									<small>ADICIONAR AL CARRITO</small> 
+									<small>SUSCRIBIR</small> 
 
-									<i class="fa fa-shopping-cart col-md-0"></i>
+									<i class="fa fa-credit-card-alt  col-md-0"></i>
 
 									</button>
 
-								</div>';
+								</div>';   					*/
 						}else{
 
 							echo '<div class="col-lg-6 col-md-8 col-xs-12">
 									
 									<button class="btn btn-default btn-block btn-lg backColor">
 
-									ADICIONAR AL CARRITO 
+									SUSCRIBIR AHORA 
 
-									<i class="fa fa-shopping-cart"></i>
+									<i class="fa fa-credit-card-alt"></i>
 
 									</button>
 
@@ -799,7 +801,7 @@ ARTÏCULOS RELACIONADOS
 
 				<div class="col-sm-6 col-xs-12">
 			
-					<h1><small>PRODUCTOS RELACIONADOS</small></h1>
+					<h1><small>PERFILES RELACIONADOS</small></h1>
 
 				</div>
 

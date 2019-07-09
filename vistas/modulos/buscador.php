@@ -14,7 +14,7 @@ BARRA PRODUCTOS
 					
 					 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-					  Ordenar Productos <span class="caret"></span></button>
+					  Ordenar  <span class="caret"></span></button>
 
 					  <ul class="dropdown-menu" role="menu">
 
