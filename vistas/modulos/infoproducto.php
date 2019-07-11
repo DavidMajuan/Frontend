@@ -114,7 +114,7 @@ INFOPRODUCTOS
 			?>
 
 				<!--=====================================
-				REGRESAR A LA TIENDA
+				REGRESAR A LA PAGINA PRINCIPAL
 				======================================-->
 
 				<div class="col-xs-6">
