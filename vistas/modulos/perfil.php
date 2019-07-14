@@ -1,766 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>IlidanNutrition | Pagina principal</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
 
-<!--=====================================
-BREADCRUMB PERFIL
-======================================-->
 
-<div class="container-fluid well well-sm">
-	
-	<div class="container">
-		
-		<div class="row">
-			
-			<ul class="breadcrumb fondoBreadcrumb text-uppercase">
-				
-				<li><a href="<?php echo $url;  ?>">INICIO</a></li>
-				<li class="active pagActiva"><?php echo $rutas[0] ?></li>
 
-			</ul>
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
 
-		</div>
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>I</b>N</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Ilidan</b>Nutrition</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
 
-	</div>
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope-o"></i>
+              <span class="label label-success">4</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 4 messages</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li><!-- start message -->
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Support Team
+                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <!-- end message -->
+                </ul>
+              </li>
+              <li class="footer"><a href="#">See All Messages</a></li>
+            </ul>
+          </li>
+          <!-- Notifications: style can be found in dropdown.less -->
+          <li class="dropdown notifications-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell-o"></i>
+              <span class="label label-warning">10</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 10 notifications</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="footer"><a href="#">View all</a></li>
+            </ul>
+          </li>
+        
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">David Jhoel Majuan Pintado</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
+                <p>
+                  David Jhoel Majuan Pintado
+                  <small>Miembro desde el 2019</small>
+                </p>
+              </li>
+             
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="perfil.html" class="btn btn-default btn-flat">Perfil</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Cerrar Sesion</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+         
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =============================================== -->
+
+  <!-- Left side column. contains the sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>David Jhoel </p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">MENU DE NAVEGACION</li>
+        <li>
+          <a href="perfil.html">
+            <i class="fa fa-user-circle-o"></i> <span>Perfil</span>
+          </a>
+        </li>
+        <li>
+          <a href="pacientes.html">
+            <i class="fa fa-users"></i> <span>Pacientes</span>
+          </a>
+        </li>
+        
+        <li class="treeview">
+            <a href="#">
+              <i class="fa fa-pencil-square-o"></i> <span>Recetas</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="categoriaReceta.html"><i class="fa fa-circle-o"></i> Categorias</a></li>
+              <li><a href="recetas.html"><i class="fa fa-circle-o"></i>Lista de recetas</a></li>
+            </ul>
+          </li>
+        <li>
+            <a href="bandejaEntrada.html">
+                <i class="fa fa-envelope-o"></i><span>Bandeja de Entrada</span>
+            </a>
+        </li>
+            
+        <li>
+            <a href="suscripcion.html">
+                <i class="fa fa-cc-paypal"></i><span>Suscripcion</span>
+            </a>
+        </li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- =============================================== -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Pagina Principal
+        <small>IlidanNutrititon</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="perfil.html"><i class="fa fa-dashboard"></i> pagina principal</a></li>
+        <li><a href="perfil.html">Examples</a></li>
+        <li class="active">Blank page</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="box">
+        <div class="box-header with-border">
+          <center><h3 class="box-title">Pagina Principal</h3></center> 
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                    title="Collapse">
+              <i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+        <center>BIENVENIDO a IlidanNutrition</center> 
+        </div>
+        <!-- /.box-body -->
+      
+      </div>
+      <!-- /.box -->
+
+
+
+      <div class="formaPago row">
+      
+     
+          <figure class="col-xs-12">
+            
+            <center>
+              
+               <img src="vistas/img/logo.png" class="img-thumbnail">	
+    
+            </center>	
+            
+              
+    
+          </figure>
+    
+         
+    
+        </div>
+
+
+
+    </section>
+    <!-- /.content -->
+
+   
+
+
+
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.4.0
+    </div>
+    <strong>Copyright &copy; 2019 <a href="https://adminlte.io">IlidanNutrition</a>.</strong> All rights
+    reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+   
+  </aside>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
 </div>
-
-<!--=====================================
-SECCIÓN PERFIL
-======================================-->
-
-<div class="container-fluid">
-
-	<div class="container">
-
-		<ul class="nav nav-tabs">
-		  
-	  		<li class="active">	  			
-			  	<a data-toggle="tab" href="#compras">
-			  	<i class="fa fa-list-ul"></i> MIS COMPRAS</a>
-	  		</li>
-
-	  		<li> 				
-		  		<a data-toggle="tab" href="#deseos">
-		  		<i class="fa fa-gift"></i> MI LISTA DE DESEOS</a>
-	  		</li>
-
-	  		<li>				
-	  			<a data-toggle="tab" href="#perfil">
-	  			<i class="fa fa-user"></i> EDITAR PERFIL</a>
-	  		</li>
-
-	  		<li>				
-		 	 	<a href="<?php echo $url; ?>ofertas">
-		 	 	<i class="fa fa-star"></i>	VER OFERTAS</a>
-	  		</li>
-		
-		</ul>
-
-		<div class="tab-content">
-
-			<!--=====================================
-			PESTAÑA COMPRAS
-			======================================-->
-
-	  		<div id="compras" class="tab-pane fade in active">
-		    
-				<div class="panel-group">
-
-				<?php
-
-					$item = "id_usuario";
-					$valor = $_SESSION["id"];
-
-					$compras = ControladorUsuarios::ctrMostrarCompras($item, $valor);
-
-					if(!$compras){
-
-						echo '<div class="col-xs-12 text-center error404">
-				               
-				    		<h1><small>¡Oops!</small></h1>
-				    
-				    		<h2>Aún no tienes compras realizadas en esta tienda</h2>
-
-				  		</div>';
-
-					}else{
-
-						foreach ($compras as $key => $value1) {
-
-							$ordenar = "id";
-							$item = "id";
-							$valor = $value1["id_producto"];
-
-							$productos = ControladorProductos::ctrListarProductos($ordenar, $item, $valor);
-
-							foreach ($productos as $key => $value2) {
-							
-								echo '<div class="panel panel-default">
-									    
-									    <div class="panel-body">
-
-											<div class="col-md-2 col-sm-6 col-xs-12">
-
-												<figure>
-												
-													<img class="img-thumbnail" src="'.$servidor.$value2["portada"].'">
-
-												</figure>
-
-											</div>
-
-											<div class="col-sm-6 col-xs-12">
-
-												<h1><small>'.$value2["titulo"].'</small></h1>
-
-												<p>'.$value2["titular"].'</p>';
-
-												if($value2["tipo"] == "virtual"){
-
-													echo '<a href="'.$url.'/curso">
-														<button class="btn btn-default pull-left">Ir al curso</button>
-														</a>';
-
-												}else{
-
-													echo '<h6>Proceso de entrega: '.$value2["entrega"].' días hábiles</h6>';
-
-													if($value1["envio"] == 0){
-
-														echo '<div class="progress">
-
-															<div class="progress-bar progress-bar-info" role="progressbar" style="width:33.33%">
-																<i class="fa fa-check"></i> Despachado
-															</div>
-
-															<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">
-																<i class="fa fa-clock-o"></i> Enviando
-															</div>
-
-															<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
-																<i class="fa fa-clock-o"></i> Entregado
-															</div>
-
-														</div>';
-
-													}
-
-													if($value1["envio"] == 1){
-
-														echo '<div class="progress">
-
-															<div class="progress-bar progress-bar-info" role="progressbar" style="width:33.33%">
-																<i class="fa fa-check"></i> Despachado
-															</div>
-
-															<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">
-																<i class="fa fa-check"></i> Enviando
-															</div>
-
-															<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
-																<i class="fa fa-clock-o"></i> Entregado
-															</div>
-
-														</div>';
-
-													}
-
-													if($value1["envio"] == 2){
-
-														echo '<div class="progress">
-
-															<div class="progress-bar progress-bar-info" role="progressbar" style="width:33.33%">
-																<i class="fa fa-check"></i> Despachado
-															</div>
-
-															<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">
-																<i class="fa fa-check"></i> Enviando
-															</div>
-
-															<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
-																<i class="fa fa-check"></i> Entregado
-															</div>
-
-														</div>';
-
-													}
-
-												}
-
-												echo '<h4 class="pull-right"><small>Comprado el '.substr($value1["fecha"],0,-8).'</small></h4>
-																
-											</div>
-
-											<div class="col-md-4 col-xs-12">';
-
-											$datos = array("idUsuario"=>$_SESSION["id"],
-															"idProducto"=>$value2["id"] );
-
-											$comentarios = ControladorUsuarios::ctrMostrarComentariosPerfil($datos);
-
-												echo '<div class="pull-right">
-
-													<a class="calificarProducto" href="#modalComentarios" data-toggle="modal" idComentario="'.$comentarios["id"].'">
-													
-														<button class="btn btn-default backColor">Calificar Producto</button>
-
-													</a>
-
-												</div>
-
-												<br><br>
-
-												<div class="pull-right">
-
-													<h3 class="text-right">';
-
-													if($comentarios["calificacion"] == 0 && $comentarios["comentario"] == ""){
-
-														echo '<i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																<i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																<i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																<i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																<i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-
-													}else{
-
-														switch($comentarios["calificacion"]){
-
-															case 0.5:
-															echo '<i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
-
-															case 1.0:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
-
-															case 1.5:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
-
-															case 2.0:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
-
-															case 2.5:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
-
-															case 3.0:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
-
-															case 3.5:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
-
-															case 4.0:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
-
-															case 4.5:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>';
-															break;
-
-															case 5.0:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>';
-															break;
-
-														}
-
-
-													}
-												
-														
-													echo '</h3>
-
-													<p class="panel panel-default text-right" style="padding:5px">
-
-														<small>
-
-														'.$comentarios["comentario"].'
-
-														</small>
-													
-													</p>
-
-												</div>
-
-											</div>
-
-									    </div>
-
-									</div>';
-
-							}
-							
-						}
-					}
-				?>
-				  
-				
-
-				</div>
-
-		  	</div>
-
-		  	<!--=====================================
-			PESTAÑA DESEOS
-			======================================-->
-
-		  	<div id="deseos" class="tab-pane fade">
-		    	
-			<?php
-
-				$item = $_SESSION["id"];
-
-				$deseos = ControladorUsuarios::ctrMostrarDeseos($item);
-
-				if(!$deseos){
-
-					echo '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center error404">
-				               
-			    		<h1><small>¡Oops!</small></h1>
-			    
-			    		<h2>Aún no tiene productos en su lista de deseos</h2>
-
-			  		</div>';
-				
-				}else{
-
-					foreach ($deseos as $key => $value1) {
-
-						$ordenar = "id";
-						$valor = $value1["id_producto"];
-						$item = "id";
-
-						$productos = ControladorProductos::ctrListarProductos($ordenar, $item, $valor);
-
-						echo '<ul class="grid0">';
-
-							foreach ($productos as $key => $value2) {
-							
-							echo '<li class="col-md-3 col-sm-6 col-xs-12">
-
-									<figure>
-										
-										<a href="'.$url.$value2["ruta"].'" class="pixelProducto">
-											
-											<img src="'.$servidor.$value2["portada"].'" class="img-responsive">
-
-										</a>
-
-									</figure>
-
-									<h4>
-							
-										<small>
-											
-											<a href="'.$url.$value2["ruta"].'" class="pixelProducto">
-												
-												'.$value2["titulo"].'<br>
-
-												<span style="color:rgba(0,0,0,0)">-</span>';
-
-												if($value2["nuevo"] != 0){
-
-													echo '<span class="label label-warning fontSize">Nuevo</span> ';
-
-												}
-
-												if($value2["oferta"] != 0){
-
-													echo '<span class="label label-warning fontSize">'.$value2["descuentoOferta"].'% off</span>';
-
-												}
-
-											echo '</a>	
-
-										</small>			
-
-									</h4>
-
-									<div class="col-xs-6 precio">';
-
-									if($value2["precio"] == 0){
-
-										echo '<h2 style="margin-top:-10px"><small>GRATIS</small></h2>';
-
-									}else{
-
-										if($value2["oferta"] != 0){
-
-											echo '<h2 style="margin-top:-10px">
-
-													<small>
-								
-														<strong class="oferta" style="font-size:12px">USD $'.$value2["precio"].'</strong>
-
-													</small>
-
-													<small>$'.$value2["precioOferta"].'</small>
-												
-												</h2>';
-
-										}else{
-
-											echo '<h2 style="margin-top:-10px"><small>USD $'.$value2["precio"].'</small></h2>';
-
-										}
-										
-									}
-													
-									echo '</div>
-
-									<div class="col-xs-6 enlaces">
-										
-										<div class="btn-group pull-right">
-											
-											<button type="button" class="btn btn-danger btn-xs quitarDeseo" idDeseo="'.$value1["id"].'" data-toggle="tooltip" title="Quitar de mi lista de deseos">
-												
-												<i class="fa fa-heart" aria-hidden="true"></i>
-
-											</button>';
-
-											if($value2["tipo"] == "virtual" && $value2["precio"] != 0){
-
-												if($value2["oferta"] != 0){
-
-													echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value2["id"].'" imagen="'.$servidor.$value2["portada"].'" titulo="'.$value2["titulo"].'" precio="'.$value2["precioOferta"].'" tipo="'.$value2["tipo"].'" peso="'.$value2["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
-
-													<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-
-													</button>';
-
-												}else{
-
-													echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value2["id"].'" imagen="'.$servidor.$value2["portada"].'" titulo="'.$value2["titulo"].'" precio="'.$value2["precio"].'" tipo="'.$value2["tipo"].'" peso="'.$value2["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
-
-													<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-
-													</button>';
-
-												}
-
-											}
-
-											echo '<a href="'.$url.$value2["ruta"].'" class="pixelProducto">
-											
-												<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
-													
-													<i class="fa fa-eye" aria-hidden="true"></i>
-
-												</button>	
-											
-											</a>
-
-										</div>
-
-									</div>
-
-								</li>';
-							}
-
-						echo '</ul>';
-
-
-					}
-
-				}
-
-			?>
-
-
-		  	</div>
-
-			<!--=====================================
-			PESTAÑA PERFIL
-			======================================-->
-		  	
-		  	<div id="perfil" class="tab-pane fade">
-		    	
-				<div class="row">
-					
-					<form method="post" enctype="multipart/form-data">
-					
-						<div class="col-md-3 col-sm-4 col-xs-12 text-center">
-							
-							<br>
-
-							<figure id="imgPerfil">
-								
-							<?php
-
-							echo '<input type="hidden" value="'.$_SESSION["id"].'" id="idUsuario" name="idUsuario">
-							      <input type="hidden" value="'.$_SESSION["password"].'" name="passUsuario">
-							      <input type="hidden" value="'.$_SESSION["foto"].'" name="fotoUsuario" id="fotoUsuario">
-							      <input type="hidden" value="'.$_SESSION["modo"].'" name="modoUsuario" id="modoUsuario">';
-
-
-							if($_SESSION["modo"] == "directo"){
-
-								if($_SESSION["foto"] != ""){
-
-									echo '<img src="'.$url.$_SESSION["foto"].'" class="img-thumbnail">';
-
-								}else{
-
-									echo '<img src="'.$servidor.'vistas/img/usuarios/default/anonymous.png" class="img-thumbnail">';
-
-								}
-					
-
-							}else{
-
-								echo '<img src="'.$_SESSION["foto"].'" class="img-thumbnail">';
-							}		
-
-							?>
-
-							</figure>
-
-							<br>
-
-							<?php
-
-							if($_SESSION["modo"] == "directo"){
-							
-							echo '<button type="button" class="btn btn-default" id="btnCambiarFoto">
-									
-									Cambiar foto de perfil
-									
-									</button>';
-
-							}
-
-							?>
-
-							<div id="subirImagen">
-								
-								<input type="file" class="form-control" id="datosImagen" name="datosImagen">
-
-								<img class="previsualizar">
-
-							</div>
-
-						</div>	
-
-						<div class="col-md-9 col-sm-8 col-xs-12">
-
-						<br>
-							
-						<?php
-
-						if($_SESSION["modo"] != "directo"){
-
-							echo '<label class="control-label text-muted text-uppercase">Nombre:</label>
-									
-									<div class="input-group">
-								
-										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control"  value="'.$_SESSION["nombre"].'" readonly>
-
-									</div>
-
-									<br>
-
-									<label class="control-label text-muted text-uppercase">Correo electrónico:</label>
-									
-									<div class="input-group">
-								
-										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control"  value="'.$_SESSION["email"].'" readonly>
-
-									</div>
-
-									<br>
-
-									<label class="control-label text-muted text-uppercase">Modo de registro en el sistema:</label>
-									
-									<div class="input-group">
-								
-										<span class="input-group-addon"><i class="fa fa-'.$_SESSION["modo"].'"></i></span>
-										<input type="text" class="form-control text-uppercase"  value="'.$_SESSION["modo"].'" readonly>
-
-									</div>
-
-									<br>';
-		
-
-						}else{
-
-							echo '<label class="control-label text-muted text-uppercase" for="editarNombre">Cambiar Nombre:</label>
-									
-									<div class="input-group">
-								
-										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" id="editarNombre" name="editarNombre" value="'.$_SESSION["nombre"].'">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarEmail">Cambiar Correo Electrónico:</label>
-
-								<div class="input-group">
-								
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarEmail" name="editarEmail" value="'.$_SESSION["email"].'">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarPassword">Cambiar Contraseña:</label>
-
-								<div class="input-group">
-								
-										<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-										<input type="text" class="form-control" id="editarPassword" name="editarPassword" placeholder="Escribe la nueva contraseña">
-
-									</div>
-
-								<br>
-
-								<button type="submit" class="btn btn-default backColor btn-md pull-left">Actualizar Datos</button>';
-
-						}
-
-						?>
-
-						</div>
-
-						<?php
-
-							$actualizarPerfil = new ControladorUsuarios();
-							$actualizarPerfil->ctrActualizarPerfil();
-
-						?>					
-
-					</form>
-
-					<button class="btn btn-danger btn-md pull-right" id="eliminarUsuario">Eliminar cuenta</button>
-
-					<?php
-
-							$borrarUsuario = new ControladorUsuarios();
-							$borrarUsuario->ctrEliminarUsuario();
-
-						?>	
-
-				</div>
-
-		  	</div>
-
-		</div>
-
-	</div>
-
-</div>
-
-<!--=====================================
-VENTANA MODAL PARA COMENTARIOS
-======================================-->
-
-<div  class="modal fade modalFormulario" id="modalComentarios" role="dialog">
-	
-	<div class="modal-content modal-dialog">
-		
-		<div class="modal-body modalTitulo">
-			
-			<h3 class="backColor">CALIFICA ESTE PRODUCTO</h3>
-
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
-
-			<form method="post" onsubmit="return validarComentario()">
-
-				<input type="hidden" value="" id="idComentario" name="idComentario">
-				
-				<h1 class="text-center" id="estrellas">
-
-		       		<i class="fa fa-star text-success" aria-hidden="true"></i>
-					<i class="fa fa-star text-success" aria-hidden="true"></i>
-					<i class="fa fa-star text-success" aria-hidden="true"></i>
-					<i class="fa fa-star text-success" aria-hidden="true"></i>
-					<i class="fa fa-star text-success" aria-hidden="true"></i>
-
-				</h1>
-
-				<div class="form-group text-center">
-
-		       		<label class="radio-inline"><input type="radio" name="puntaje" value="0.5">0.5</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="1.0">1.0</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="1.5">1.5</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="2.0">2.0</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="2.5">2.5</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="3.0">3.0</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="3.5">3.5</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="4.0">4.0</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="4.5">4.5</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="5.0" checked>5.0</label>
-
-				</div>
-
-				<div class="form-group">
-			  		
-			  		<label for="comment" class="text-muted">Tu opinión acerca de este producto: <span><small>(máximo 300 caracteres)</small></span></label>
-			  		
-			  		<textarea class="form-control" rows="5" id="comentario" name="comentario" maxlength="300" required></textarea>
-
-			  		<br>
-					
-					<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">
-
-				</div>
-
-			
-
-			</form>
-
-		</div>
-
-		<div class="modal-footer">
-      	
-      	</div>
-
-	</div>
-
-</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.sidebar-menu').tree()
+  })
+</script>
+</body>
+</html>

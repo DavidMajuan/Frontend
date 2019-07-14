@@ -37,7 +37,56 @@ class ModeloUsuarios{
 		$stmt->close();
 		$stmt = null;
 
-    }
+	}
+
+
+	/*=============================================
+	MOSTRAR USUARIO
+	=============================================*/
+
+	static public function mdlMostrarUsuario($tabla, $item, $valor){
+
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+
+		$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+		$stmt -> execute();
+
+		return $stmt -> fetch();
+
+		$stmt-> close();
+
+		$stmt = null;
+
+	}
+
+
+	/*=============================================
+	ACTUALIZAR USUARIO
+	=============================================*/
+
+	static public function mdlActualizarUsuario($tabla, $id, $item, $valor){
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET $item = :$item WHERE id = :id");
+
+		$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+		$stmt -> bindParam(":id", $id, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+
+		}
+
+		$stmt-> close();
+
+		$stmt = null;
+
+	}
     
 
 }

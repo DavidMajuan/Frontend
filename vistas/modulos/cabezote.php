@@ -3,6 +3,7 @@
 $servidor= Ruta::ctrRutaServidor();
 $url = Ruta::ctrRuta();
 
+
 ?>
 
 <!--=====================================
@@ -39,7 +40,7 @@ TOP
 
 				?>
 	
-				
+	
 			
 				</ul>
 
@@ -52,10 +53,64 @@ TOP
 			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 registro">
 				
 				<ul>
+
+				<?php
+///verifica
+				if(isset($_SESSION["validarSesion"])){
+
+					if($_SESSION["validarSesion"] == "ok"){
+
+						if($_SESSION["modo"] == "directo"){
+
+							if($_SESSION["foto"] != ""){
+
+								echo '<li>
+
+										<img class="img-circle" src="'.$url.$_SESSION["foto"].'" width="10%">
+
+									</li>';
+
+							}else{
+
+								echo '<li>
+
+									<img class="img-circle" src="'.$servidor.'vistas/img/usuarios/default/anonymous.png" width="10%">
+
+								</li>';
+
+							}
+
+							echo '<li>|</li>
+							<li><a href="'.$url.'perfil">Ver Perfil</a></li>
+							<li>|</li>
+							<li><a href="'.$url.'salir">Salir</a></li>';
+
+
+						}
+
+					}
+
+				}else{
+
+					echo '<li class="dropdown user user-menu">
+
+					<a href="#" class="dropdown-toggle  text-muted" data-toggle="dropdown"><span>Ingresar</span></a>
+
+					<ul class="dropdown-menu pull-right compartirRedes" style="background-color: #000000;">
+
+									<center><a href="#modalIngresoNutricionista" data-toggle="modal"><h4>Nutricionista</h4></a></center>
+		
+									<hr>
+						
+									<center><a href="#modalIngresoPaciente" data-toggle="modal"><h4>Paciente</h4></a></center>
+
+						</ul>
 					
-					<li><a href="#modalIngreso" data-toggle="modal">Ingresar</a></li>
+					</li>
+					
 					<li>|</li>
-					<li class="dropdown user user-menu">
+
+					<li class="dropdown user user-menu"> 
 							<!--=====================================
 							REGISTRO COMO USUARIO O PACIENTE
 							======================================-->
@@ -73,7 +128,15 @@ TOP
 								</ul>
 				
 					
-					</li>
+					</li>';
+
+
+
+
+				}
+
+
+				?>
 
 						
 				</ul>
@@ -244,6 +307,10 @@ HEADER
 </header>
 
 
+
+<!-----------------------------------  NUTRICIONISTA  ------------------------------->
+
+
 <!--=====================================
 VENTANA MODAL PARA EL REGISTRO DE NUTRICIONISTA
 ======================================-->
@@ -290,7 +357,7 @@ VENTANA MODAL PARA EL REGISTRO DE NUTRICIONISTA
 			REGISTRO DIRECTO   
 			======================================-->
 
-			<form method="post">
+			<form method="post"  onsubmit="return registroUsuarioN()">
 				
 			<hr>
 
@@ -298,7 +365,7 @@ VENTANA MODAL PARA EL REGISTRO DE NUTRICIONISTA
 				NOMBRE
 				======================================-->
 
-				<div class="form-group" onsubmit="return registroUsuarioNutricionista()">
+				<div class="form-group">
 					
 					<div class="input-group">
 						
@@ -444,7 +511,7 @@ VENTANA MODAL PARA EL REGISTRO DE NUTRICIONISTA
 					
 					<label>
 						
-						<input id="regPoliticas" type="checkbox">
+						<input id="regPoliticasN" type="checkbox">
 					
 							<small>
 								
@@ -475,7 +542,7 @@ VENTANA MODAL PARA EL REGISTRO DE NUTRICIONISTA
 
         <div class="modal-footer">
           
-			¿Ya tienes una cuenta registrada? | <strong><a href="#modalIngreso" data-dismiss="modal" data-toggle="modal">Ingresar</a></strong>
+			¿Ya tienes una cuenta registrada? | <strong><a href="#modalIngresoNutricionista" data-dismiss="modal" data-toggle="modal">Ingresar</a></strong>
 
         </div>
       
@@ -483,6 +550,193 @@ VENTANA MODAL PARA EL REGISTRO DE NUTRICIONISTA
 
 </div>
 
+
+<!--=====================================
+VENTANA MODAL PARA EL INGRESO NUTRICIONISTA
+======================================-->
+
+<div class="modal fade modalFormulario" id="modalIngresoNutricionista" role="dialog">
+
+    <div class="modal-content modal-dialog">
+
+        <div class="modal-body modalTitulo">
+
+        	<h3 class="backColor">INGRESAR COMO NUTRICIONISTA</h3>
+
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+        	
+			<!--=====================================
+			INGRESO FACEBOOK
+			======================================-->
+
+			<div class="col-sm-6 col-xs-12 facebook">
+				
+				<p>
+				  <i class="fa fa-facebook"></i>
+					Ingreso con Facebook
+				</p>
+
+			</div>
+
+			<!--=====================================
+			INGRESO GOOGLE
+			======================================-->
+			<a href="">
+			
+				<div class="col-sm-6 col-xs-12 google">
+					
+					<p>
+					  <i class="fa fa-google"></i>
+						Ingreso con Google
+					</p>
+
+				</div>
+
+			</a>
+
+			<!--=====================================
+			INGRESO DIRECTO
+			======================================-->
+
+			<form method="post">
+				
+			<hr>
+
+				<div class="form-group">
+					
+					<div class="input-group">
+						
+						<span class="input-group-addon">
+							
+							<i class="glyphicon glyphicon-envelope"></i>
+						
+						</span>
+
+						<input type="email" class="form-control" id="ingEmailN" name="ingEmailN" placeholder="Correo Electrónico" required>
+
+					</div>
+
+				</div>
+
+				<div class="form-group">
+					
+					<div class="input-group">
+						
+						<span class="input-group-addon">
+							
+							<i class="glyphicon glyphicon-lock"></i>
+						
+						</span>
+
+						<input type="password" class="form-control" id="ingPasswordN" name="ingPasswordN" placeholder="Contraseña" required>
+
+					</div>
+
+				</div>
+
+				<?php
+
+					$ingreso = new ControladorUsuarios();
+					$ingreso -> ctrIngresoUsuario();
+
+				?>
+				
+
+			
+				
+				<input type="submit" class="btn btn-default backColor btn-block btnIngreso" value="ENVIAR">	
+
+				<br>
+
+				<center>
+					
+					<a href="#modalPasswordNutricionista" data-dismiss="modal" data-toggle="modal">¿Olvidaste tu contraseña?</a>
+
+				</center>
+
+			</form>
+
+        </div>
+
+        <div class="modal-footer">
+          
+			¿No tienes una cuenta registrada? | <strong><a href="#modalRegistroNutricionista" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong>
+
+        </div>
+      
+    </div>
+
+</div>
+
+
+
+
+<!--=====================================
+VENTANA MODAL PARA OLVIDO DE CONTRASEÑA NUTRICIONISTA
+======================================-->
+
+<div class="modal fade modalFormulario" id="modalPasswordNutricionista" role="dialog">
+
+    <div class="modal-content modal-dialog">
+
+        <div class="modal-body modalTitulo">
+
+        	<h3 class="backColor">SOLICITUD DE NUEVA CONTRASEÑA</h3>
+
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+        	
+			<!--=====================================
+			OLVIDO CONTRASEÑA
+			======================================-->
+
+			<form method="post">
+
+				<label class="text-muted">Escribe el correo electrónico con el que estás registrado y allí te enviaremos una nueva contraseña:</label>
+
+				<div class="form-group">
+					
+					<div class="input-group">
+						
+						<span class="input-group-addon">
+							
+							<i class="glyphicon glyphicon-envelope"></i>
+						
+						</span>
+					
+						<input type="email" class="form-control" id="passEmailN" name="passEmailN" placeholder="Correo Electrónico" required>
+
+					</div>
+
+				</div>			
+
+
+				
+				<?php
+
+					$password = new ControladorUsuarios();
+					$password -> ctrOlvidoPassword();
+
+				?>
+				
+				
+				<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">	
+
+			</form>
+
+        </div>
+
+        <div class="modal-footer">
+          
+			¿No tienes una cuenta registrada? | <strong><a href="#modalRegistroNutricionista" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong>
+
+        </div>
+      
+    </div>
+
+</div>
+
+
+<!-----------------------------------  PACIENTE  ------------------------------->
 
 <!--=====================================
 VENTANA MODAL PARA EL REGISTRO DE PACIENTE
@@ -646,7 +900,7 @@ VENTANA MODAL PARA EL REGISTRO DE PACIENTE
 					
 					<label>
 						
-						<input id="regPoliticasN" type="checkbox">
+						<input id="regPoliticas" type="checkbox">
 					
 							<small>
 								
@@ -672,183 +926,13 @@ VENTANA MODAL PARA EL REGISTRO DE PACIENTE
 
         <div class="modal-footer">
           
-			¿Ya tienes una cuenta registrada? | <strong><a href="#modalIngreso" data-dismiss="modal" data-toggle="modal">Ingresar</a></strong>
+			¿Ya tienes una cuenta registrada? | <strong><a href="#modalIngresoPaciente" data-dismiss="modal" data-toggle="modal">Ingresar</a></strong>
 
         </div>
       
     </div>
 
 </div>
-
-
-<!--=====================================
-VENTANA MODAL PARA EL INGRESO
-======================================-->
-
-<div class="modal fade modalFormulario" id="modalIngreso" role="dialog">
-
-    <div class="modal-content modal-dialog">
-
-        <div class="modal-body modalTitulo">
-
-        	<h3 class="backColor">INGRESAR</h3>
-
-           <button type="button" class="close" data-dismiss="modal">&times;</button>
-        	
-			<!--=====================================
-			INGRESO FACEBOOK
-			======================================-->
-
-			<div class="col-sm-6 col-xs-12 facebook">
-				
-				<p>
-				  <i class="fa fa-facebook"></i>
-					Ingreso con Facebook
-				</p>
-
-			</div>
-
-			<!--=====================================
-			INGRESO GOOGLE
-			======================================-->
-			<a href="">
-			
-				<div class="col-sm-6 col-xs-12 google">
-					
-					<p>
-					  <i class="fa fa-google"></i>
-						Ingreso con Google
-					</p>
-
-				</div>
-
-			</a>
-
-			<!--=====================================
-			INGRESO DIRECTO
-			======================================-->
-
-			<form method="post">
-				
-			<hr>
-
-				<div class="form-group">
-					
-					<div class="input-group">
-						
-						<span class="input-group-addon">
-							
-							<i class="glyphicon glyphicon-envelope"></i>
-						
-						</span>
-
-						<input type="email" class="form-control" id="ingEmail" name="ingEmail" placeholder="Correo Electrónico" >
-
-					</div>
-
-				</div>
-
-				<div class="form-group">
-					
-					<div class="input-group">
-						
-						<span class="input-group-addon">
-							
-							<i class="glyphicon glyphicon-lock"></i>
-						
-						</span>
-
-						<input type="password" class="form-control" id="ingPassword" name="ingPassword" placeholder="Contraseña" >
-
-					</div>
-
-				</div>
-
-				
-
-			
-				
-				<input type="submit" class="btn btn-default backColor btn-block btnIngreso" value="ENVIAR">	
-
-				<br>
-
-				<center>
-					
-					<a href="#modalPassword" data-dismiss="modal" data-toggle="modal">¿Olvidaste tu contraseña?</a>
-
-				</center>
-
-			</form>
-
-        </div>
-
-        <div class="modal-footer">
-          
-			¿No tienes una cuenta registrada? | <strong><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong>
-
-        </div>
-      
-    </div>
-
-</div>
-
-
-<!--=====================================
-VENTANA MODAL PARA OLVIDO DE CONTRASEÑA
-======================================-->
-
-<div class="modal fade modalFormulario" id="modalPassword" role="dialog">
-
-    <div class="modal-content modal-dialog">
-
-        <div class="modal-body modalTitulo">
-
-        	<h3 class="backColor">SOLICITUD DE NUEVA CONTRASEÑA</h3>
-
-           <button type="button" class="close" data-dismiss="modal">&times;</button>
-        	
-			<!--=====================================
-			OLVIDO CONTRASEÑA
-			======================================-->
-
-			<form method="post">
-
-				<label class="text-muted">Escribe el correo electrónico con el que estás registrado y allí te enviaremos una nueva contraseña:</label>
-
-				<div class="form-group">
-					
-					<div class="input-group">
-						
-						<span class="input-group-addon">
-							
-							<i class="glyphicon glyphicon-envelope"></i>
-						
-						</span>
-					
-						<input type="email" class="form-control" id="passEmail" name="passEmail" placeholder="Correo Electrónico" required>
-
-					</div>
-
-				</div>			
-
-				
-				
-				<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">	
-
-			</form>
-
-        </div>
-
-        <div class="modal-footer">
-          
-			¿No tienes una cuenta registrada? | <strong><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong>
-
-        </div>
-      
-    </div>
-
-</div>
-
 
 
 
@@ -856,13 +940,13 @@ VENTANA MODAL PARA OLVIDO DE CONTRASEÑA
 VENTANA MODAL PARA EL INGRESO PACIENTE
 ======================================-->
 
-<div class="modal fade modalFormulario" id="modalIngreso" role="dialog">
+<div class="modal fade modalFormulario" id="modalIngresoPaciente" role="dialog">
 
     <div class="modal-content modal-dialog">
 
         <div class="modal-body modalTitulo">
 
-        	<h3 class="backColor">INGRESAR</h3>
+        	<h3 class="backColor">INGRESAR COMO PACIENTE</h3>
 
            <button type="button" class="close" data-dismiss="modal">&times;</button>
         	
@@ -945,7 +1029,7 @@ VENTANA MODAL PARA EL INGRESO PACIENTE
 
 				<center>
 					
-					<a href="#modalPassword" data-dismiss="modal" data-toggle="modal">¿Olvidaste tu contraseña?</a>
+					<a href="#modalPasswordPaciente" data-dismiss="modal" data-toggle="modal">¿Olvidaste tu contraseña?</a>
 
 				</center>
 
@@ -965,10 +1049,10 @@ VENTANA MODAL PARA EL INGRESO PACIENTE
 
 
 <!--=====================================
-VENTANA MODAL PARA OLVIDO DE CONTRASEÑA
+VENTANA MODAL PARA OLVIDO DE CONTRASEÑA PACIENTE
 ======================================-->
 
-<div class="modal fade modalFormulario" id="modalPassword" role="dialog">
+<div class="modal fade modalFormulario" id="modalPasswordPaciente" role="dialog">
 
     <div class="modal-content modal-dialog">
 
