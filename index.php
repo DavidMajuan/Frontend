@@ -16,9 +16,9 @@ require_once "extensiones/PHPMailer/PHPMailerAutoload.php";
 
 
 
-    $plantilla = new ControladorPlantilla();
+$plantilla = new ControladorPlantilla();
 
-    $plantilla -> plantilla();
+$plantilla -> plantilla();
 
 
 

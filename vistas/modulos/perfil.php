@@ -61,19 +61,19 @@ SECCIÓN PERFIL
 	  		</li>
 		  
 	  		<li> 				
-		  		<a data-toggle="tab" href="#deseos">
-		  		<i class="fa fa-gift"></i> PACIENTES</a>
+		  		<a data-toggle="tab" href="#pacientes">
+		  		<i class="fa fa-users"></i> PACIENTES</a>
 			</li>
 			
 			<li> 				
-		  		<a data-toggle="tab" href="#deseos">
-		  		<i class="fa fa-gift"></i> RECETAS</a>
+		  		<a data-toggle="tab" href="#recetas">
+		  		<i class="fa fa-pencil-square-o"></i> RECETAS</a>
 	  		</li>
 
 			
 			<li>	  			
-			  	<a data-toggle="tab" href="#deseos">
-			  	<i class="fa fa-list-ul"></i> BANDEJA DE ENTRADA</a>
+			  	<a data-toggle="tab" href="#bandeja">
+			  	<i class="fa fa-envelope-o"></i> BANDEJA DE ENTRADA</a>
 	  		</li>
 
 	  		<li> 				
@@ -82,8 +82,8 @@ SECCIÓN PERFIL
 	  		</li>
 
 			  <li> 				
-		  		<a data-toggle="tab" href="#deseos">
-		  		<i class="fa fa-gift"></i> SUSCRIPCION</a>
+		  		<a data-toggle="tab" href="#suscripcion">
+		  		<i class="fa fa-cc-paypal"></i> SUSCRIPCION</a>
 	  		</li>
 
 		
@@ -269,10 +269,10 @@ SECCIÓN PERFIL
 
 
 			<!--=====================================
-			PESTAÑA COMPRAS
+			PESTAÑA PACIENTES
 			======================================-->
 
-	  		<div id="compras" class="tab-pane fade in active">
+	  		<div id="pacientes" class="tab-pane fade in active">
 		    
 				<div class="panel-group">
 
@@ -285,16 +285,52 @@ SECCIÓN PERFIL
 		  	</div>
 
 		  	<!--=====================================
-			PESTAÑA DESEOS
+			PESTAÑA RECETAS
 			======================================-->
 
-		  	<div id="deseos" class="tab-pane fade">
+		  	<div id="recetas" class="tab-pane fade">
 		    	
 		
 
 
-		  	</div>
+			</div>
+			  
 
+			<!--=====================================
+			PESTAÑA BANDEJA
+			======================================-->
+
+			<div id="bandeja" class="tab-pane fade">
+		    	
+		
+
+
+			</div>
+
+
+			<!--=====================================
+			PESTAÑA DESEOS
+			======================================-->
+
+			<div id="deseos" class="tab-pane fade">
+		    	
+		
+
+
+			</div>
+
+			<!--=====================================
+			PESTAÑA SUSCRIPCION
+			======================================-->
+
+			<div id="suscripcion" class="tab-pane fade">
+		    	
+		
+
+
+			</div>
+
+			
 			
 		</div>
 
