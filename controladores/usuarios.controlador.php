@@ -254,6 +254,10 @@ class ControladorUsuarios{
 						$_SESSION["validarSesion"] = "ok";
 						$_SESSION["id"] = $respuesta["id"];
 						$_SESSION["nombre"] = $respuesta["nombre"];
+						$_SESSION["genero"] = $respuesta["genero"];
+						$_SESSION["celular"] = $respuesta["celular"];
+						$_SESSION["localTrabajo"] = $respuesta["localTrabajo"];
+						$_SESSION["codigoCnp"] = $respuesta["codigoCnp"];
 						$_SESSION["foto"] = $respuesta["foto"];
 						$_SESSION["email"] = $respuesta["email"];
 						$_SESSION["password"] = $respuesta["password"];

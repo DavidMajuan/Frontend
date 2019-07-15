@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-07-2019 a las 06:17:44
+-- Tiempo de generación: 15-07-2019 a las 02:11:53
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.2
 
@@ -99,7 +99,9 @@ CREATE TABLE `nutricionista` (
 --
 
 INSERT INTO `nutricionista` (`id`, `nombre`, `password`, `email`, `genero`, `celular`, `localTrabajo`, `codigoCnp`, `modo`, `foto`, `verificacion`, `emailEncriptado`, `fecha`) VALUES
-(1, 'sofia', '$2a$07$asxx54ahjppf45sd87a5auA8q05nOXtNY6tPmLiLJA2gzcAI1rAqu', 'abc@asdmail.com', 'Femenino', '956500963', 'UNPRG', '878948', 'directo', '', 1, 'd41d8cd98f00b204e9800998ecf8427e', '2019-07-11 04:17:17');
+(1, 'DAVID JHOEL MAJUAN PINTADO', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'djmp@hotmail.com', 'Masculino', '956500963', 'UNPRG', '878948', 'directo', '', 0, '248a42dc7933fa66089a30e4af20c9a7', '2019-07-14 05:01:47'),
+(2, 'DAVID', '$2a$07$asxx54ahjppf45sd87a5au0AprpAOPsKBKdQqhd5kkjwXGa58eKPi', 'abc@remail.com', 'Masculino', '956500963', 'sadfasdf', '132132', 'directo', '', 0, 'd165ea3518e3ca11845293aa9ee308f3', '2019-07-14 05:07:17'),
+(3, 'jhoel', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'djmp1@hotmail.com', 'Masculino', '956500963', 'UNPRG', '989798', 'directo', '', 0, 'e50f395725dcac6f08f1c74be85a5ef8', '2019-07-14 15:44:43');
 
 -- --------------------------------------------------------
 
@@ -536,7 +538,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `nutricionista`
 --
 ALTER TABLE `nutricionista`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `plantilla`

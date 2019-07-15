@@ -69,6 +69,8 @@
 
     <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/infoproducto.css">
 
+    <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/perfil.css">
+
     <!--=====================================
         PLUGINS DE JAVASCRIPT
     ======================================-->
@@ -201,29 +203,6 @@ if(isset($_GET["ruta"])){
 <script src="<?php echo $url; ?>vistas/js/usuarios.js"></script>
 <script src="<?php echo $url; ?>vistas/js/registroFacebook.js"></script>
 <script src="<?php echo $url; ?>vistas/js/vcampos.js"></script>
-
-    <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '{2435998559965635}',
-      cookie     : true,
-      xfbml      : true,
-      version    : '{v3.3}'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
 
 </body>
 </html>

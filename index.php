@@ -14,6 +14,33 @@ require_once "modelos/rutas.php";
 
 require_once "extensiones/PHPMailer/PHPMailerAutoload.php";
 
-$plantilla = new ControladorPlantilla();
 
-$plantilla -> plantilla();
+
+    $plantilla = new ControladorPlantilla();
+
+    $plantilla -> plantilla();
+
+
+
+
+   
+
+
+       
+
+
+
+   
+
+    
+
+
+
+   
+
+
+
+
+
+
+

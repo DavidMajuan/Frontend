@@ -10,6 +10,17 @@ class ControladorPlantilla{
         
         include "vistas/plantilla.php";
 
+	}
+	
+	
+    /*=============================================
+	LLAMAMOS LA PLANTILLA PERFILES
+	=============================================*/
+
+    public function plantillaPerfil(){
+        
+        include "vistas/plantillaPerfiles.php";
+
     }
 
     /*=============================================
