@@ -221,6 +221,189 @@ class ModeloUsuarios{
 
 	}
 
+
+	/*=============================================
+	AGREGAR A LISTA DE DESEOS
+	=============================================*/
+
+	static public function mdlAgregarDeseo($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (id_usuario, id_producto) VALUES (:id_usuario, :id_producto)");
+
+		$stmt->bindParam(":id_usuario", $datos["idUsuario"], PDO::PARAM_INT);
+		$stmt->bindParam(":id_producto", $datos["idProducto"], PDO::PARAM_INT);	
+
+		if($stmt -> execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+
+		}
+
+		$stmt-> close();
+
+		$stmt = null;
+
+	}
+
+	/*=============================================
+	MOSTRAR LISTA DE DESEOS
+	=============================================*/
+
+	static public function mdlMostrarDeseos($tabla, $item){
+
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id_usuario = :id_usuario ORDER BY id DESC");
+
+		$stmt -> bindParam(":id_usuario", $item, PDO::PARAM_INT);
+
+		$stmt -> execute();
+
+		return $stmt -> fetchAll();
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
+	/*=============================================
+	QUITAR PRODUCTO DE LISTA DE DESEOS
+	=============================================*/
+
+	static public function mdlQuitarDeseo($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
+
+		$stmt -> bindParam(":id", $datos, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+
+		}
+
+		$stmt-> close();
+
+		$stmt = null;
+
+	}
+
+
+	/*=============================================
+	ELIMINAR USUARIO
+	=============================================*/
+
+	static public function mdlEliminarUsuario($tabla, $id){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
+
+		$stmt -> bindParam(":id", $id, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+
+		}
+
+		$stmt-> close();
+
+		$stmt = null;
+
+	}
+
+
+	/*=============================================
+	ELIMINAR COMENTARIOS DE USUARIO
+	=============================================*/
+
+	static public function mdlEliminarComentarios($tabla, $id){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_usuario = :id_usuario");
+
+		$stmt -> bindParam(":id_usuario", $id, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+
+		}
+
+		$stmt-> close();
+
+		$stmt = null;
+
+	}
+
+
+	/*=============================================
+	ELIMINAR COMPRAS DE USUARIO
+	=============================================*/
+
+	static public function mdlEliminarCompras($tabla, $id){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_usuario = :id_usuario");
+
+		$stmt -> bindParam(":id_usuario", $id, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+
+		}
+
+		$stmt-> close();
+
+		$stmt = null;
+
+	}
+
+
+	/*=============================================
+	ELIMINAR LISTA DE DESEOS DE USUARIO
+	=============================================*/
+
+	static public function mdlEliminarListaDeseos($tabla, $id){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_usuario = :id_usuario");
+
+		$stmt -> bindParam(":id_usuario", $id, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+
+		}
+
+		$stmt-> close();
+
+		$stmt = null;
+
+	}
+
+
     
 
 }
