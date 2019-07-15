@@ -12,16 +12,6 @@ class ControladorPlantilla{
 
 	}
 	
-	
-    /*=============================================
-	LLAMAMOS LA PLANTILLA PERFILES
-	=============================================*/
-
-    public function plantillaPerfil(){
-        
-        include "vistas/plantillaPerfiles.php";
-
-    }
 
     /*=============================================
 	TRAEMOS LOS ESTILOS DINÁMICOS DE LA PLANTILLA
