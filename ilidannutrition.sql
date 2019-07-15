@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-07-2019 a las 02:11:53
+-- Tiempo de generación: 15-07-2019 a las 21:11:11
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.2
 
@@ -75,33 +75,52 @@ INSERT INTO `categorias` (`id`, `categoria`, `ruta`, `fecha`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nutricionista`
+-- Estructura de tabla para la tabla `comentarios`
 --
 
-CREATE TABLE `nutricionista` (
+CREATE TABLE `comentarios` (
   `id` int(11) NOT NULL,
-  `nombre` text COLLATE utf8_spanish_ci NOT NULL,
-  `password` text COLLATE utf8_spanish_ci NOT NULL,
-  `email` text COLLATE utf8_spanish_ci NOT NULL,
-  `genero` text COLLATE utf8_spanish_ci NOT NULL,
-  `celular` text COLLATE utf8_spanish_ci NOT NULL,
-  `localTrabajo` text COLLATE utf8_spanish_ci NOT NULL,
-  `codigoCnp` text COLLATE utf8_spanish_ci NOT NULL,
-  `modo` text COLLATE utf8_spanish_ci NOT NULL,
-  `foto` text COLLATE utf8_spanish_ci NOT NULL,
-  `verificacion` int(11) NOT NULL,
-  `emailEncriptado` text COLLATE utf8_spanish_ci NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `calificacion` float NOT NULL,
+  `comentario` text COLLATE utf8_spanish_ci NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `nutricionista`
+-- Volcado de datos para la tabla `comentarios`
 --
 
-INSERT INTO `nutricionista` (`id`, `nombre`, `password`, `email`, `genero`, `celular`, `localTrabajo`, `codigoCnp`, `modo`, `foto`, `verificacion`, `emailEncriptado`, `fecha`) VALUES
-(1, 'DAVID JHOEL MAJUAN PINTADO', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'djmp@hotmail.com', 'Masculino', '956500963', 'UNPRG', '878948', 'directo', '', 0, '248a42dc7933fa66089a30e4af20c9a7', '2019-07-14 05:01:47'),
-(2, 'DAVID', '$2a$07$asxx54ahjppf45sd87a5au0AprpAOPsKBKdQqhd5kkjwXGa58eKPi', 'abc@remail.com', 'Masculino', '956500963', 'sadfasdf', '132132', 'directo', '', 0, 'd165ea3518e3ca11845293aa9ee308f3', '2019-07-14 05:07:17'),
-(3, 'jhoel', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'djmp1@hotmail.com', 'Masculino', '956500963', 'UNPRG', '989798', 'directo', '', 0, 'e50f395725dcac6f08f1c74be85a5ef8', '2019-07-14 15:44:43');
+INSERT INTO `comentarios` (`id`, `id_usuario`, `id_producto`, `calificacion`, `comentario`, `fecha`) VALUES
+(1, 8, 120, 4, 'espectacular', '2019-07-15 17:35:05'),
+(2, 8, 147, 5, 'expectacular', '2019-07-15 17:34:17'),
+(4, 9, 147, 5, 'excelente', '2019-07-15 19:05:30');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `deseos`
+--
+
+CREATE TABLE `deseos` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `deseos`
+--
+
+INSERT INTO `deseos` (`id`, `id_usuario`, `id_producto`, `fecha`) VALUES
+(11, 8, 227, '2019-07-15 18:56:25'),
+(12, 8, 226, '2019-07-15 18:56:26'),
+(13, 8, 225, '2019-07-15 18:56:27'),
+(14, 8, 228, '2019-07-15 18:56:28'),
+(20, 9, 2, '2019-07-15 18:59:55'),
+(21, 9, 3, '2019-07-15 18:59:56'),
+(22, 9, 4, '2019-07-15 18:59:57');
 
 -- --------------------------------------------------------
 
@@ -169,7 +188,7 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `id_categoria`, `id_subcategoria`, `tipo`, `ruta`, `titulo`, `titular`, `descripcion`, `multimedia`, `detalles`, `precio`, `portada`, `vistas`, `ventas`, `vistasGratis`, `ventasGratis`, `ofertadoPorCategoria`, `ofertadoPorSubcategoria`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `nuevo`, `peso`, `entrega`, `fecha`) VALUES
-(1, 1, 1, 'fisico', 'alejandra-lopez-1', 'Alejandra Lopez', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/1/img-01.jpg\"} ]', '{\"Talla\": [36,38,40],\"Color\": [\"rojo\",\"negro\",\"blanco\"],\"Marca\":null\r\n}', 29, 'vistas/img/productos/nutricionista/nutricionista1.jpg', 1, 404, 0, 0, 0, 1, 0, 11, 40, 'vistas/img/ofertas/nutricionista1.jpg', '0000-00-00 00:00:00', 1, 1, 10, '2019-07-09 08:21:25'),
+(1, 1, 1, 'fisico', 'anita-1', 'Anita', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', 'Es un profesional sanitario experto en alimentación, nutrición y dietética. Se encarga principalmente del diagnóstico nutricional-dietético general y específico, así como del tratamiento nutricional-dietético de enfermedades, como por ejemplo diabetes, malnutrición, insuficiencia renal, obesidad, enfermedad de Crohn, del tratamiento con nutrición artificial enteral y parenteral en hospitales, o a domicilio, de la prevención de patologías mediante la alimentación, nutrición y dietética, decidir colaborativamente en el tratamiento del paciente oncológico etc., además de adecuar la alimentación, nutrición y dietética de cada persona a cualquier situación fisiológica, como embarazo, lactancia, deporte, etc, y patológica con carácter de primera intención, como facultativo en su área propia de de conocimiento, cual es la Nutrición y la Dietética.', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/1/img-01.jpg\"} ]', '{\"Talla\": [36,38,40],\"Color\": [\"rojo\",\"negro\",\"blanco\"],\"Marca\":null\r\n}', 29, 'vistas/img/productos/nutricionista/nutricionista1.jpg', 1, 404, 0, 0, 0, 1, 0, 11, 40, 'vistas/img/ofertas/nutricionista1.jpg', '0000-00-00 00:00:00', 1, 1, 10, '2019-07-15 06:56:10'),
 (2, 1, 1, 'fisico', 'hector-gomez-1', 'Hector Gomez', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/2/img-01.jpg\"} ]', '{\"Talla\": [36,38,40],\"Color\": [\"rojo\",\"negro\",\"blanco\"],\"Marca\":null\r\n}', 29, 'vistas/img/productos/nutricionista/nutricionista2.jpg', 2, 403, 0, 0, 0, 1, 0, 11, 40, 'vistas/img/ofertas/nutricionista2.jpg', '0000-00-00 00:00:00', 0, 1, 10, '0000-00-00 00:00:00'),
 (3, 1, 1, 'fisico', 'michelle-lewin-1', 'Michelle Lewin', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/3/img-01.jpg\"} ]', '{\"Talla\": [36,38,40],\"Color\": [\"rojo\",\"negro\",\"blanco\"],\"Marca\":null\r\n}', 29, 'vistas/img/productos/nutricionista/nutricionista3.jpg', 3, 402, 0, 0, 0, 1, 0, 11, 40, 'vistas/img/ofertas/nutricionista3.jpg', '0000-00-00 00:00:00', 0, 1, 10, '0000-00-00 00:00:00'),
 (4, 1, 1, 'fisico', 'neil-cesar-1', 'Neil Cesar', 'Nutricionista. Especialidad Deportiva', 'Nutricionista. Especialidad Deportiva', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/4/img-01.jpg\"} ]', '{\"Talla\": [36,38,40],\"Color\": [\"rojo\",\"negro\",\"blanco\"],\"Marca\":null\r\n}', 29, 'vistas/img/productos/nutricionista/nutricionista4.jpg', 4, 401, 0, 0, 0, 0, 0, 0, 0, 'vistas/img/ofertas/nutricionista4.jpg', '0000-00-00 00:00:00', 0, 1, 10, '0000-00-00 00:00:00'),
@@ -238,9 +257,9 @@ INSERT INTO `productos` (`id`, `id_categoria`, `id_subcategoria`, `tipo`, `ruta`
 (67, 1, 5, 'fisico', 'michelle-lewin-17', 'Michelle Lewin', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/3/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista3.jpg', 247, 158, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista3.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
 (68, 1, 5, 'fisico', 'neil-cesar-17', 'Neil Cesar', 'Nutricionista. Especialidad Deportiva', 'Nutricionista. Especialidad Deportiva', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/4/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista4.jpg', 248, 157, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista4.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
 (69, 1, 5, 'fisico', 'alejandra-lopez-18', 'Alejandra Lopez', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/1/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista1.jpg', 249, 156, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista1.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
-(70, 1, 5, 'fisico', 'hector-gomez-18', 'Hector Gomez', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/2/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista2.jpg', 250, 155, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista2.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
-(71, 1, 5, 'fisico', 'michelle-lewin-18', 'Michelle Lewin', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/3/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista3.jpg', 251, 154, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista3.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00');
+(70, 1, 5, 'fisico', 'hector-gomez-18', 'Hector Gomez', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/2/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista2.jpg', 250, 155, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista2.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00');
 INSERT INTO `productos` (`id`, `id_categoria`, `id_subcategoria`, `tipo`, `ruta`, `titulo`, `titular`, `descripcion`, `multimedia`, `detalles`, `precio`, `portada`, `vistas`, `ventas`, `vistasGratis`, `ventasGratis`, `ofertadoPorCategoria`, `ofertadoPorSubcategoria`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `nuevo`, `peso`, `entrega`, `fecha`) VALUES
+(71, 1, 5, 'fisico', 'michelle-lewin-18', 'Michelle Lewin', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/3/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista3.jpg', 251, 154, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista3.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
 (72, 1, 5, 'fisico', 'neil-cesar-18', 'Neil Cesar', 'Nutricionista. Especialidad Deportiva', 'Nutricionista. Especialidad Deportiva', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/4/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista4.jpg', 252, 153, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista4.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
 (73, 1, 5, 'fisico', 'alejandra-lopez-19', 'Alejandra Lopez', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/1/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista1.jpg', 253, 152, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista1.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
 (74, 1, 5, 'fisico', 'hector-gomez-19', 'Hector Gomez', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/2/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista2.jpg', 254, 151, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista2.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
@@ -305,9 +324,9 @@ INSERT INTO `productos` (`id`, `id_categoria`, `id_subcategoria`, `tipo`, `ruta`
 (133, 2, 2, 'virtual', 'julia-farre-6', 'Julia Farre', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/1/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista1.jpg', 313, 92, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista1.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
 (134, 2, 2, 'virtual', 'rutina-de-ejercicios-para-hombres-7', 'Rutina de ejercicios para hombres', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/2/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista2.jpg', 374, 31, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista2.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
 (135, 2, 3, 'virtual', 'curso-de-cocina-42', 'Curso de Cocina', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/3/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista3.jpg', 393, 12, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista3.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
-(136, 2, 3, 'virtual', 'aprende-yoga-42', 'Aprende Yoga', 'Nutricionista. Especialidad Deportiva', 'Nutricionista. Especialidad Deportiva', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/4/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista4.jpg', 394, 11, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista4.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
-(137, 2, 3, 'virtual', 'rutina-de-ejercicios-para-mujeres-42', 'Rutina de ejercicios para mujeres', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/1/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista1.jpg', 395, 10, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista1.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00');
+(136, 2, 3, 'virtual', 'aprende-yoga-42', 'Aprende Yoga', 'Nutricionista. Especialidad Deportiva', 'Nutricionista. Especialidad Deportiva', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/4/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista4.jpg', 394, 11, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista4.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00');
 INSERT INTO `productos` (`id`, `id_categoria`, `id_subcategoria`, `tipo`, `ruta`, `titulo`, `titular`, `descripcion`, `multimedia`, `detalles`, `precio`, `portada`, `vistas`, `ventas`, `vistasGratis`, `ventasGratis`, `ofertadoPorCategoria`, `ofertadoPorSubcategoria`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `nuevo`, `peso`, `entrega`, `fecha`) VALUES
+(137, 2, 3, 'virtual', 'rutina-de-ejercicios-para-mujeres-42', 'Rutina de ejercicios para mujeres', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/1/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista1.jpg', 395, 10, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista1.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
 (138, 2, 3, 'virtual', 'rutina-de-ejercicios-para-hombres-49', 'Rutina de ejercicios para hombres', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', '3ONCIvSAP3c', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista2.jpg', 396, 9, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista2.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
 (139, 2, 3, 'virtual', 'curso-de-cocina-48', 'Curso de Cocina', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/1/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista3.jpg', 397, 8, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista3.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
 (140, 2, 3, 'virtual', 'aprende-yoga-48', 'Aprende Yoga', 'Nutricionista. Especialidad Deportiva', 'Nutricionista. Especialidad Deportiva', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/1/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 100, 'vistas/img/productos/nutricionista/nutricionista4.jpg', 398, 7, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista4.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
@@ -376,10 +395,10 @@ INSERT INTO `productos` (`id`, `id_categoria`, `id_subcategoria`, `tipo`, `ruta`
 (203, 3, 4, 'virtual', 'bebidas-saludables-22', 'Bebidas Saludables', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/3/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 0, 'vistas/img/productos/nutricionista/nutricionista3.jpg', 59, 385, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista3.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
 (204, 3, 4, 'virtual', 'hector-gomez-36', 'Hector Gomez', 'Nutricionista. Especialidad Deportiva', 'Nutricionista. Especialidad Deportiva', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/4/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 0, 'vistas/img/productos/nutricionista/nutricionista4.jpg', 59, 385, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista4.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
 (205, 3, 4, 'virtual', 'michelle-lewin-36', 'Michelle Lewin', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/1/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 0, 'vistas/img/productos/nutricionista/nutricionista1.jpg', 59, 385, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista1.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
-(206, 3, 4, 'virtual', 'alejandra-lopez-437', 'Alejandra Lopez', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/2/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 0, 'vistas/img/productos/nutricionista/nutricionista2.jpg', 59, 385, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista2.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
-(207, 3, 4, 'virtual', 'alejandra-lopez-480', 'Alejandra Lopez', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/3/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 0, 'vistas/img/productos/nutricionista/nutricionista3.jpg', 59, 385, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista3.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
-(208, 3, 4, 'virtual', 'frutas-y-verduras-23', 'Frutas y verduras', 'Nutricionista. Especialidad Deportiva', 'Nutricionista. Especialidad Deportiva', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/4/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 0, 'vistas/img/productos/nutricionista/nutricionista4.jpg', 59, 385, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista4.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00');
+(206, 3, 4, 'virtual', 'alejandra-lopez-437', 'Alejandra Lopez', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/2/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 0, 'vistas/img/productos/nutricionista/nutricionista2.jpg', 59, 385, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista2.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00');
 INSERT INTO `productos` (`id`, `id_categoria`, `id_subcategoria`, `tipo`, `ruta`, `titulo`, `titular`, `descripcion`, `multimedia`, `detalles`, `precio`, `portada`, `vistas`, `ventas`, `vistasGratis`, `ventasGratis`, `ofertadoPorCategoria`, `ofertadoPorSubcategoria`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `nuevo`, `peso`, `entrega`, `fecha`) VALUES
+(207, 3, 4, 'virtual', 'alejandra-lopez-480', 'Alejandra Lopez', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/3/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 0, 'vistas/img/productos/nutricionista/nutricionista3.jpg', 59, 385, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista3.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
+(208, 3, 4, 'virtual', 'frutas-y-verduras-23', 'Frutas y verduras', 'Nutricionista. Especialidad Deportiva', 'Nutricionista. Especialidad Deportiva', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/4/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 0, 'vistas/img/productos/nutricionista/nutricionista4.jpg', 59, 385, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista4.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
 (209, 3, 4, 'virtual', 'controla-tu-peso-23', 'Controla tu peso', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', 's?lida formaci?n ?tica, humanista, cient?fica y tecnol?gica, que la distingue como l?der en las ?reas de nutrici?n, alimentaci?n, diet?tica y dietoterapia.', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/1/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 0, 'vistas/img/productos/nutricionista/nutricionista1.jpg', 59, 385, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista1.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
 (210, 3, 4, 'virtual', 'bebidas-saludables-23', 'Bebidas Saludables', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', 'Nutricionistia clinico en Instituto Nacional de enfermedades Neoplàsicas', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/2/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 0, 'vistas/img/productos/nutricionista/nutricionista2.jpg', 59, 385, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista2.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
 (211, 3, 4, 'virtual', 'hector-gomez-37', 'Hector Gomez', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '\" Si el plan no funciona, cambia el plan, pero no cambies la meta.\"\r\n', '[ {\"foto\":\"vistas/img/multimedia/nutricionista/3/img-01.jpg\"} ]', '{ \"Clases\": \"121 Clases\",\"Tiempo\": \"24 horas de estudio\",\"Nivel\": \"Nivel B?sico\", \"Acceso\": \"Acceso de por vida\",\"Dispositivo\": \"Acceso en dispositivos m?viles y TV\",\"Certificado\": \"Certificado de finalizaci?n\"}', 0, 'vistas/img/productos/nutricionista/nutricionista3.jpg', 59, 385, 0, 0, 1, 0, 1, 10, 90, 'vistas/img/ofertas/nutricionista3.jpg', '0000-00-00 00:00:00', 0, 0, 0, '0000-00-00 00:00:00'),
@@ -472,6 +491,63 @@ INSERT INTO `subcategorias` (`id`, `subcategoria`, `id_categoria`, `ruta`, `fech
 (19, 'Batidos\r\n', 4, 'batidos\r\n\r\n', '2019-07-08 18:41:22'),
 (20, 'Control de peso\r\n', 4, 'control-de-peso\r\n', '2019-07-08 18:41:25');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `suscripcion`
+--
+
+CREATE TABLE `suscripcion` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `envio` int(11) NOT NULL,
+  `metodo` text COLLATE utf8_spanish_ci NOT NULL,
+  `direccion` text COLLATE utf8_spanish_ci NOT NULL,
+  `pais` text COLLATE utf8_spanish_ci NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `suscripcion`
+--
+
+INSERT INTO `suscripcion` (`id`, `id_usuario`, `id_producto`, `envio`, `metodo`, `direccion`, `pais`, `fecha`) VALUES
+(1, 8, 120, 0, 'paypal', 'lambayeque', 'peru', '2019-07-15 16:10:59'),
+(2, 8, 147, 0, 'paypal', 'Chiclayo', 'peru', '2019-07-15 16:10:59'),
+(4, 9, 147, 0, 'paypal', 'Chiclayo', 'peru', '2019-07-15 05:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nombre` text COLLATE utf8_spanish_ci NOT NULL,
+  `password` text COLLATE utf8_spanish_ci NOT NULL,
+  `email` text COLLATE utf8_spanish_ci NOT NULL,
+  `genero` text COLLATE utf8_spanish_ci NOT NULL,
+  `celular` text COLLATE utf8_spanish_ci NOT NULL,
+  `localTrabajo` text COLLATE utf8_spanish_ci NOT NULL,
+  `codigoCnp` text COLLATE utf8_spanish_ci NOT NULL,
+  `modo` text COLLATE utf8_spanish_ci NOT NULL,
+  `foto` text COLLATE utf8_spanish_ci NOT NULL,
+  `verificacion` int(11) NOT NULL,
+  `emailEncriptado` text COLLATE utf8_spanish_ci NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `password`, `email`, `genero`, `celular`, `localTrabajo`, `codigoCnp`, `modo`, `foto`, `verificacion`, `emailEncriptado`, `fecha`) VALUES
+(2, 'DAVID', '$2a$07$asxx54ahjppf45sd87a5au0AprpAOPsKBKdQqhd5kkjwXGa58eKPi', 'abc@remail.com', 'Masculino', '956500963', 'sadfasdf', '132132', 'directo', '', 0, 'd165ea3518e3ca11845293aa9ee308f3', '2019-07-14 05:07:17'),
+(8, 'cesar', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'neil@hotmail.com', 'Maculino', '7777777', 'PERU', '989798', 'directo', 'vistas/img/usuarios/8/216.jpg', 0, '31993d40f928e2ab7655af072fef0979', '2019-07-15 04:53:19'),
+(9, 'DAVID JHOEL MAJUAN PINTADO', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'djmp@hotmail.com', 'Masculino', '989888888', 'Derrama Magisterial', '494949', 'directo', '', 0, '248a42dc7933fa66089a30e4af20c9a7', '2019-07-15 18:59:20');
+
 --
 -- Índices para tablas volcadas
 --
@@ -489,9 +565,15 @@ ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `nutricionista`
+-- Indices de la tabla `comentarios`
 --
-ALTER TABLE `nutricionista`
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `deseos`
+--
+ALTER TABLE `deseos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -519,6 +601,18 @@ ALTER TABLE `subcategorias`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `suscripcion`
+--
+ALTER TABLE `suscripcion`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -535,10 +629,16 @@ ALTER TABLE `categorias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `nutricionista`
+-- AUTO_INCREMENT de la tabla `comentarios`
 --
-ALTER TABLE `nutricionista`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `comentarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `deseos`
+--
+ALTER TABLE `deseos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `plantilla`
@@ -563,6 +663,18 @@ ALTER TABLE `slide`
 --
 ALTER TABLE `subcategorias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT de la tabla `suscripcion`
+--
+ALTER TABLE `suscripcion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
