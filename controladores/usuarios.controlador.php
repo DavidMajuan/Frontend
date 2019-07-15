@@ -36,7 +36,7 @@ class ControladorUsuarios{
 							   "verificacion"=> 1,
                                "emailEncriptado"=>$encriptarEmail);
 
-				$tabla = "nutricionista";
+				$tabla = "usuarios";
 
                 $respuesta = ModeloUsuarios::mdlRegistroUsuario($tabla, $datos);
             
@@ -184,7 +184,7 @@ class ControladorUsuarios{
 
 	static public function ctrMostrarUsuario($item, $valor){
 
-		$tabla = "nutricionista";
+		$tabla = "usuarios";
 
 		$respuesta = ModeloUsuarios::mdlMostrarUsuario($tabla, $item, $valor);
 
@@ -198,7 +198,7 @@ class ControladorUsuarios{
 
 	static public function ctrActualizarUsuario($id, $item, $valor){
 
-		$tabla = "nutricionista";
+		$tabla = "usuarios";
 
 		$respuesta = ModeloUsuarios::mdlActualizarUsuario($tabla, $id, $item, $valor);
 
@@ -221,7 +221,7 @@ class ControladorUsuarios{
 
 				$encriptar = crypt($_POST["ingPasswordN"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
-				$tabla = "nutricionista";
+				$tabla = "usuarios";
 				$item = "email";
 				$valor = $_POST["ingEmailN"];
 
@@ -356,7 +356,7 @@ class ControladorUsuarios{
 
 				$encriptar = crypt($nuevaPassword, '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
-				$tabla = "nutricionista";
+				$tabla = "usuarios";
 
 				$item1 = "email";
 				$valor1 = $_POST["passEmailN"];
@@ -614,7 +614,7 @@ class ControladorUsuarios{
 						   "foto" => $ruta,
 						   "id" => $_POST["idUsuario"]);
 
-			$tabla = "nutricionista";
+			$tabla = "usuarios";
 
 			$respuesta = ModeloUsuarios::mdlActualizarPerfil($tabla, $datos);
 
@@ -658,6 +658,129 @@ class ControladorUsuarios{
 		}
 
 	}
+
+
+	/*=============================================
+	MOSTRAR COMPRAS DE SUSCRIPCION
+	=============================================*/
+
+	static public function ctrMostrarCompras($item, $valor){
+
+		$tabla = "suscripcion";
+
+		$respuesta = ModeloUsuarios::mdlMostrarCompras($tabla, $item, $valor);
+
+		return $respuesta;
+
+	}
+
+
+	/*=============================================
+	MOSTRAR COMENTARIOS EN PERFIL
+	=============================================*/
+
+	static public function ctrMostrarComentariosPerfil($datos){
+
+		$tabla = "comentarios";
+
+		$respuesta = ModeloUsuarios::mdlMostrarComentariosPerfil($tabla, $datos);
+
+		return $respuesta;
+
+	}
+
+	
+
+	/*=============================================
+	ACTUALIZAR COMENTARIOS
+	=============================================*/
+
+	public function ctrActualizarComentario(){
+
+		if(isset($_POST["idComentario"])){
+
+			if(preg_match('/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["comentario"])){
+
+				if($_POST["comentario"] != ""){
+
+					$tabla = "comentarios";
+
+					$datos = array("id"=>$_POST["idComentario"],
+								   "calificacion"=>$_POST["puntaje"],
+								   "comentario"=>$_POST["comentario"]);
+
+					$respuesta = ModeloUsuarios::mdlActualizarComentario($tabla, $datos);
+
+					if($respuesta == "ok"){
+
+						echo'<script>
+
+								swal({
+									  title: "¡GRACIAS POR COMPARTIR SU OPINIÓN!",
+									  text: "¡Su calificación y comentario ha sido guardado!",
+									  type: "success",
+									  confirmButtonText: "Cerrar",
+									  closeOnConfirm: false
+								},
+
+								function(isConfirm){
+										 if (isConfirm) {	   
+										   history.back();
+										  } 
+								});
+
+							  </script>';
+
+					}
+
+				}else{
+
+					echo'<script>
+
+						swal({
+							  title: "¡ERROR AL ENVIAR SU CALIFICACIÓN!",
+							  text: "¡El comentario no puede estar vacío!",
+							  type: "error",
+							  confirmButtonText: "Cerrar",
+							  closeOnConfirm: false
+						},
+
+						function(isConfirm){
+								 if (isConfirm) {	   
+								   history.back();
+								  } 
+						});
+
+					  </script>';
+
+				}	
+
+			}else{
+
+				echo'<script>
+
+					swal({
+						  title: "¡ERROR AL ENVIAR SU CALIFICACIÓN!",
+						  text: "¡El comentario no puede llevar caracteres especiales!",
+						  type: "error",
+						  confirmButtonText: "Cerrar",
+						  closeOnConfirm: false
+					},
+
+					function(isConfirm){
+							 if (isConfirm) {	   
+							   history.back();
+							  } 
+					});
+
+				  </script>';
+
+			}
+
+		}
+
+	}
+	
 
 
 }

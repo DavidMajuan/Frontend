@@ -71,7 +71,7 @@ $(window).scroll(function(){
 
 	if(window.matchMedia("(min-width:768px)").matches){
 
-		if(scrollY < ($(".banner").offset().top)-150){
+		if(scrollY < ($(".banner").offset().top) - 150){
 
 			$(".banner img").css({"margin-top":-scrollY/3+"px"})
 
