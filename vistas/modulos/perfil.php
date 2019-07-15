@@ -175,13 +175,26 @@ SECCIÓN PERFIL
 
 							echo '
 							
+									
 
-									<label class="control-label text-muted text-uppercase" for="editarEmail">CODIDO CNP:</label>
+									
+
+									<label class="control-label text-muted text-uppercase" for="editarCodigoCnp">CODIDO CNP:</label>
 
 									<div class="input-group">
 								
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 										<input type="text" class="form-control" id="editarCodigoCnp" name="editarCodigoCnp" value="'.$_SESSION["codigoCnp"].'" readonly>
+
+									</div>
+									<br>
+
+									<label class="control-label text-muted text-uppercase" for="editarGenero">Genero:</label>
+
+									<div class="input-group">
+								
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+										<input type="text" class="form-control" id="editarGenero" name="editarGenero" value="'.$_SESSION["genero"].'" readonly>
 
 									</div>
 									<br>
@@ -193,20 +206,11 @@ SECCIÓN PERFIL
 										<input type="text" class="form-control" id="editarNombre" name="editarNombre" value="'.$_SESSION["nombre"].'">
 
 									</div>
-									<br>
-
-									<label class="control-label text-muted text-uppercase" for="editarEmail">Genero:</label>
-
-									<div class="input-group">
-								
-										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" id="editarGenero" name="editarGnero" value="'.$_SESSION["genero"].'">
-
-									</div>
+									
 
 									<br>
 
-									<label class="control-label text-muted text-uppercase" for="editarEmail">LOCAL DE TRABAJO:</label>
+									<label class="control-label text-muted text-uppercase" for="editarlocalTrabajo">LOCAL DE TRABAJO:</label>
 
 									<div class="input-group">
 								
@@ -215,39 +219,46 @@ SECCIÓN PERFIL
 
 									</div>
 
+									<br>
+
+									<label class="control-label text-muted text-uppercase" for="editarCelular">CELULAR:</label>
+
+									<div class="input-group">
+								
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+										<input type="text" class="form-control" id="editarCelular" name="editarCelular" value="'.$_SESSION["celular"].'">
+
+									</div>
 									
 
-						
+									<br>
+
+									<label class="control-label text-muted text-uppercase" for="editarEmail">EMAIL:</label>
+
+									<div class="input-group">
+									
+											<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+											<input type="text" class="form-control" id="editarEmail" name="editarEmail" value="'.$_SESSION["email"].'">
+
+										</div>
+
+									<br>
+
+									<label class="control-label text-muted text-uppercase" for="editarPassword">Cambiar Contraseña:</label>
+
+									<div class="input-group">
+									
+											<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+											<input type="text" class="form-control" id="editarPassword" name="editarPassword" placeholder="Escribe la nueva contraseña">
+
+										</div>
 
 
-								<br>
+									<br>
 
-								<label class="control-label text-muted text-uppercase" for="editarEmail">Cambiar Correo Electrónico:</label>
+									
 
-								<div class="input-group">
-								
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarEmail" name="editarEmail" value="'.$_SESSION["email"].'">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarPassword">Cambiar Contraseña:</label>
-
-								<div class="input-group">
-								
-										<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-										<input type="text" class="form-control" id="editarPassword" name="editarPassword" placeholder="Escribe la nueva contraseña">
-
-									</div>
-
-
-								<br>
-
-								
-
-								<button type="submit" class="btn btn-default backColor btn-md pull-left">Actualizar Datos</button>';
+									<button type="submit" class="btn btn-default backColor btn-md pull-left">Actualizar Datos</button>';
 		
 
 						}
@@ -255,6 +266,14 @@ SECCIÓN PERFIL
 						?>
 
 						</div>
+
+						<?php
+
+							$actualizarPerfil = new ControladorUsuarios();
+							$actualizarPerfil->ctrActualizarPerfil();
+
+						?>			
+
 
 									
 

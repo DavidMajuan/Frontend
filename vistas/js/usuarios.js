@@ -173,3 +173,76 @@ function registroUsuarioN(){
 
 	return true;
 }
+
+
+/*=============================================
+CAMBIAR FOTO
+=============================================*/
+
+$("#btnCambiarFoto").click(function(){
+
+	$("#imgPerfil").toggle();
+	$("#subirImagen").toggle();
+
+})
+
+$("#datosImagen").change(function(){
+
+	var imagen = this.files[0];
+
+	/*=============================================
+	VALIDAMOS EL FORMATO DE LA IMAGEN
+	=============================================*/
+	
+	if(imagen["type"] != "image/jpeg"){
+
+		$("#datosImagen").val("");
+
+		swal({
+		  title: "Error al subir la imagen",
+		  text: "¡La imagen debe estar en formato JPG!",
+		  type: "error",
+		  confirmButtonText: "¡Cerrar!",
+		  closeOnConfirm: false
+		},
+		function(isConfirm){
+				 if (isConfirm) {	   
+				    window.location = rutaOculta+"perfil";
+				  } 
+		});
+
+	}
+
+	else if(Number(imagen["size"]) > 2000000){
+
+		$("#datosImagen").val("");
+
+		swal({
+		  title: "Error al subir la imagen",
+		  text: "¡La imagen no debe pesar más de 2 MB!",
+		  type: "error",
+		  confirmButtonText: "¡Cerrar!",
+		  closeOnConfirm: false
+		},
+		function(isConfirm){
+				 if (isConfirm) {	   
+				    window.location = rutaOculta+"perfil";
+				  } 
+		});
+
+	}else{
+
+		var datosImagen = new FileReader;
+		datosImagen.readAsDataURL(imagen);
+
+		$(datosImagen).on("load", function(event){
+
+			var rutaImagen = event.target.result;
+			$(".previsualizar").attr("src",  rutaImagen);
+
+		})
+
+	}
+
+
+})

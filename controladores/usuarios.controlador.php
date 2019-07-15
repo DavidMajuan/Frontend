@@ -533,4 +533,131 @@ class ControladorUsuarios{
 	}
 
 
+	/*=============================================
+	ACTUALIZAR PERFIL
+	=============================================*/
+
+	public function ctrActualizarPerfil(){
+
+		if(isset($_POST["editarNombre"])){
+
+			/*=============================================
+			VALIDAR IMAGEN
+			=============================================*/
+
+			$ruta = "";
+
+			if(isset($_FILES["datosImagen"]["tmp_name"])){
+
+				/*=============================================
+				PRIMERO PREGUNTAMOS SI EXISTE OTRA IMAGEN EN LA BD
+				=============================================*/
+
+				$directorio = "vistas/img/usuarios/".$_POST["idUsuario"];
+
+				if(!empty($_POST["fotoUsuario"])){
+
+					unlink($_POST["fotoUsuario"]);
+				
+				}else{
+
+					mkdir($directorio, 0755);
+
+				}
+
+				/*=============================================
+				GUARDAMOS LA IMAGEN EN EL DIRECTORIO
+				=============================================*/
+
+				$aleatorio = mt_rand(100, 999);
+
+				$ruta = "vistas/img/usuarios/".$_POST["idUsuario"]."/".$aleatorio.".jpg";
+
+				/*=============================================
+				MOFICAMOS TAMAÑO DE LA FOTO
+				=============================================*/
+
+				list($ancho, $alto) = getimagesize($_FILES["datosImagen"]["tmp_name"]);
+
+				$nuevoAncho = 500;
+				$nuevoAlto = 500;
+
+				$origen = imagecreatefromjpeg($_FILES["datosImagen"]["tmp_name"]);
+
+				$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+
+				imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+
+				imagejpeg($destino, $ruta);
+
+			}
+
+
+
+			if($_POST["editarPassword"] == ""){
+
+				$password = $_POST["passUsuario"];
+
+			}else{
+
+				$password = crypt($_POST["editarPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+
+			}
+
+			$datos = array("nombre" => $_POST["editarNombre"],
+						   "codigoCnp" => $_POST["editarCodigoCnp"],
+						   "genero" => $_POST["editarGenero"],
+						   "celular" => $_POST["editarCelular"],
+						   "localTrabajo" => $_POST["editarLocalTrabajo"],
+						   "email" => $_POST["editarEmail"],
+						   "password" => $password,
+						   "foto" => $ruta,
+						   "id" => $_POST["idUsuario"]);
+
+			$tabla = "nutricionista";
+
+			$respuesta = ModeloUsuarios::mdlActualizarPerfil($tabla, $datos);
+
+			if($respuesta == "ok"){
+
+
+				$_SESSION["validarSesion"] = "ok";
+				$_SESSION["id"] = $datos["id"];
+				$_SESSION["nombre"] = $datos["nombre"];
+				$_SESSION["genero"] = $datos["genero"];
+				$_SESSION["celular"] = $datos["celular"];
+				$_SESSION["localTrabajo"] = $datos["localTrabajo"];
+				$_SESSION["codigoCnp"] = $datos["codigoCnp"];
+				$_SESSION["foto"] = $datos["foto"];
+				$_SESSION["email"] = $datos["email"];
+				$_SESSION["password"] = $datos["password"];
+				$_SESSION["modo"] =$_POST["modoUsuario"];
+
+				echo '<script> 
+
+						swal({
+							  title: "¡OK!",
+							  text: "¡Su cuenta ha sido actualizada correctamente!",
+							  type:"success",
+							  confirmButtonText: "Cerrar",
+							  closeOnConfirm: false
+							},
+
+							function(isConfirm){
+
+								if(isConfirm){
+									history.back();
+								}
+						});
+
+				</script>';
+
+
+			}
+
+		}
+
+	}
+
+
 }
