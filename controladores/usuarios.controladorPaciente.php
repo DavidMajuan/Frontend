@@ -2,44 +2,41 @@
 
 <?php
 
-class ControladorUsuarios{
+class ControladorUsuariosPaciente{
 
     /*=============================================
 	REGISTRO DE USUARIO  
 	=============================================*/
 
-	public function ctrRegistroUsuarioN(){
+	public function ctrRegistroUsuarioPaciente(){
 
-		if(isset($_POST["regUsuarioN"])){
+		if(isset($_POST["regUsuario"])){
 
-			if(preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["regUsuarioN"]) &&
-			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["regEmailN"]) &&
-               preg_match('/^[a-zA-Z0-9]+$/', $_POST["regPasswordN"]) &&
-               preg_match('/^[0-9]+$/', $_POST["regCelularN"]) &&
-               preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9 ]+$/', $_POST["regLocalTrabajoN"]) &&
-               preg_match('/^[0-9]+$/', $_POST["regCodigoCnpN"])){
+			if(preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["regUsuario"]) &&
+			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["regEmail"]) &&
+               preg_match('/^[a-zA-Z0-9]+$/', $_POST["regPassword"]) &&
+               preg_match('/^[0-9]+$/', $_POST["regCelular"])){
 
-			   	$encriptar = crypt($_POST["regPasswordN"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+			   	$encriptar = crypt($_POST["regPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
-				   $encriptarEmail = md5($_POST["regEmailN"]);
+				   $encriptarEmail = md5($_POST["regEmail"]);
 				   
 
-				$datos = array("nombre"=>$_POST["regUsuarioN"],
+				$datos = array("nombre"=>$_POST["regUsuario"],
 							   "password"=> $encriptar,
-                               "email"=> $_POST["regEmailN"],
-                               "genero"=> $_POST["regGeneroN"],
-                               "celular"=> $_POST["regCelularN"],
-                               "localTrabajo"=> $_POST["regLocalTrabajoN"],
-                               "codigoCnp"=> $_POST["regCodigoCnpN"],
+                               "email"=> $_POST["regEmail"],
+                               "genero"=> $_POST["regGenero"],
+                               "celular"=> $_POST["regCelular"],
                                "foto"=>"",
                                "modo"=> "directo",                              
 							   "verificacion"=> 1,
                                "emailEncriptado"=>$encriptarEmail);
 
-				$tabla = "usuarios";
+				$tabla = "pacientes";
 
-                $respuesta = ModeloUsuarios::mdlRegistroUsuario($tabla, $datos);
+                $respuesta = ModeloUsuariosPacientes::mdlRegistroUsuarioPaciente($tabla, $datos);
             
+
 
 				if($respuesta == "ok"){
 
@@ -63,7 +60,7 @@ class ControladorUsuarios{
 
 					$mail->Subject = "Por favor verifique su dirección de correo electrónico";
 
-					$mail->addAddress($_POST["regEmailN"]);
+					$mail->addAddress($_POST["regEmail"]);
 
 					$mail->msgHTML('<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">
 						
@@ -111,7 +108,7 @@ class ControladorUsuarios{
 
 							swal({
 								  title: "¡ERROR!",
-								  text: "¡Ha ocurrido un problema enviando verificación de correo electrónico a '.$_POST["regEmailN"].$mail->ErrorInfo.'!",
+								  text: "¡Ha ocurrido un problema enviando verificación de correo electrónico a '.$_POST["regEmail"].$mail->ErrorInfo.'!",
 								  type:"error",
 								  confirmButtonText: "Cerrar",
 								  closeOnConfirm: false
@@ -132,7 +129,7 @@ class ControladorUsuarios{
 
 							swal({
 								  title: "¡OK!",
-								  text: "¡Por favor revise la bandeja de entrada o la carpeta de SPAM de su correo electrónico '.$_POST["regEmailN"].' para verificar la cuenta!",
+								  text: "¡Por favor revise la bandeja de entrada o la carpeta de SPAM de su correo electrónico '.$_POST["regEmail"].' para verificar la cuenta!",
 								  type:"success",
 								  confirmButtonText: "Cerrar",
 								  closeOnConfirm: false
@@ -184,7 +181,7 @@ class ControladorUsuarios{
 
 	static public function ctrMostrarUsuario($item, $valor){
 
-		$tabla = "usuarios";
+		$tabla = "pacientes";
 
 		$respuesta = ModeloUsuarios::mdlMostrarUsuario($tabla, $item, $valor);
 
@@ -214,20 +211,20 @@ class ControladorUsuarios{
 
 	public function ctrIngresoUsuario(){
 
-		if(isset($_POST["ingEmailN"])){
+		if(isset($_POST["ingEmail"])){
 
-			if(preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["ingEmailN"]) &&
-			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingPasswordN"])){
+			if(preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["ingEmail"]) &&
+			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingPassword"])){
 
-				$encriptar = crypt($_POST["ingPasswordN"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+				$encriptar = crypt($_POST["ingPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
-				$tabla = "usuarios";
+				$tabla = "pacientes";
 				$item = "email";
-				$valor = $_POST["ingEmailN"];
+				$valor = $_POST["ingEmail"];
 
-				$respuesta = ModeloUsuarios::mdlMostrarUsuario($tabla, $item, $valor);
+				$respuesta = ModeloUsuariosPacientes::mdlMostrarUsuarioP($tabla, $item, $valor);
 
-				if($respuesta["email"] == $_POST["ingEmailN"] && $respuesta["password"] == $encriptar){
+				if($respuesta["email"] == $_POST["ingEmail"] && $respuesta["password"] == $encriptar){
 
 					if($respuesta["verificacion"] == 1){
 
@@ -250,15 +247,13 @@ class ControladorUsuarios{
 							</script>';
 
 					}else{
-						
-						$_SESSION["validarSesiones"] = $_SESSION["validarSesion"];
-						$_SESSION["validarSesion"] = "ok";
+
+						$_SESSION["validarSesiones"] = $_SESSION["validarSesionP"];
+						$_SESSION["validarSesionP"] = "okPaciente";
 						$_SESSION["id"] = $respuesta["id"];
 						$_SESSION["nombre"] = $respuesta["nombre"];
 						$_SESSION["genero"] = $respuesta["genero"];
 						$_SESSION["celular"] = $respuesta["celular"];
-						$_SESSION["localTrabajo"] = $respuesta["localTrabajo"];
-						$_SESSION["codigoCnp"] = $respuesta["codigoCnp"];
 						$_SESSION["foto"] = $respuesta["foto"];
 						$_SESSION["email"] = $respuesta["email"];
 						$_SESSION["password"] = $respuesta["password"];
@@ -357,10 +352,10 @@ class ControladorUsuarios{
 
 				$encriptar = crypt($nuevaPassword, '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
-				$tabla = "usuarios";
+				$tabla = "pacientes";
 
 				$item1 = "email";
-				$valor1 = $_POST["passEmailN"];
+				$valor1 = $_POST["passEmail"];
 
 				$respuesta1 = ModeloUsuarios::mdlMostrarUsuario($tabla, $item1, $valor1);
 

@@ -97,7 +97,8 @@
 CABEZOTE
 =============================================*/
 
-include "modulos/cabezote.php";
+
+    include "modulos/cabezote.php";
 
 /*=============================================
 CONTENIDO DINAMICO
@@ -172,7 +173,7 @@ if(isset($_GET["ruta"])){
 
 		include "modulos/infoproducto.php";
 
-	}else if($rutas[0] == "buscador" || $rutas[0] == "verificar" || $rutas[0] == "salir" || $rutas[0] == "perfil"){
+	}else if($rutas[0] == "buscador" || $rutas[0] == "verificar" || $rutas[0] == "salir" || $rutas[0] == "salirP"  || $rutas[0] == "perfil" || $rutas[0] == "perfilPaciente") {
 
 		include "modulos/".$rutas[0].".php";
 
@@ -201,6 +202,7 @@ if(isset($_GET["ruta"])){
 <script src="<?php echo $url; ?>vistas/js/buscador.js"></script>
 <script src="<?php echo $url; ?>vistas/js/infoproducto.js"></script>
 <script src="<?php echo $url; ?>vistas/js/usuarios.js"></script>
+<script src="<?php echo $url; ?>vistas/js/usuariosP.js"></script>
 <script src="<?php echo $url; ?>vistas/js/registroFacebook.js"></script>
 <script src="<?php echo $url; ?>vistas/js/vcampos.js"></script>
 

@@ -23,7 +23,7 @@ BARRA PRODUCTOS
 						echo '<li><a href="'.$url.$rutas[0].'/1/recientes/'.$rutas[3].'">Más reciente</a></li>
 							  <li><a href="'.$url.$rutas[0].'/1/antiguos/'.$rutas[3].'">Más antiguo</a></li>';
 
-						?>
+					?>
 
 					  </ul>
 
@@ -426,7 +426,9 @@ LISTAR PRODUCTOS
 			
 			<?php
 
-				if(count($listaProductos) != 0){
+			
+
+				if(count((array)$listaProductos) != 0){
 
 					$pagProductos = ceil(count($listaProductos)/12);
 

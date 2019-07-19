@@ -7,7 +7,7 @@ $url = Ruta::ctrRuta();
 INICIO DE SESIÓN USUARIO
 =============================================*/
 
-if(isset($_SESSION["validarSesiones"])){
+if(isset($_SESSION["validarSesion"])){
 
 	if($_SESSION["validarSesion"] = $_SESSION["validarSesiones"]){
 
@@ -20,11 +20,20 @@ if(isset($_SESSION["validarSesiones"])){
 				
 									</script>';
 				
+					}else{
+
+
+								echo '<script>
+								
+									localStorage.setItem("usuario","'.$_SESSION["id"].'");
+						
+								</script>';
+
 					}
 				
 				
 
-	}else if($_SESSION["validarSesionP"] = $_SESSION["validarSesiones"]){
+	}else if($_SESSION["validarSesionP"] == $_SESSION["validarSesiones"]){
 
 				
 				
@@ -32,7 +41,7 @@ if(isset($_SESSION["validarSesiones"])){
 				
 						echo '<script>
 						
-							localStorage.setItem("usuarios","'.$_SESSION["id"].'");
+							localStorage.setItem("usuario","'.$_SESSION["id"].'");
 				
 						</script>';
 				
@@ -101,7 +110,7 @@ TOP
 
 				<?php
 ///verifica
-				if(isset($_SESSION["validarSesiones"])){
+				if(isset($_SESSION["validarSesion"])){
 
 					if($_SESSION["validarSesion"] == "ok"){
 
@@ -142,7 +151,7 @@ TOP
 					}else if($_SESSION["validarSesionP"] == "okPaciente" ){
 
 									
-							if($_SESSION["validarSesionP"] == "okPaciente"){
+							if($_SESSION["validarSesion"] == "okPaciente"){
 
 								if($_SESSION["modo"] == "directo"){
 			
@@ -167,7 +176,7 @@ TOP
 									echo '<li>|</li>
 									<li><a href="'.$url.'perfilPaciente"> Perfil Paciente</a></li>
 									<li>|</li>
-									<li><a href="'.$url.'salirP">Salir</a></li>';
+									<li><a href="'.$url.'salir">Salir</a></li>';
 			
 			
 								}
