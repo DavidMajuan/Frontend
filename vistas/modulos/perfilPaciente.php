@@ -88,7 +88,7 @@ SECCIÓN PERFIL
 		  		<i class="fa fa-gift"></i> MI LISTA DE DESEOS</a>
 	  		</li>
 
-//asdfasdf
+
 
 		
 		</ul>
