@@ -248,7 +248,10 @@ class ControladorUsuariosPaciente{
 
 					}else{
 
+<<<<<<< HEAD
 						
+=======
+>>>>>>> 2232f37d90614260efe3858fd36e83ec84189bf2
 						$_SESSION["validarSesionP"] = "okPaciente";
 						$_SESSION["validarSesiones"] = $_SESSION["validarSesionP"];
 						$_SESSION["id"] = $respuesta["id"];
