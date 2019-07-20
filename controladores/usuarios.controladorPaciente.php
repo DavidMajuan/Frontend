@@ -610,7 +610,7 @@ class ControladorUsuariosPaciente{
 						   "foto" => $ruta,
 						   "id" => $_POST["idUsuario"]);
 
-			$tabla = "usuarios";
+			$tabla = "pacientes";
 
 			$respuesta = ModeloUsuarios::mdlActualizarPerfil($tabla, $datos);
 
