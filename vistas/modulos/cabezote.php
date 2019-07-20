@@ -414,34 +414,7 @@ VENTANA MODAL PARA EL REGISTRO DE NUTRICIONISTA
 
            <button type="button" class="close" data-dismiss="modal">&times;</button>
         	
-			<!--=====================================
-			REGISTRO FACEBOOK
-			======================================-->
-
-			<div class="col-sm-6 col-xs-12 facebook">
-				
-				<p>
-				  <i class="fa fa-facebook"></i>
-					Registro con Facebook
-				</p>
-
-			</div>
-
-			<!--=====================================
-			REGISTRO GOOGLE
-			======================================-->
-			<a href="<?php echo $rutaGoogle; ?>">
-
-				<div class="col-sm-6 col-xs-12 google">
-					
-					<p>
-					  <i class="fa fa-google"></i>
-						Registro con Google
-					</p>
-
-				</div>
-			</a>
-
+			
 			<!--=====================================
 			REGISTRO DIRECTO   
 			======================================-->
@@ -654,34 +627,7 @@ VENTANA MODAL PARA EL INGRESO NUTRICIONISTA
 
            <button type="button" class="close" data-dismiss="modal">&times;</button>
         	
-			<!--=====================================
-			INGRESO FACEBOOK
-			======================================-->
-
-			<div class="col-sm-6 col-xs-12 facebook">
-				
-				<p>
-				  <i class="fa fa-facebook"></i>
-					Ingreso con Facebook
-				</p>
-
-			</div>
-
-			<!--=====================================
-			INGRESO GOOGLE
-			======================================-->
-			<a href="">
-			
-				<div class="col-sm-6 col-xs-12 google">
-					
-					<p>
-					  <i class="fa fa-google"></i>
-						Ingreso con Google
-					</p>
-
-				</div>
-
-			</a>
+		
 
 			<!--=====================================
 			INGRESO DIRECTO
@@ -841,33 +787,7 @@ VENTANA MODAL PARA EL REGISTRO DE PACIENTE
 
            <button type="button" class="close" data-dismiss="modal">&times;</button>
         	
-			<!--=====================================
-			REGISTRO FACEBOOK
-			======================================-->
-
-			<div class="col-sm-6 col-xs-12 facebook">
-				
-				<p>
-				  <i class="fa fa-facebook"></i>
-					Registro con Facebook
-				</p>
-
-			</div>
-
-			<!--=====================================
-			REGISTRO GOOGLE
-			======================================-->
-			<a href="<?php echo $rutaGoogle; ?>">
-
-				<div class="col-sm-6 col-xs-12 google">
-					
-					<p>
-					  <i class="fa fa-google"></i>
-						Registro con Google
-					</p>
-
-				</div>
-			</a>
+			
 
 			<!--=====================================
 			REGISTRO DIRECTO
@@ -1045,34 +965,6 @@ VENTANA MODAL PARA EL INGRESO PACIENTE
 
            <button type="button" class="close" data-dismiss="modal">&times;</button>
         	
-			<!--=====================================
-			INGRESO FACEBOOK
-			======================================-->
-
-			<div class="col-sm-6 col-xs-12 facebook">
-				
-				<p>
-				  <i class="fa fa-facebook"></i>
-					Ingreso con Facebook
-				</p>
-
-			</div>
-
-			<!--=====================================
-			INGRESO GOOGLE
-			======================================-->
-			<a href="">
-			
-				<div class="col-sm-6 col-xs-12 google">
-					
-					<p>
-					  <i class="fa fa-google"></i>
-						Ingreso con Google
-					</p>
-
-				</div>
-
-			</a>
 
 			<!--=====================================
 			INGRESO DIRECTO
@@ -1203,3 +1095,6 @@ VENTANA MODAL PARA OLVIDO DE CONTRASEÑA PACIENTE
     </div>
 
 </div>
+
+
+
