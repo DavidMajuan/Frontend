@@ -248,8 +248,8 @@ class ControladorUsuariosPaciente{
 
 					}else{
 
-						$_SESSION["validarSesiones"] = $_SESSION["validarSesionP"];
 						$_SESSION["validarSesionP"] = "okPaciente";
+						$_SESSION["validarSesiones"] = $_SESSION["validarSesionP"];
 						$_SESSION["id"] = $respuesta["id"];
 						$_SESSION["nombre"] = $respuesta["nombre"];
 						$_SESSION["genero"] = $respuesta["genero"];
