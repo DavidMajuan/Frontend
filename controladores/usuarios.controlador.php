@@ -251,8 +251,8 @@ class ControladorUsuarios{
 
 					}else{
 						
-						$_SESSION["validarSesiones"] = $_SESSION["validarSesion"];
 						$_SESSION["validarSesion"] = "ok";
+						$_SESSION["validarSesiones"] = $_SESSION["validarSesion"];
 						$_SESSION["id"] = $respuesta["id"];
 						$_SESSION["nombre"] = $respuesta["nombre"];
 						$_SESSION["genero"] = $respuesta["genero"];

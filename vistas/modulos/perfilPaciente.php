@@ -117,7 +117,7 @@ SECCIÓN PERFIL
 								  <input type="hidden" value="'.$_SESSION["genero"].'" name="genero">
 								  <input type="hidden" value="'.$_SESSION["celular"].'" name="celular">
 							      <input type="hidden" value="'.$_SESSION["password"].'" name="passUsuario">
-							      <input type="hidden" value="'.$_SESSION["foto"].'" name="fotoUsuario" id="fotoUsuario">
+							      <input type="hidden" value="'.$_SESSION["foto"].'" name="fotoUsuarioP" id="fotoUsuarioP">
 								  <input type="hidden" value="'.$_SESSION["modo"].'" name="modoUsuario" id="modoUsuario">
 								  ';
 
@@ -147,7 +147,7 @@ SECCIÓN PERFIL
 
 							if($_SESSION["modo"] == "directo"){
 							
-							echo '<button type="button" class="btn btn-default" id="btnCambiarFoto">
+							echo '<button type="button" class="btn btn-default" id="btnCambiarFotoP">
 									
 									Cambiar foto de perfil
 									
@@ -192,7 +192,8 @@ SECCIÓN PERFIL
 
 									</div>
 									<br>
-									<label class="control-label text-muted text-uppercase" for="editarNombre">Cambiar Nombre:</label>
+									<label class="control-label text-muted text-uppercase" for="editarNombre
+									">Cambiar Nombre:</label>
 									
 									<div class="input-group">
 								

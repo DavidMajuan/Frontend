@@ -179,7 +179,7 @@ function registroUsuarioP(){
 CAMBIAR FOTO
 =============================================*/
 
-$("#btnCambiarFoto").click(function(){
+$("#btnCambiarFotoP").click(function(){
 
 	$("#imgPerfil").toggle();
 	$("#subirImagen").toggle();

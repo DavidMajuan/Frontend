@@ -95,7 +95,7 @@ class ModeloUsuarios{
 
 	static public function mdlActualizarPerfil($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, email = :email, password = :password, foto = :foto, genero = :genero, celular = :celular, localTrabajo = :localTrabajo WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, email = :email, password = :password, foto = :foto, celular = :celular WHERE id = :id");
 
 		/*$stmt -> bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
 		$stmt -> bindParam(":email", $datos["email"], PDO::PARAM_STR);
@@ -108,9 +108,7 @@ class ModeloUsuarios{
 		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
 		$stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
 		$stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
-        $stmt->bindParam(":genero", $datos["genero"], PDO::PARAM_STR);
         $stmt->bindParam(":celular", $datos["celular"], PDO::PARAM_STR);
-        $stmt->bindParam(":localTrabajo", $datos["localTrabajo"], PDO::PARAM_STR);
         $stmt->bindParam(":foto", $datos["foto"], PDO::PARAM_STR);
 		$stmt -> bindParam(":id", $datos["id"], PDO::PARAM_INT);
 		

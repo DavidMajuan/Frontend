@@ -146,7 +146,7 @@ LISTAR PRODUCTOS
 
 						 <h1><small>¡Oops!</small></h1>
 
-						 <h2>Aún no hay productos en esta sección</h2>
+						 <h2>Aún no hay nutricionistas en esta sección</h2>
 
 					</div>';
 
