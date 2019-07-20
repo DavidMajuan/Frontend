@@ -1,7 +1,7 @@
 /*=============================================
 CAPTURA DE RUTA
 =============================================*/
-
+/*HOLI */
 var rutaActual = location.href;
 
 $(".btnIngresoP, .facebook, .google").click(function(){
