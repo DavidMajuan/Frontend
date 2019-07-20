@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-07-2019 a las 21:11:11
+-- Tiempo de generación: 20-07-2019 a las 18:45:15
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.2
 
@@ -94,7 +94,7 @@ CREATE TABLE `comentarios` (
 INSERT INTO `comentarios` (`id`, `id_usuario`, `id_producto`, `calificacion`, `comentario`, `fecha`) VALUES
 (1, 8, 120, 4, 'espectacular', '2019-07-15 17:35:05'),
 (2, 8, 147, 5, 'expectacular', '2019-07-15 17:34:17'),
-(4, 9, 147, 5, 'excelente', '2019-07-15 19:05:30');
+(4, 9, 147, 3, 'muy buena profesional', '2019-07-15 21:59:40');
 
 -- --------------------------------------------------------
 
@@ -118,9 +118,36 @@ INSERT INTO `deseos` (`id`, `id_usuario`, `id_producto`, `fecha`) VALUES
 (12, 8, 226, '2019-07-15 18:56:26'),
 (13, 8, 225, '2019-07-15 18:56:27'),
 (14, 8, 228, '2019-07-15 18:56:28'),
-(20, 9, 2, '2019-07-15 18:59:55'),
-(21, 9, 3, '2019-07-15 18:59:56'),
-(22, 9, 4, '2019-07-15 18:59:57');
+(22, 9, 3, '2019-07-15 21:58:37'),
+(23, 9, 4, '2019-07-15 21:58:40');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pacientes`
+--
+
+CREATE TABLE `pacientes` (
+  `id` int(11) NOT NULL,
+  `nombre` text COLLATE utf8_spanish_ci NOT NULL,
+  `password` text COLLATE utf8_spanish_ci NOT NULL,
+  `email` text COLLATE utf8_spanish_ci NOT NULL,
+  `genero` text COLLATE utf8_spanish_ci NOT NULL,
+  `celular` text COLLATE utf8_spanish_ci NOT NULL,
+  `modo` text COLLATE utf8_spanish_ci NOT NULL,
+  `foto` text COLLATE utf8_spanish_ci NOT NULL,
+  `verificacion` int(11) NOT NULL,
+  `emailEncriptado` text COLLATE utf8_spanish_ci NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `pacientes`
+--
+
+INSERT INTO `pacientes` (`id`, `nombre`, `password`, `email`, `genero`, `celular`, `modo`, `foto`, `verificacion`, `emailEncriptado`, `fecha`) VALUES
+(1, 'lesly', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'lesly@gmail.com', 'Femenino', '897978499', 'directo', '', 0, '3770dd0d4e8f92080e729eb29d5217b2', '2019-07-18 02:34:44'),
+(2, 'david jhoel', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'djmp_144@hotmail.com', 'Masculino', '798797897', 'directo', '', 0, 'a92460df7e2c45757bfba66631baee03', '2019-07-18 01:29:51');
 
 -- --------------------------------------------------------
 
@@ -546,7 +573,8 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `nombre`, `password`, `email`, `genero`, `celular`, `localTrabajo`, `codigoCnp`, `modo`, `foto`, `verificacion`, `emailEncriptado`, `fecha`) VALUES
 (2, 'DAVID', '$2a$07$asxx54ahjppf45sd87a5au0AprpAOPsKBKdQqhd5kkjwXGa58eKPi', 'abc@remail.com', 'Masculino', '956500963', 'sadfasdf', '132132', 'directo', '', 0, 'd165ea3518e3ca11845293aa9ee308f3', '2019-07-14 05:07:17'),
 (8, 'cesar', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'neil@hotmail.com', 'Maculino', '7777777', 'PERU', '989798', 'directo', 'vistas/img/usuarios/8/216.jpg', 0, '31993d40f928e2ab7655af072fef0979', '2019-07-15 04:53:19'),
-(9, 'DAVID JHOEL MAJUAN PINTADO', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'djmp@hotmail.com', 'Masculino', '989888888', 'Derrama Magisterial', '494949', 'directo', '', 0, '248a42dc7933fa66089a30e4af20c9a7', '2019-07-15 18:59:20');
+(9, 'DAVID JHOEL MAJUAN PINTADO', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'djmp@hotmail.com', 'Masculino', '989888888', 'Derrama Magisterial', '494949', 'directo', 'vistas/img/usuarios/9/979.jpg', 0, '248a42dc7933fa66089a30e4af20c9a7', '2019-07-15 19:19:38'),
+(10, 'ANITA', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'rosa@hotmail.com', 'Femenino', '199191919', 'chiclayo', '646546', 'directo', 'vistas/img/usuarios/10/235.jpg', 0, 'f28a12749cea75c465d9bdc6e4652547', '2019-07-15 21:54:41');
 
 --
 -- Índices para tablas volcadas
@@ -574,6 +602,12 @@ ALTER TABLE `comentarios`
 -- Indices de la tabla `deseos`
 --
 ALTER TABLE `deseos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `pacientes`
+--
+ALTER TABLE `pacientes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -638,7 +672,13 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT de la tabla `deseos`
 --
 ALTER TABLE `deseos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT de la tabla `pacientes`
+--
+ALTER TABLE `pacientes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `plantilla`
@@ -674,7 +714,7 @@ ALTER TABLE `suscripcion`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
