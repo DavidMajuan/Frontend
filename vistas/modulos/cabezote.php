@@ -464,12 +464,38 @@ VENTANA MODAL PARA EL REGISTRO DE NUTRICIONISTA
 						
 						</span>
 
-						<input type="text" class="form-control text-uppercase" id="regUsuarioN" name="regUsuarioN" placeholder="Nombre Completo" required>
+						<input type="text" class="form-control text-uppercase" id="regUsuarioN" name="regUsuarioN" placeholder="Nombres" required>
 
 					</div>
 
 				</div>
 
+				<!--=====================================
+				APELLIDO PATERNO Y MATERNO
+				======================================-->
+
+				<div class="form-group">
+					
+					<div class="input-group">
+						
+						<span class="input-group-addon">
+							
+							<i class="glyphicon glyphicon-user"></i>
+						
+						</span>
+
+						<input type="text" class="form-control text-uppercase" id="regApePaterno" name="regApePaterno" placeholder="Apellido Paterno" required>
+
+						<span class="input-group-addon">
+							
+							<i class="glyphicon glyphicon-user"></i>
+						
+						</span>
+
+						<input type="text" class="form-control text-uppercase" id="regApeMaterno" name="regApeMaterno" placeholder="Apellido Materno" required>
+					</div>
+
+				</div>
 
 				<!--=====================================
 				EMAIL
@@ -571,12 +597,29 @@ VENTANA MODAL PARA EL REGISTRO DE NUTRICIONISTA
 
 
 				<!--=====================================
-                CODIGO DE CNP
+                ESPECIALIDAD Y CODIGO DE CNP
                 ======================================-->
 
 				<div class="form-group">
 					
 					<div class="input-group">
+						
+						<span class="input-group-addon">
+							
+							<i class="glyphicon glyphicon-education"></i>
+						
+						</span> 
+						<?php 
+							$allsubcategorias = ControladorProductos::ctrMostrarAllSubcategorias();
+						?>
+						<select style="height:52px;width:260px" class="form-control" id="regEspecialidad" name="regEspecialidad" required>
+							<option disabled selected>Especialidad</option>
+							<?php
+							for ($i=0;$i<sizeof($allsubcategorias);$i++) {
+								echo '<option value="'.$allsubcategorias[$i][0].'">'.$allsubcategorias[$i][1].'</option>';
+							}
+							?>
+						</select>
 						
 						<span class="input-group-addon">
 							

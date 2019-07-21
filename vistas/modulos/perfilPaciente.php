@@ -57,12 +57,8 @@ SECCIÓN PERFIL
 
 		<ul class="nav nav-tabs">
 
-			<li class="active"> 				
-		  		<a data-toggle="tab" href="#compras">
-		  		<i class="fa fa-cc-paypal"></i> SUSCRIPCION</a>
-	  		</li>
 
-			<li>				
+			<li class="active">				
 	  			<a data-toggle="tab" href="#perfil">
 	  			<i class="fa fa-user"></i>  EDITAR PERFIL</a>
 	  		</li>
@@ -88,6 +84,10 @@ SECCIÓN PERFIL
 		  		<i class="fa fa-gift"></i> MI LISTA DE DESEOS</a>
 	  		</li>
 
+			<li> 				
+		  		<a data-toggle="tab" href="#compras">
+		  		<i class="fa fa-cc-paypal"></i> SUSCRIPCION</a>
+	  		</li>
 
 
 		
@@ -99,7 +99,7 @@ SECCIÓN PERFIL
 			PESTAÑA PERFIL
 			======================================-->
 		  	
-			<div id="perfil" class="tab-pane fade">
+			<div id="perfil" class="tab-pane fade in active">
 		    	
 				<div class="row">
 					
@@ -281,7 +281,7 @@ SECCIÓN PERFIL
 			PESTAÑA SUSCRIPCION
 			======================================-->
 
-			<div id="compras" class="tab-pane fade in active">
+			<div id="compras" class="tab-pane fade">
 		    
 			<div class="panel-group">
 
