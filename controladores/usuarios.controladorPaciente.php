@@ -606,12 +606,20 @@ class ControladorUsuariosPaciente{
 
 			}
 
+<<<<<<< HEAD
+			$datos = array("nombre" => $_POST["editarNombre"],
+						   "codigoCnp" => $_POST["editarCodigoCnp"],
+						   "genero" => $_POST["editarGenero"],
+						   "celular" => $_POST["editarCelular"],
+						   "email" => $_POST["editarEmail"],
+=======
 			$datos = array("nombre" => $_POST["editarNombreP"],
 						   "apellido_paterno" => $_POST["editarApePatP"],
 						   "apellido_materno" => $_POST["editarApeMatP"],
 						   "genero" => $_POST["editarGeneroP"],
 						   "celular" => $_POST["editarCelularP"],
 						   "email" => $_POST["editarEmailP"],
+>>>>>>> 320f9f05347335cc27302a111294c6ee1511d70f
 						   "password" => $password,
 						   "foto" => $ruta,
 						   "id" => $_POST["idUsuario"]);
