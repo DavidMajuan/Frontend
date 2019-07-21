@@ -189,79 +189,79 @@ SECCIÓN PERFIL
 
 									
 
-									<label class="control-label text-muted text-uppercase" for="editarGenero">Genero:</label>
+									<label class="control-label text-muted text-uppercase" for="editarGeneroP">Genero:</label>
 
 									<div class="input-group">
 								
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" id="editarGenero" name="editarGenero" value="'.$_SESSION["genero"].'" readonly>
+										<input type="text" class="form-control" id="editarGeneroP" name="editarGeneroP" value="'.$_SESSION["genero"].'" readonly>
 
 									</div>
 									<br>
-									<label class="control-label text-muted text-uppercase" for="editarNombre
+									<label class="control-label text-muted text-uppercase" for="editarNombreP
 									">Nombre:</label>
 									
 									<div class="input-group">
 								
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" id="editarNombre" name="editarNombre" value="'.$_SESSION["nombre"].'">
+										<input type="text" class="form-control" id="editarNombreP" name="editarNombreP" value="'.$_SESSION["nombre"].'">
 
 									</div>
 
 									<br>
-									<label class="control-label text-muted text-uppercase" for="editarApePat
+									<label class="control-label text-muted text-uppercase" for="editarApePatP
 									">Apellido Paterno:</label>
 									
 									<div class="input-group">
 								
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" id="editarApePat" name="editarApePat" value="'.$_SESSION["apellido_paterno"].'">
+										<input type="text" class="form-control" id="editarApePatP" name="editarApePatP" value="'.$_SESSION["apellido_paterno"].'">
 
 									</div>
 
 									<br>
-									<label class="control-label text-muted text-uppercase" for="editarApeMat
+									<label class="control-label text-muted text-uppercase" for="editarApeMatP
 									">Apellido Materno:</label>
 									
 									<div class="input-group">
 								
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" id="editarApeMat" name="editarApeMat" value="'.$_SESSION["apellido_materno"].'">
+										<input type="text" class="form-control" id="editarApeMatP" name="editarApeMatP" value="'.$_SESSION["apellido_materno"].'">
 
 									</div>
 				
 
 									<br>
 
-									<label class="control-label text-muted text-uppercase" for="editarCelular">CELULAR:</label>
+									<label class="control-label text-muted text-uppercase" for="editarCelularP">CELULAR:</label>
 
 									<div class="input-group">
 								
 										<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-										<input type="text" class="form-control" id="editarCelular" name="editarCelular" value="'.$_SESSION["celular"].'">
+										<input type="text" class="form-control" id="editarCelularP" name="editarCelularP" value="'.$_SESSION["celular"].'">
 
 									</div>
 									
 
 									<br>
 
-									<label class="control-label text-muted text-uppercase" for="editarEmail">EMAIL:</label>
+									<label class="control-label text-muted text-uppercase" for="editarEmailP">EMAIL:</label>
 
 									<div class="input-group">
 									
 											<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-											<input type="text" class="form-control" id="editarEmail" name="editarEmail" value="'.$_SESSION["email"].'">
+											<input type="text" class="form-control" id="editarEmailP" name="editarEmailP" value="'.$_SESSION["email"].'">
 
 										</div>
 
 									<br>
 
-									<label class="control-label text-muted text-uppercase" for="editarPassword">Cambiar Contraseña:</label>
+									<label class="control-label text-muted text-uppercase" for="editarPasswordP">Cambiar Contraseña:</label>
 
 									<div class="input-group">
 									
 											<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-											<input type="password" class="form-control" id="editarPassword" name="editarPassword" placeholder="Escribe la nueva contraseña">
+											<input type="password" class="form-control" id="editarPasswordP" name="editarPasswordP" placeholder="Escribe la nueva contraseña">
 
 										</div>
 
