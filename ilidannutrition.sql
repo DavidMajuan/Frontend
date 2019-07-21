@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-07-2019 a las 18:45:15
+-- Tiempo de generación: 20-07-2019 a las 23:22:19
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.2
 
@@ -67,10 +67,10 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id`, `categoria`, `ruta`, `fecha`) VALUES
-(1, 'NUTRICIONISTAS', 'nutricionistas', '2019-07-08 18:31:01'),
-(2, 'NUTRICION', 'nutricion', '2019-07-08 18:30:53'),
-(3, 'DIETETICA', 'dietetica', '2019-07-08 18:30:45'),
-(4, 'FITNESS', 'fitness', '2019-07-08 18:30:36');
+(1, 'CLINICA', 'clinica', '2019-07-20 21:05:43'),
+(2, 'SALUD PUBLICA', 'salud-publica', '2019-07-20 21:05:53'),
+(3, 'ALIMENTACIÓN', 'alimentacion', '2019-07-20 21:20:19'),
+(4, 'DEPORTIVA', 'deportiva', '2019-07-20 21:06:05');
 
 -- --------------------------------------------------------
 
@@ -146,7 +146,7 @@ CREATE TABLE `pacientes` (
 --
 
 INSERT INTO `pacientes` (`id`, `nombre`, `password`, `email`, `genero`, `celular`, `modo`, `foto`, `verificacion`, `emailEncriptado`, `fecha`) VALUES
-(1, 'lesly', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'lesly@gmail.com', 'Femenino', '897978499', 'directo', '', 0, '3770dd0d4e8f92080e729eb29d5217b2', '2019-07-18 02:34:44'),
+(1, 'lesly', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'lesly@gmail.com', 'Femenino', '897978499', 'directo', 'vistas/img/usuarios/1/611.jpg', 0, '3770dd0d4e8f92080e729eb29d5217b2', '2019-07-20 20:23:39'),
 (2, 'david jhoel', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'djmp_144@hotmail.com', 'Masculino', '798797897', 'directo', '', 0, 'a92460df7e2c45757bfba66631baee03', '2019-07-18 01:29:51');
 
 -- --------------------------------------------------------
@@ -497,26 +497,13 @@ CREATE TABLE `subcategorias` (
 --
 
 INSERT INTO `subcategorias` (`id`, `subcategoria`, `id_categoria`, `ruta`, `fecha`) VALUES
-(1, 'Alimentacion vegana  vegetariana', 1, 'alimentacion-vegana-vegetariana\r\n', '2019-07-08 18:33:07'),
-(2, 'Nutricion en salud publica o comunitaria\r\n', 1, 'nutricion-en-salud-publica-o-comunitaria\r\n', '2019-07-08 18:33:23'),
-(3, 'Dietetica hospitalaria\r\n', 1, 'dietetica-hospitalaria\r\n', '2019-07-08 18:33:39'),
-(4, 'Nutricion en el embarazo\r\n', 1, 'nutricion-en-el-embarazo\r\n', '2019-07-08 18:34:06'),
-(5, 'Nutricion pediatrica\r\n', 1, 'nutricion-pediatrica', '2019-07-08 18:34:35'),
-(6, 'Nutricion gerontologica\r\n', 1, 'nutricion-gerontologica\r\n', '2019-07-08 18:35:10'),
-(7, 'Nutricion deportiva\r\n', 1, 'nutricion-deportiva\r\n', '2019-07-08 18:35:13'),
-(8, 'Salud\r\n', 2, 'salud\r\n', '2019-07-08 18:37:04'),
-(9, 'Comida vegana\r\n', 2, 'comida-vegana\r\n', '2019-07-08 18:37:17'),
-(10, 'Organización de comidas\r\n', 2, 'organizacion-de-comidas\r\n', '2019-07-09 08:04:48'),
-(11, 'Herbologia\r\n', 2, 'herbologia\r\n', '2019-07-08 18:38:01'),
-(12, 'Dieta cetogenica\r\n', 3, 'dieta-cetogenica\r\n', '2019-07-08 18:38:37'),
-(13, 'Perdida de peso\r\n', 3, 'perdida-de-peso\r\n', '2019-07-08 18:39:26'),
-(14, 'Cetosis\r\n', 3, 'cetosis\r\n', '2019-07-08 18:39:30'),
-(15, 'Ayuno\r\n', 3, 'ayuno\r\n', '2019-07-08 18:39:34'),
-(16, 'Dietas\r\n', 4, 'dietas\r\n', '2019-07-08 18:40:10'),
-(17, 'Recetas\r\n', 4, 'recetas\r\n', '2019-07-08 18:40:25'),
-(18, 'Aumento de peso\r\n', 4, 'aumento-de-peso\r\n', '2019-07-08 18:41:18'),
-(19, 'Batidos\r\n', 4, 'batidos\r\n\r\n', '2019-07-08 18:41:22'),
-(20, 'Control de peso\r\n', 4, 'control-de-peso\r\n', '2019-07-08 18:41:25');
+(1, 'Alimentacion vegana  vegetariana', 3, 'alimentacion-vegana-vegetariana\r\n', '2019-07-20 21:13:36'),
+(2, 'Nutricion en salud publica o comunitaria\r\n', 2, 'nutricion-en-salud-publica-o-comunitaria\r\n', '2019-07-20 21:07:56'),
+(3, 'Dietetica hospitalaria\r\n', 1, 'dietetica-hospitalaria\r\n', '2019-07-20 21:19:34'),
+(4, 'Nutricion en el embarazo\r\n', 1, 'nutricion-en-el-embarazo\r\n', '2019-07-20 21:10:07'),
+(5, 'Nutricion pediatrica\r\n', 1, 'nutricion-pediatrica', '2019-07-20 21:12:04'),
+(6, 'Nutricion gerontologica\r\n', 1, 'nutricion-gerontologica\r\n', '2019-07-20 21:13:01'),
+(7, 'Nutricion deportiva\r\n', 4, 'nutricion-deportiva\r\n', '2019-07-20 21:16:15');
 
 -- --------------------------------------------------------
 
@@ -574,7 +561,8 @@ INSERT INTO `usuarios` (`id`, `nombre`, `password`, `email`, `genero`, `celular`
 (2, 'DAVID', '$2a$07$asxx54ahjppf45sd87a5au0AprpAOPsKBKdQqhd5kkjwXGa58eKPi', 'abc@remail.com', 'Masculino', '956500963', 'sadfasdf', '132132', 'directo', '', 0, 'd165ea3518e3ca11845293aa9ee308f3', '2019-07-14 05:07:17'),
 (8, 'cesar', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'neil@hotmail.com', 'Maculino', '7777777', 'PERU', '989798', 'directo', 'vistas/img/usuarios/8/216.jpg', 0, '31993d40f928e2ab7655af072fef0979', '2019-07-15 04:53:19'),
 (9, 'DAVID JHOEL MAJUAN PINTADO', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'djmp@hotmail.com', 'Masculino', '989888888', 'Derrama Magisterial', '494949', 'directo', 'vistas/img/usuarios/9/979.jpg', 0, '248a42dc7933fa66089a30e4af20c9a7', '2019-07-15 19:19:38'),
-(10, 'ANITA', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'rosa@hotmail.com', 'Femenino', '199191919', 'chiclayo', '646546', 'directo', 'vistas/img/usuarios/10/235.jpg', 0, 'f28a12749cea75c465d9bdc6e4652547', '2019-07-15 21:54:41');
+(10, 'ANITA', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'rosa@hotmail.com', 'Femenino', '199191919', 'chiclayo', '646546', 'directo', 'vistas/img/usuarios/10/235.jpg', 0, 'f28a12749cea75c465d9bdc6e4652547', '2019-07-15 21:54:41'),
+(11, 'jose', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'jose@gmail.com', 'Masculino', '894949848', 'derrma', '879787', 'directo', '', 0, '3d56face555bed51f9ecd38957998286', '2019-07-20 17:10:47');
 
 --
 -- Índices para tablas volcadas
@@ -714,7 +702,7 @@ ALTER TABLE `suscripcion`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
