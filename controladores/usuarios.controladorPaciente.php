@@ -541,7 +541,7 @@ class ControladorUsuariosPaciente{
 
 	public function ctrActualizarPerfil(){
 
-		if(isset($_POST["editarNombre"])){
+		if(isset($_POST["editarNombreP"])){
 
 			/*=============================================
 			VALIDAR IMAGEN
@@ -596,28 +596,37 @@ class ControladorUsuariosPaciente{
 
 
 
-			if($_POST["editarPassword"] == ""){
+			if($_POST["editarPasswordP"] == ""){
 
 				$password = $_POST["passUsuario"];
 
 			}else{
 
-				$password = crypt($_POST["editarPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+				$password = crypt($_POST["editarPasswordP"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
 			}
 
+<<<<<<< HEAD
 			$datos = array("nombre" => $_POST["editarNombre"],
 						   "codigoCnp" => $_POST["editarCodigoCnp"],
 						   "genero" => $_POST["editarGenero"],
 						   "celular" => $_POST["editarCelular"],
 						   "email" => $_POST["editarEmail"],
+=======
+			$datos = array("nombre" => $_POST["editarNombreP"],
+						   "apellido_paterno" => $_POST["editarApePatP"],
+						   "apellido_materno" => $_POST["editarApeMatP"],
+						   "genero" => $_POST["editarGeneroP"],
+						   "celular" => $_POST["editarCelularP"],
+						   "email" => $_POST["editarEmailP"],
+>>>>>>> 320f9f05347335cc27302a111294c6ee1511d70f
 						   "password" => $password,
 						   "foto" => $ruta,
 						   "id" => $_POST["idUsuario"]);
 
 			$tabla = "pacientes";
 
-			$respuesta = ModeloUsuarios::mdlActualizarPerfil($tabla, $datos);
+			$respuesta = ModeloUsuariosPacientes::mdlActualizarPerfil($tabla, $datos);
 
 			if($respuesta == "ok"){
 
@@ -625,10 +634,10 @@ class ControladorUsuariosPaciente{
 				$_SESSION["validarSesion"] = "ok";
 				$_SESSION["id"] = $datos["id"];
 				$_SESSION["nombre"] = $datos["nombre"];
+				$_SESSION["apellido_paterno"] = $datos["apellido_paterno"];
+				$_SESSION["apellido_materno"] = $datos["apellido_materno"];
 				$_SESSION["genero"] = $datos["genero"];
 				$_SESSION["celular"] = $datos["celular"];
-				$_SESSION["localTrabajo"] = $datos["localTrabajo"];
-				$_SESSION["codigoCnp"] = $datos["codigoCnp"];
 				$_SESSION["foto"] = $datos["foto"];
 				$_SESSION["email"] = $datos["email"];
 				$_SESSION["password"] = $datos["password"];
