@@ -10,23 +10,27 @@ class ControladorUsuariosPaciente{
 
 	public function ctrRegistroUsuarioPaciente(){
 
-		if(isset($_POST["regUsuario"])){
+		if(isset($_POST["regUsuarioP"])){
 
-			if(preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["regUsuario"]) &&
-			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["regEmail"]) &&
-               preg_match('/^[a-zA-Z0-9]+$/', $_POST["regPassword"]) &&
-               preg_match('/^[0-9]+$/', $_POST["regCelular"])){
+			if(preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["regUsuarioP"]) &&
+			   preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["regApePatP"]) &&
+			   preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["regApeMatP"]) &&
+			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["regEmailP"]) &&
+               preg_match('/^[a-zA-Z0-9]+$/', $_POST["regPasswordP"]) &&
+               preg_match('/^[0-9]+$/', $_POST["regCelularP"])){
 
-			   	$encriptar = crypt($_POST["regPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+			   	$encriptar = crypt($_POST["regPasswordP"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
-				   $encriptarEmail = md5($_POST["regEmail"]);
+				   $encriptarEmail = md5($_POST["regEmailP"]);
 				   
 
-				$datos = array("nombre"=>$_POST["regUsuario"],
+				$datos = array("nombre"=>$_POST["regUsuarioP"],
+							   "apellido_paterno"=>$_POST["regApePatP"],
+							   "apellido_materno"=>$_POST["regApeMatP"],
 							   "password"=> $encriptar,
-                               "email"=> $_POST["regEmail"],
-                               "genero"=> $_POST["regGenero"],
-                               "celular"=> $_POST["regCelular"],
+                               "email"=> $_POST["regEmailP"],
+                               "genero"=> $_POST["regGeneroP"],
+                               "celular"=> $_POST["regCelularP"],
                                "foto"=>"",
                                "modo"=> "directo",                              
 							   "verificacion"=> 1,
@@ -60,7 +64,7 @@ class ControladorUsuariosPaciente{
 
 					$mail->Subject = "Por favor verifique su dirección de correo electrónico";
 
-					$mail->addAddress($_POST["regEmail"]);
+					$mail->addAddress($_POST["regEmailP"]);
 
 					$mail->msgHTML('<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">
 						
@@ -108,7 +112,7 @@ class ControladorUsuariosPaciente{
 
 							swal({
 								  title: "¡ERROR!",
-								  text: "¡Ha ocurrido un problema enviando verificación de correo electrónico a '.$_POST["regEmail"].$mail->ErrorInfo.'!",
+								  text: "¡Ha ocurrido un problema enviando verificación de correo electrónico a '.$_POST["regEmailP"].$mail->ErrorInfo.'!",
 								  type:"error",
 								  confirmButtonText: "Cerrar",
 								  closeOnConfirm: false
@@ -129,7 +133,7 @@ class ControladorUsuariosPaciente{
 
 							swal({
 								  title: "¡OK!",
-								  text: "¡Por favor revise la bandeja de entrada o la carpeta de SPAM de su correo electrónico '.$_POST["regEmail"].' para verificar la cuenta!",
+								  text: "¡Por favor revise la bandeja de entrada o la carpeta de SPAM de su correo electrónico '.$_POST["regEmailP"].' para verificar la cuenta!",
 								  type:"success",
 								  confirmButtonText: "Cerrar",
 								  closeOnConfirm: false
@@ -211,20 +215,20 @@ class ControladorUsuariosPaciente{
 
 	public function ctrIngresoUsuario(){
 
-		if(isset($_POST["ingEmail"])){
+		if(isset($_POST["ingEmailP"])){
 
-			if(preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["ingEmail"]) &&
-			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingPassword"])){
+			if(preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["ingEmailP"]) &&
+			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingPasswordP"])){
 
-				$encriptar = crypt($_POST["ingPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+				$encriptar = crypt($_POST["ingPasswordP"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
 				$tabla = "pacientes";
 				$item = "email";
-				$valor = $_POST["ingEmail"];
+				$valor = $_POST["ingEmailP"];
 
 				$respuesta = ModeloUsuariosPacientes::mdlMostrarUsuarioP($tabla, $item, $valor);
 
-				if($respuesta["email"] == $_POST["ingEmail"] && $respuesta["password"] == $encriptar){
+				if($respuesta["email"] == $_POST["ingEmailP"] && $respuesta["password"] == $encriptar){
 
 					if($respuesta["verificacion"] == 1){
 
@@ -252,6 +256,8 @@ class ControladorUsuariosPaciente{
 						$_SESSION["validarSesiones"] = $_SESSION["validarSesionP"];
 						$_SESSION["id"] = $respuesta["id"];
 						$_SESSION["nombre"] = $respuesta["nombre"];
+						$_SESSION["apellido_paterno"] = $respuesta["apellido_paterno"];
+						$_SESSION["apellido_materno"] = $respuesta["apellido_materno"];
 						$_SESSION["genero"] = $respuesta["genero"];
 						$_SESSION["celular"] = $respuesta["celular"];
 						$_SESSION["foto"] = $respuesta["foto"];
@@ -357,7 +363,7 @@ class ControladorUsuariosPaciente{
 				$item1 = "email";
 				$valor1 = $_POST["passEmailP"];
 
-				$respuesta1 = ModeloUsuarios::mdlMostrarUsuario($tabla, $item1, $valor1);
+				$respuesta1 = ModeloUsuariosPacientes::mdlMostrarUsuarioP($tabla, $item1, $valor1);
 
 				if($respuesta1){
 

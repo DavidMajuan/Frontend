@@ -118,6 +118,8 @@ SECCIÓN PERFIL
 							<?php
 
 							echo '<input type="hidden" value="'.$_SESSION["id"].'" id="idUsuario" name="idUsuario">
+								  <input type="hidden" value="'.$_SESSION["apellido_paterno"].'" id="apellido_paterno" name="apellido_paterno">
+								  <input type="hidden" value="'.$_SESSION["apellido_materno"].'" id="apellido_materno" name="apellido_materno">
 								  <input type="hidden" value="'.$_SESSION["genero"].'" name="genero">
 								  <input type="hidden" value="'.$_SESSION["celular"].'" name="celular">
 							      <input type="hidden" value="'.$_SESSION["password"].'" name="passUsuario">
@@ -189,12 +191,34 @@ SECCIÓN PERFIL
 									</div>
 									<br>
 									<label class="control-label text-muted text-uppercase" for="editarNombre
-									">Cambiar Nombre:</label>
+									">Nombre:</label>
 									
 									<div class="input-group">
 								
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 										<input type="text" class="form-control" id="editarNombre" name="editarNombre" value="'.$_SESSION["nombre"].'">
+
+									</div>
+
+									<br>
+									<label class="control-label text-muted text-uppercase" for="editarApePat
+									">Apellido Paterno:</label>
+									
+									<div class="input-group">
+								
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+										<input type="text" class="form-control" id="editarApePat" name="editarApePat" value="'.$_SESSION["apellido_paterno"].'">
+
+									</div>
+
+									<br>
+									<label class="control-label text-muted text-uppercase" for="editarApeMat
+									">Apellido Materno:</label>
+									
+									<div class="input-group">
+								
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+										<input type="text" class="form-control" id="editarApeMat" name="editarApeMat" value="'.$_SESSION["apellido_materno"].'">
 
 									</div>
 				

@@ -69,7 +69,7 @@ $("#regEmail").change(function(){
 })
 
 /*=============================================
-VALIDAR EL REGISTRO DE USUARIO NUTRICIONISTA
+VALIDAR EL REGISTRO DE USUARIO PACIENTE
 =============================================*/
 function registroUsuarioP(){
 
@@ -77,7 +77,7 @@ function registroUsuarioP(){
 	VALIDAR EL NOMBRE
 	=============================================*/
 
-	var nombre = $("#regUsuario").val();
+	var nombre = $("#regUsuarioP").val();
 
 	if(nombre != ""){
 
@@ -85,7 +85,7 @@ function registroUsuarioP(){
 
 		if(!expresion.test(nombre)){
 
-			$("#regUsuario").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> No se permiten números ni caracteres especiales</div>')
+			$("#regUsuarioP").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> No se permiten números ni caracteres especiales</div>')
 
 			return false;
 
@@ -93,7 +93,7 @@ function registroUsuarioP(){
 
 	}else{
 
-		$("#regUsuario").parent().before('<div class="alert alert-warning"><strong>ATENCIÓN:</strong> Este campo es obligatorio</div>')
+		$("#regUsuarioP").parent().before('<div class="alert alert-warning"><strong>ATENCIÓN:</strong> Este campo es obligatorio</div>')
 
 		return false;
 	}
@@ -102,7 +102,7 @@ function registroUsuarioP(){
 	VALIDAR EL EMAIL
 	=============================================*/
 
-	var email = $("#regEmailN").val();
+	var email = $("#regEmailP").val();
 
 	if(email != ""){
 
@@ -110,7 +110,7 @@ function registroUsuarioP(){
 
 		if(!expresion.test(email)){
 
-			$("#regEmailN").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> Escriba correctamente el correo electrónico</div>')
+			$("#regEmailP").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> Escriba correctamente el correo electrónico</div>')
 
 			return false;
 
@@ -118,7 +118,7 @@ function registroUsuarioP(){
 
 		if(validarEmailRepetido){
 
-			$("#regEmailN").parent().before('<div class="alert alert-danger"><strong>ERROR:</strong> El correo electrónico ya existe en la base de datos, por favor ingrese otro diferente</div>')
+			$("#regEmailP").parent().before('<div class="alert alert-danger"><strong>ERROR:</strong> El correo electrónico ya existe en la base de datos, por favor ingrese otro diferente</div>')
 
 			return false;
 
@@ -126,7 +126,7 @@ function registroUsuarioP(){
 
 	}else{
 
-		$("#regEmailN").parent().before('<div class="alert alert-warning"><strong>ATENCIÓN:</strong> Este campo es obligatorio</div>')
+		$("#regEmailP").parent().before('<div class="alert alert-warning"><strong>ATENCIÓN:</strong> Este campo es obligatorio</div>')
 
 		return false;
 	}
@@ -136,7 +136,7 @@ function registroUsuarioP(){
 	VALIDAR CONTRASEÑA
 	=============================================*/
 
-	var password = $("#regPassword").val();
+	var password = $("#regPasswordP").val();
 
 	if(password != ""){
 
@@ -144,7 +144,7 @@ function registroUsuarioP(){
 
 		if(!expresion.test(password)){
 
-			$("#regPassword").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> No se permiten caracteres especiales</div>')
+			$("#regPasswordP").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> No se permiten caracteres especiales</div>')
 
 			return false;
 
@@ -152,7 +152,7 @@ function registroUsuarioP(){
 
 	}else{
 
-		$("#regPassword").parent().before('<div class="alert alert-warning"><strong>ATENCIÓN:</strong> Este campo es obligatorio</div>')
+		$("#regPasswordP").parent().before('<div class="alert alert-warning"><strong>ATENCIÓN:</strong> Este campo es obligatorio</div>')
 
 		return false;
 	}

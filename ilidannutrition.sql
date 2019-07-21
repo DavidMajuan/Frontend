@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-07-2019 a las 04:55:12
+-- Tiempo de generación: 21-07-2019 a las 09:25:07
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.2
 
@@ -40,10 +40,6 @@ CREATE TABLE `banner` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- RELACIONES PARA LA TABLA `banner`:
---
-
---
 -- Volcado de datos para la tabla `banner`
 --
 
@@ -65,10 +61,6 @@ CREATE TABLE `categorias` (
   `ruta` text COLLATE utf8_spanish_ci NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- RELACIONES PARA LA TABLA `categorias`:
---
 
 --
 -- Volcado de datos para la tabla `categorias`
@@ -96,10 +88,6 @@ CREATE TABLE `comentarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- RELACIONES PARA LA TABLA `comentarios`:
---
-
---
 -- Volcado de datos para la tabla `comentarios`
 --
 
@@ -122,10 +110,6 @@ CREATE TABLE `deseos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- RELACIONES PARA LA TABLA `deseos`:
---
-
---
 -- Volcado de datos para la tabla `deseos`
 --
 
@@ -146,6 +130,8 @@ INSERT INTO `deseos` (`id`, `id_usuario`, `id_producto`, `fecha`) VALUES
 CREATE TABLE `pacientes` (
   `id` int(11) NOT NULL,
   `nombre` text COLLATE utf8_spanish_ci NOT NULL,
+  `apellido_paterno` text COLLATE utf8_spanish_ci NOT NULL,
+  `apellido_materno` text COLLATE utf8_spanish_ci NOT NULL,
   `password` text COLLATE utf8_spanish_ci NOT NULL,
   `email` text COLLATE utf8_spanish_ci NOT NULL,
   `genero` text COLLATE utf8_spanish_ci NOT NULL,
@@ -158,8 +144,12 @@ CREATE TABLE `pacientes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- RELACIONES PARA LA TABLA `pacientes`:
+-- Volcado de datos para la tabla `pacientes`
 --
+
+INSERT INTO `pacientes` (`id`, `nombre`, `apellido_paterno`, `apellido_materno`, `password`, `email`, `genero`, `celular`, `modo`, `foto`, `verificacion`, `emailEncriptado`, `fecha`) VALUES
+(1, 'neil cesar', 'lizama', 'diaz', '$2a$07$asxx54ahjppf45sd87a5audSLCI1xPBRwIJ7bAiobI/5yAsEJSHgi', 'nclz@gmail.com', 'Masculino', '123456789', 'directo', '', 0, '599f1714c1befffd596a2fe3deff7efb', '2019-07-21 07:21:09'),
+(2, 'TEST', 'SAAA', 'GAAA', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'TEST2@gmail.com', 'Masculino', '412312321', 'directo', '', 0, '31ba998bdd47c21b0cc820e82630cc97', '2019-07-21 06:56:25');
 
 -- --------------------------------------------------------
 
@@ -178,10 +168,6 @@ CREATE TABLE `plantilla` (
   `redesSociales` text COLLATE utf8_spanish_ci NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- RELACIONES PARA LA TABLA `plantilla`:
---
 
 --
 -- Volcado de datos para la tabla `plantilla`
@@ -226,10 +212,6 @@ CREATE TABLE `productos` (
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- RELACIONES PARA LA TABLA `productos`:
---
-
 -- --------------------------------------------------------
 
 --
@@ -250,10 +232,6 @@ CREATE TABLE `slide` (
   `url` text COLLATE utf8_spanish_ci NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- RELACIONES PARA LA TABLA `slide`:
---
 
 --
 -- Volcado de datos para la tabla `slide`
@@ -278,12 +256,6 @@ CREATE TABLE `subcategorias` (
   `ruta` text COLLATE utf8_spanish_ci NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- RELACIONES PARA LA TABLA `subcategorias`:
---   `id_categoria`
---       `categorias` -> `id`
---
 
 --
 -- Volcado de datos para la tabla `subcategorias`
@@ -314,10 +286,6 @@ CREATE TABLE `suscripcion` (
   `pais` text COLLATE utf8_spanish_ci NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- RELACIONES PARA LA TABLA `suscripcion`:
---
 
 --
 -- Volcado de datos para la tabla `suscripcion`
@@ -354,18 +322,13 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- RELACIONES PARA LA TABLA `usuarios`:
---   `especialidad`
---       `subcategorias` -> `idsubcategoria`
---
-
---
 -- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido_paterno`, `apellido_materno`, `password`, `email`, `genero`, `celular`, `localTrabajo`, `codigoCnp`, `especialidad`, `modo`, `foto`, `verificacion`, `emailEncriptado`, `fecha`) VALUES
-(1, 'Cesar david', 'majuan', 'pintado', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'test1@gmail.com', 'Masculino', '946582315', 'Derrama', '123456', 1, 'directo', '', 0, '245cf079454dc9a3374a7c076de247cc', '2019-07-20 23:16:24'),
-(2, 'neil cesar', 'lizama', 'diaz', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'neilcesarlizamadiaz@gmail.com', 'Masculino', '929293939', 'UNPRG', '421312', 4, 'directo', 'vistas/img/usuarios/2/443.jpg', 0, 'c803f577c9d59c44954883e66f0a02ee', '2019-07-21 02:46:04');
+(1, 'Cesar david', 'majuan', 'pintado', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'test1@gmail.com', 'Masculino', '946582315', 'Derrama', '123456', 6, 'directo', 'vistas/img/usuarios/1/594.jpg', 0, '245cf079454dc9a3374a7c076de247cc', '2019-07-21 03:14:18'),
+(2, 'neil cesar', 'lizama', 'diaz', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'neilcesarlizamadiaz@gmail.com', 'Masculino', '929293939', 'UNPRG', '421312', 4, 'directo', 'vistas/img/usuarios/2/443.jpg', 0, 'c803f577c9d59c44954883e66f0a02ee', '2019-07-21 02:46:04'),
+(3, 'Prueba', 'TEST', 'EXAM', '$2a$07$asxx54ahjppf45sd87a5auFgQHVJQ0O3ZuCPpBhHa/K6QXNjjFTae', 'test2@gmail.com', 'Masculino', '123456789', 'Derrama', '123456', 4, 'directo', '', 1, '3c4f419e8cd958690d0d14b3b89380d3', '2019-07-21 06:32:31');
 
 --
 -- Índices para tablas volcadas
@@ -471,7 +434,7 @@ ALTER TABLE `deseos`
 -- AUTO_INCREMENT de la tabla `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `plantilla`
@@ -507,7 +470,7 @@ ALTER TABLE `suscripcion`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
