@@ -28,7 +28,23 @@ class ControladorProductos{
 
         $tabla = "subcategorias";
 
-        $respuesta = ModeloProductos::mdlMostrarSubCategorias($tabla, $item, $valor);
+        $respuesta = ModeloProductos::mdlMostrarSubCategorias($tabla,$item, $valor);
+
+        return $respuesta;
+
+
+
+	}
+	
+	/*=================================================================
+    MOSTRAR SUBCATEGORIAS
+    =================================================================*/
+
+	static public function ctrMostrarAllSubcategorias(){
+
+        $tabla = "subcategorias";
+
+        $respuesta = ModeloProductos::mdlMostrarAllSubCategorias($tabla);
 
         return $respuesta;
 

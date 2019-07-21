@@ -10,14 +10,17 @@ class ControladorUsuarios{
 
 	public function ctrRegistroUsuarioN(){
 
-		if(isset($_POST["regUsuarioN"])){
+		if(isset($_POST["regUsuarioN"]) && $_POST["regEspecialidad"]!="0"){
 
 			if(preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["regUsuarioN"]) &&
+			   preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["regApePaterno"]) &&
+			   preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["regApeMaterno"]) &&
 			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["regEmailN"]) &&
                preg_match('/^[a-zA-Z0-9]+$/', $_POST["regPasswordN"]) &&
                preg_match('/^[0-9]+$/', $_POST["regCelularN"]) &&
                preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9 ]+$/', $_POST["regLocalTrabajoN"]) &&
-               preg_match('/^[0-9]+$/', $_POST["regCodigoCnpN"])){
+			   preg_match('/^[0-9]+$/', $_POST["regCodigoCnpN"]) &&
+			   preg_match('/^[0-9]+$/', $_POST["regEspecialidad"])){
 
 			   	$encriptar = crypt($_POST["regPasswordN"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
@@ -25,12 +28,15 @@ class ControladorUsuarios{
 				   
 
 				$datos = array("nombre"=>$_POST["regUsuarioN"],
+							   "apepat"=>$_POST["regApePaterno"],
+							   "apemat"=>$_POST["regApeMaterno"],
 							   "password"=> $encriptar,
                                "email"=> $_POST["regEmailN"],
                                "genero"=> $_POST["regGeneroN"],
                                "celular"=> $_POST["regCelularN"],
                                "localTrabajo"=> $_POST["regLocalTrabajoN"],
-                               "codigoCnp"=> $_POST["regCodigoCnpN"],
+							   "codigoCnp"=> $_POST["regCodigoCnpN"],
+							   "especialidad"=> $_POST["regEspecialidad"],
                                "foto"=>"",
                                "modo"=> "directo",                              
 							   "verificacion"=> 1,
@@ -255,10 +261,13 @@ class ControladorUsuarios{
 						$_SESSION["validarSesiones"] = $_SESSION["validarSesion"];
 						$_SESSION["id"] = $respuesta["id"];
 						$_SESSION["nombre"] = $respuesta["nombre"];
+						$_SESSION["apellido_paterno"] = $respuesta["apellido_paterno"];
+						$_SESSION["apellido_materno"] = $respuesta["apellido_materno"];
 						$_SESSION["genero"] = $respuesta["genero"];
 						$_SESSION["celular"] = $respuesta["celular"];
 						$_SESSION["localTrabajo"] = $respuesta["localTrabajo"];
 						$_SESSION["codigoCnp"] = $respuesta["codigoCnp"];
+						$_SESSION["especialidad"] = $respuesta["subcategoria"];
 						$_SESSION["foto"] = $respuesta["foto"];
 						$_SESSION["email"] = $respuesta["email"];
 						$_SESSION["password"] = $respuesta["password"];
@@ -606,10 +615,13 @@ class ControladorUsuarios{
 			}
 
 			$datos = array("nombre" => $_POST["editarNombre"],
+						   "apellido_paterno" => $_POST["editarApepat"],
+						   "apellido_materno" => $_POST["editarApemat"],
 						   "codigoCnp" => $_POST["editarCodigoCnp"],
 						   "genero" => $_POST["editarGenero"],
 						   "celular" => $_POST["editarCelular"],
 						   "localTrabajo" => $_POST["editarLocalTrabajo"],
+						   "especialidad" => $_POST["editarEspecialidad"],
 						   "email" => $_POST["editarEmail"],
 						   "password" => $password,
 						   "foto" => $ruta,
@@ -629,6 +641,7 @@ class ControladorUsuarios{
 				$_SESSION["celular"] = $datos["celular"];
 				$_SESSION["localTrabajo"] = $datos["localTrabajo"];
 				$_SESSION["codigoCnp"] = $datos["codigoCnp"];
+				$_SESSION["especialidad"] = $datos["especialidad"];
 				$_SESSION["foto"] = $datos["foto"];
 				$_SESSION["email"] = $datos["email"];
 				$_SESSION["password"] = $datos["password"];

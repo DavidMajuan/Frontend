@@ -99,6 +99,56 @@ function registroUsuarioN(){
 	}
 
 	/*=============================================
+	VALIDAR EL APELLIDO PATERNO
+	=============================================*/
+
+	var apepat = $("#regApePaterno").val();
+
+	if(apepat != ""){
+
+		var expresion = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*$/;
+
+		if(!expresion.test(apepat)){
+
+			$("#regApePaterno").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> No se permiten números ni caracteres especiales</div>')
+
+			return false;
+
+		}
+
+	}else{
+
+		$("#regApePaterno").parent().before('<div class="alert alert-warning"><strong>ATENCIÓN:</strong> Este campo es obligatorio</div>')
+
+		return false;
+	}
+
+	/*=============================================
+	VALIDAR EL APELLIDO MATERNO
+	=============================================*/
+
+	var apemat = $("#regApeMaterno").val();
+
+	if(apemat != ""){
+
+		var expresion = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*$/;
+
+		if(!expresion.test(apemat)){
+
+			$("#regApeMaterno").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> No se permiten números ni caracteres especiales</div>')
+
+			return false;
+
+		}
+
+	}else{
+
+		$("#regApeMaterno").parent().before('<div class="alert alert-warning"><strong>ATENCIÓN:</strong> Este campo es obligatorio</div>')
+
+		return false;
+	}
+
+	/*=============================================
 	VALIDAR EL EMAIL
 	=============================================*/
 

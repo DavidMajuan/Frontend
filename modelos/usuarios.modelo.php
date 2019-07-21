@@ -10,15 +10,18 @@ class ModeloUsuarios{
 
 	static public function mdlRegistroUsuario($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre,password,email,genero,celular,localTrabajo,codigoCnp,foto,modo,verificacion,emailEncriptado) VALUES (:nombre, :password, :email, :genero, :celular, :localTrabajo, :codigoCnp, :foto, :modo, :verificacion, :emailEncriptado)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre,apellido_paterno,apellido_materno,password,email,genero,celular,localTrabajo,codigoCnp,especialidad,foto,modo,verificacion,emailEncriptado) VALUES (:nombre,:apepat,:apemat, :password, :email, :genero, :celular, :localTrabajo, :codigoCnp, :especialidad, :foto, :modo, :verificacion, :emailEncriptado)");
 
 		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+		$stmt->bindParam(":apepat", $datos["apepat"], PDO::PARAM_STR);
+		$stmt->bindParam(":apemat", $datos["apemat"], PDO::PARAM_STR);
 		$stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
 		$stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
         $stmt->bindParam(":genero", $datos["genero"], PDO::PARAM_STR);
         $stmt->bindParam(":celular", $datos["celular"], PDO::PARAM_STR);
         $stmt->bindParam(":localTrabajo", $datos["localTrabajo"], PDO::PARAM_STR);
-        $stmt->bindParam(":codigoCnp", $datos["codigoCnp"], PDO::PARAM_STR);
+		$stmt->bindParam(":codigoCnp", $datos["codigoCnp"], PDO::PARAM_STR);
+		$stmt->bindParam(":especialidad", $datos["especialidad"], PDO::PARAM_STR);
         $stmt->bindParam(":foto", $datos["foto"], PDO::PARAM_STR);
 		$stmt->bindParam(":modo", $datos["modo"], PDO::PARAM_STR);
 		$stmt->bindParam(":verificacion", $datos["verificacion"], PDO::PARAM_INT);
@@ -46,7 +49,9 @@ class ModeloUsuarios{
 
 	static public function mdlMostrarUsuario($tabla, $item, $valor){
 
-		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+		$tabla2="subcategorias";
+
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla INNER JOIN $tabla2 ON $tabla.especialidad=$tabla2.idsubcategoria WHERE $item = :$item");
 
 		$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
@@ -95,7 +100,7 @@ class ModeloUsuarios{
 
 	static public function mdlActualizarPerfil($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, email = :email, password = :password, foto = :foto, celular = :celular WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, email = :email, password = :password, foto = :foto, celular = :celular,apellido_paterno = :apellido_paterno,apellido_materno = :apellido_materno,especialidad = :especialidad,localTrabajo = :localTrabajo WHERE id = :id");
 
 		/*$stmt -> bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
 		$stmt -> bindParam(":email", $datos["email"], PDO::PARAM_STR);
@@ -106,6 +111,10 @@ class ModeloUsuarios{
 
 	
 		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+		$stmt->bindParam(":apellido_paterno", $datos["apellido_paterno"], PDO::PARAM_STR);
+		$stmt->bindParam(":apellido_materno", $datos["apellido_materno"], PDO::PARAM_STR);
+		$stmt->bindParam(":especialidad", $datos["especialidad"], PDO::PARAM_STR);
+		$stmt->bindParam(":localTrabajo", $datos["localTrabajo"], PDO::PARAM_STR);
 		$stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
 		$stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
         $stmt->bindParam(":celular", $datos["celular"], PDO::PARAM_STR);
@@ -133,7 +142,7 @@ class ModeloUsuarios{
 
 
 	/*=============================================
-	MOSTRAR COMPRAS
+	MOSTRAR NUTRICIONISTAS CONTACTADOS (COMPRAS)
 	=============================================*/
 
 	static public function mdlMostrarCompras($tabla, $item, $valor){

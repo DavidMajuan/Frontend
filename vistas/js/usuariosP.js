@@ -253,7 +253,7 @@ $("#datosImagen").change(function(){
 COMENTARIOS ID
 =============================================*/
 
-$(".calificarProducto").click(function(){
+$(".calificarProductoN").click(function(){
 
 	var idComentario = $(this).attr("idComentario");
 
@@ -265,7 +265,7 @@ $(".calificarProducto").click(function(){
 COMENTARIOS CAMBIO DE ESTRELLAS
 =============================================*/
 
-$("input[name='puntaje']").change(function(){
+$("input[name='puntajeN']").change(function(){
 
 	var puntaje = $(this).val();
 	
@@ -360,9 +360,9 @@ $("input[name='puntaje']").change(function(){
 VALIDAR EL COMENTARIO
 =============================================*/
 
-function validarComentario(){
+function validarComentarioP(){
 
-	var comentario = $("#comentario").val();
+	var comentario = $("#comentarioP").val();
 
 	if(comentario != ""){
 
@@ -370,7 +370,7 @@ function validarComentario(){
 
 		if(!expresion.test(comentario)){
 
-			$("#comentario").parent().before('<div class="alert alert-danger"><strong>ERROR:</strong> No se permiten caracteres especiales como por ejemplo !$%&/?¡¿[]*</div>');
+			$("#comentarioP").parent().before('<div class="alert alert-danger"><strong>ERROR:</strong> No se permiten caracteres especiales como por ejemplo !$%&/?¡¿[]*</div>');
 
 			return false;
 
@@ -378,7 +378,7 @@ function validarComentario(){
 
 	}else{
 
-		$("#comentario").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> Campo obligatorio</div>');
+		$("#comentarioP").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> Campo obligatorio</div>');
 
 		return false;
 
