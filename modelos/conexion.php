@@ -4,7 +4,7 @@ class Conexion{
 
     public function conectar(){
 
-        $link = new PDO("mysql:host=localhost;dbname=ilidanNutrition",
+        $link = new PDO("mysql:host=localhost;dbname=ilidanNutritionCieza",
 						"root",
 						"",
 						array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
