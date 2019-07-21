@@ -610,7 +610,6 @@ class ControladorUsuariosPaciente{
 						   "codigoCnp" => $_POST["editarCodigoCnp"],
 						   "genero" => $_POST["editarGenero"],
 						   "celular" => $_POST["editarCelular"],
-						   "localTrabajo" => $_POST["editarLocalTrabajo"],
 						   "email" => $_POST["editarEmail"],
 						   "password" => $password,
 						   "foto" => $ruta,
