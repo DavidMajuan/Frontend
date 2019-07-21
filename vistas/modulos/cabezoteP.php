@@ -7,7 +7,7 @@ $url = Ruta::ctrRuta();
 INICIO DE SESIÓN USUARIO
 =============================================*/
 
-if(isset($_SESSION["validarSesiones"])){
+if(isset($_SESSION["validarSesion"])){
 
 	if($_SESSION["validarSesion"] = $_SESSION["validarSesiones"]){
 
@@ -20,11 +20,20 @@ if(isset($_SESSION["validarSesiones"])){
 				
 									</script>';
 				
+					}else{
+
+
+								echo '<script>
+								
+									localStorage.setItem("usuario","'.$_SESSION["id"].'");
+						
+								</script>';
+
 					}
 				
 				
 
-	}else if($_SESSION["validarSesionP"] = $_SESSION["validarSesiones"]){
+	}else if($_SESSION["validarSesionP"] == $_SESSION["validarSesiones"]){
 
 				
 				
@@ -32,7 +41,7 @@ if(isset($_SESSION["validarSesiones"])){
 				
 						echo '<script>
 						
-							localStorage.setItem("usuarios","'.$_SESSION["id"].'");
+							localStorage.setItem("usuario","'.$_SESSION["id"].'");
 				
 						</script>';
 				
@@ -101,7 +110,7 @@ TOP
 
 				<?php
 ///verifica
-				if(isset($_SESSION["validarSesiones"])){
+				if(isset($_SESSION["validarSesion"])){
 
 					if($_SESSION["validarSesion"] == "ok"){
 
@@ -142,7 +151,7 @@ TOP
 					}else if($_SESSION["validarSesionP"] == "okPaciente" ){
 
 									
-							if($_SESSION["validarSesionP"] == "okPaciente"){
+							if($_SESSION["validarSesion"] == "okPaciente"){
 
 								if($_SESSION["modo"] == "directo"){
 			
@@ -167,7 +176,7 @@ TOP
 									echo '<li>|</li>
 									<li><a href="'.$url.'perfilPaciente"> Perfil Paciente</a></li>
 									<li>|</li>
-									<li><a href="'.$url.'salirP">Salir</a></li>';
+									<li><a href="'.$url.'salir">Salir</a></li>';
 			
 			
 								}
@@ -414,7 +423,34 @@ VENTANA MODAL PARA EL REGISTRO DE NUTRICIONISTA
 
            <button type="button" class="close" data-dismiss="modal">&times;</button>
         	
-			
+			<!--=====================================
+			REGISTRO FACEBOOK
+			======================================-->
+
+			<div class="col-sm-6 col-xs-12 facebook">
+				
+				<p>
+				  <i class="fa fa-facebook"></i>
+					Registro con Facebook
+				</p>
+
+			</div>
+
+			<!--=====================================
+			REGISTRO GOOGLE
+			======================================-->
+			<a href="<?php echo $rutaGoogle; ?>">
+
+				<div class="col-sm-6 col-xs-12 google">
+					
+					<p>
+					  <i class="fa fa-google"></i>
+						Registro con Google
+					</p>
+
+				</div>
+			</a>
+
 			<!--=====================================
 			REGISTRO DIRECTO   
 			======================================-->
@@ -437,38 +473,12 @@ VENTANA MODAL PARA EL REGISTRO DE NUTRICIONISTA
 						
 						</span>
 
-						<input type="text" class="form-control text-uppercase" id="regUsuarioN" name="regUsuarioN" placeholder="Nombres" required>
+						<input type="text" class="form-control text-uppercase" id="regUsuarioN" name="regUsuarioN" placeholder="Nombre Completo" required>
 
 					</div>
 
 				</div>
 
-				<!--=====================================
-				APELLIDO PATERNO Y MATERNO
-				======================================-->
-
-				<div class="form-group">
-					
-					<div class="input-group">
-						
-						<span class="input-group-addon">
-							
-							<i class="glyphicon glyphicon-user"></i>
-						
-						</span>
-
-						<input type="text" class="form-control text-uppercase" id="regApePaterno" name="regApePaterno" placeholder="Apellido Paterno" required>
-
-						<span class="input-group-addon">
-							
-							<i class="glyphicon glyphicon-user"></i>
-						
-						</span>
-
-						<input type="text" class="form-control text-uppercase" id="regApeMaterno" name="regApeMaterno" placeholder="Apellido Materno" required>
-					</div>
-
-				</div>
 
 				<!--=====================================
 				EMAIL
@@ -570,29 +580,12 @@ VENTANA MODAL PARA EL REGISTRO DE NUTRICIONISTA
 
 
 				<!--=====================================
-                ESPECIALIDAD Y CODIGO DE CNP
+                CODIGO DE CNP
                 ======================================-->
 
 				<div class="form-group">
 					
 					<div class="input-group">
-						
-						<span class="input-group-addon">
-							
-							<i class="glyphicon glyphicon-education"></i>
-						
-						</span> 
-						<?php 
-							$allsubcategorias = ControladorProductos::ctrMostrarAllSubcategorias();
-						?>
-						<select style="height:52px;width:260px" class="form-control" id="regEspecialidad" name="regEspecialidad" required>
-							<option disabled selected>Especialidad</option>
-							<?php
-							for ($i=0;$i<sizeof($allsubcategorias);$i++) {
-								echo '<option value="'.$allsubcategorias[$i][0].'">'.$allsubcategorias[$i][1].'</option>';
-							}
-							?>
-						</select>
 						
 						<span class="input-group-addon">
 							
@@ -670,7 +663,34 @@ VENTANA MODAL PARA EL INGRESO NUTRICIONISTA
 
            <button type="button" class="close" data-dismiss="modal">&times;</button>
         	
-		
+			<!--=====================================
+			INGRESO FACEBOOK
+			======================================-->
+
+			<div class="col-sm-6 col-xs-12 facebook">
+				
+				<p>
+				  <i class="fa fa-facebook"></i>
+					Ingreso con Facebook
+				</p>
+
+			</div>
+
+			<!--=====================================
+			INGRESO GOOGLE
+			======================================-->
+			<a href="">
+			
+				<div class="col-sm-6 col-xs-12 google">
+					
+					<p>
+					  <i class="fa fa-google"></i>
+						Ingreso con Google
+					</p>
+
+				</div>
+
+			</a>
 
 			<!--=====================================
 			INGRESO DIRECTO
@@ -830,7 +850,33 @@ VENTANA MODAL PARA EL REGISTRO DE PACIENTE
 
            <button type="button" class="close" data-dismiss="modal">&times;</button>
         	
-			
+			<!--=====================================
+			REGISTRO FACEBOOK
+			======================================-->
+
+			<div class="col-sm-6 col-xs-12 facebook">
+				
+				<p>
+				  <i class="fa fa-facebook"></i>
+					Registro con Facebook
+				</p>
+
+			</div>
+
+			<!--=====================================
+			REGISTRO GOOGLE
+			======================================-->
+			<a href="<?php echo $rutaGoogle; ?>">
+
+				<div class="col-sm-6 col-xs-12 google">
+					
+					<p>
+					  <i class="fa fa-google"></i>
+						Registro con Google
+					</p>
+
+				</div>
+			</a>
 
 			<!--=====================================
 			REGISTRO DIRECTO
@@ -854,35 +900,7 @@ VENTANA MODAL PARA EL REGISTRO DE PACIENTE
 						
 						</span>
 
-						<input type="text" class="form-control text-uppercase" id="regUsuarioP" name="regUsuarioP" placeholder="Nombre Completo" required>
-
-					</div>
-
-				</div>
-
-				<!--=====================================
-				APELLIDO PATERNO Y APELLIDO MATERNO
-				======================================-->
-
-				<div class="form-group">
-					
-					<div class="input-group">
-						
-						<span class="input-group-addon">
-							
-							<i class="glyphicon glyphicon-user"></i>
-						
-						</span>
-
-						<input type="text" class="form-control text-uppercase" id="regApePatP" name="regApePatP" placeholder="Apellido Paterno" required>
-
-						<span class="input-group-addon">
-							
-							<i class="glyphicon glyphicon-user"></i>
-						
-						</span>
-
-						<input type="text" class="form-control text-uppercase" id="regApeMatP" name="regApeMatP" placeholder="Apellido Materno" required>
+						<input type="text" class="form-control text-uppercase" id="regUsuario" name="regUsuario" placeholder="Nombre Completo" required>
 
 					</div>
 
@@ -902,7 +920,7 @@ VENTANA MODAL PARA EL REGISTRO DE PACIENTE
 						
 						</span>
 
-						<input type="email" class="form-control" id="regEmailP" name="regEmailP" placeholder="Correo Electrónico" required>
+						<input type="email" class="form-control" id="regEmail" name="regEmail" placeholder="Correo Electrónico" required>
 						
 					</div>
 
@@ -922,7 +940,7 @@ VENTANA MODAL PARA EL REGISTRO DE PACIENTE
 						
 						</span>
 
-						<input type="password" class="form-control" id="regPasswordP" name="regPasswordP" placeholder="Contraseña" required>
+						<input type="password" class="form-control" id="regPassword" name="regPassword" placeholder="Contraseña" required>
 
 
 					</div>
@@ -946,7 +964,7 @@ VENTANA MODAL PARA EL REGISTRO DE PACIENTE
 						
 							</span>
 							
-								<select  style="height:52px;"  class="form-control" id="regGeneroP" name="regGeneroP" required>
+								<select  style="height:52px;"  class="form-control" id="regGenero" name="regGenero" required>
 									<option disabled selected>Genero</option>
 									<option value="Masculino">Masculino</option>
 									<option value="Femenino">Femenino</option>
@@ -962,7 +980,7 @@ VENTANA MODAL PARA EL REGISTRO DE PACIENTE
 						
 							</span>
 
-							<input type="text" class="form-control" id="regCelularP" name="regCelularP" placeholder="999999999"  minlength="9" maxlength="9" pattern="[0-9]+" oninvalid="setCustomValidity('Inserte 9 números')">		
+							<input type="text" class="form-control" id="regCelular" name="regCelular" placeholder="999999999"  minlength="9" maxlength="9" pattern="[0-9]+" oninvalid="setCustomValidity('Inserte 9 números')">		
 
 					</div>
 				</div>
@@ -1036,6 +1054,34 @@ VENTANA MODAL PARA EL INGRESO PACIENTE
 
            <button type="button" class="close" data-dismiss="modal">&times;</button>
         	
+			<!--=====================================
+			INGRESO FACEBOOK
+			======================================-->
+
+			<div class="col-sm-6 col-xs-12 facebook">
+				
+				<p>
+				  <i class="fa fa-facebook"></i>
+					Ingreso con Facebook
+				</p>
+
+			</div>
+
+			<!--=====================================
+			INGRESO GOOGLE
+			======================================-->
+			<a href="">
+			
+				<div class="col-sm-6 col-xs-12 google">
+					
+					<p>
+					  <i class="fa fa-google"></i>
+						Ingreso con Google
+					</p>
+
+				</div>
+
+			</a>
 
 			<!--=====================================
 			INGRESO DIRECTO
@@ -1055,7 +1101,7 @@ VENTANA MODAL PARA EL INGRESO PACIENTE
 						
 						</span>
 
-						<input type="email" class="form-control" id="ingEmailP" name="ingEmailP" placeholder="Correo Electrónico" >
+						<input type="email" class="form-control" id="ingEmail" name="ingEmail" placeholder="Correo Electrónico" >
 
 					</div>
 
@@ -1071,7 +1117,7 @@ VENTANA MODAL PARA EL INGRESO PACIENTE
 						
 						</span>
 
-						<input type="password" class="form-control" id="ingPasswordP" name="ingPasswordP" placeholder="Contraseña" >
+						<input type="password" class="form-control" id="ingPassword" name="ingPassword" placeholder="Contraseña" >
 
 					</div>
 
@@ -1143,18 +1189,12 @@ VENTANA MODAL PARA OLVIDO DE CONTRASEÑA PACIENTE
 						
 						</span>
 					
-						<input type="email" class="form-control" id="passEmailP" name="passEmailP" placeholder="Correo Electrónico" required>
+						<input type="email" class="form-control" id="passEmail" name="passEmail" placeholder="Correo Electrónico" required>
 
 					</div>
 
 				</div>			
 
-				<?php
-
-				$passwordP = new ControladorUsuariosPaciente();
-				$passwordP -> ctrOlvidoPassword();
-
-				?>
 				
 				
 				<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">	
@@ -1172,6 +1212,3 @@ VENTANA MODAL PARA OLVIDO DE CONTRASEÑA PACIENTE
     </div>
 
 </div>
-
-
-
