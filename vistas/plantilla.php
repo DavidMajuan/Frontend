@@ -68,6 +68,8 @@
 
     <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/perfil.css">
 
+    <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/perfilP.css">
+
     <!--=====================================
         PLUGINS DE JAVASCRIPT
     ======================================-->

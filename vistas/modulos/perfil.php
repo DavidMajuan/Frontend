@@ -643,7 +643,7 @@ SECCIÓN PERFIL
 								<th>Descripcion</th>
 								<th>Opciones</th>
 						</thead>
-								@foreach($categorias as $cat) 
+								
 								<tr>
 									<td>{{$cat->idcategoria}}</td>
 									<td>{{$cat->nombre}}</td>
@@ -653,11 +653,12 @@ SECCIÓN PERFIL
 									<a href="" data-target="#modal-delete-{{$cat->idcategoria}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
 									</td>
 								</tr>
-								@include('almacen.categoria.modal')
-								@endforeach 
+							
 						</table>
+					
+					
 					</div>
-					{{$categorias->render()}} 
+					
 				</div>
 			</div>
 		</div>
@@ -940,6 +941,17 @@ VENTANA MODAL PARA COMENTARIOS
 </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
 <!--=====================================
 VENTANA MODAL PARA CREAR PACIENTE
 ======================================-->
@@ -972,10 +984,10 @@ VENTANA MODAL PARA CREAR PACIENTE
 					</div>
 				</div>
 				<?php
-
+/*
 				$registroRelacion = new ControladorRelacionPN();
 				$registroRelacion -> ctrRegistroRelacionPN();
-
+*/
 				?>
 			
 					<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR SOLICITUD A UN PACIENTE" >	

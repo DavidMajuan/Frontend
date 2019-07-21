@@ -1115,7 +1115,7 @@ VENTANA MODAL PARA OLVIDO DE CONTRASEÑA PACIENTE
 						
 						</span>
 					
-						<input type="email" class="form-control" id="passEmail" name="passEmail" placeholder="Correo Electrónico" required>
+						<input type="email" class="form-control" id="passEmailP" name="passEmailP" placeholder="Correo Electrónico" required>
 
 					</div>
 

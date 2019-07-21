@@ -323,9 +323,9 @@ class ControladorUsuariosPaciente{
 
 	public function ctrOlvidoPassword(){
 
-		if(isset($_POST["passEmailN"])){
+		if(isset($_POST["passEmailP"])){
 
-			if(preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["passEmailN"])){
+			if(preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["passEmailP"])){
 
 				/*=============================================
 				GENERAR CONTRASEÑA ALEATORIA
@@ -355,7 +355,7 @@ class ControladorUsuariosPaciente{
 				$tabla = "pacientes";
 
 				$item1 = "email";
-				$valor1 = $_POST["passEmail"];
+				$valor1 = $_POST["passEmailP"];
 
 				$respuesta1 = ModeloUsuarios::mdlMostrarUsuario($tabla, $item1, $valor1);
 
@@ -389,7 +389,7 @@ class ControladorUsuariosPaciente{
 
 						$mail->Subject = "Solicitud de nueva contraseña";
 
-						$mail->addAddress($_POST["passEmailN"]);
+						$mail->addAddress($_POST["passEmailP"]);
 
 						$mail->msgHTML('<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">
 	
@@ -437,7 +437,7 @@ class ControladorUsuariosPaciente{
 
 								swal({
 									  title: "¡ERROR!",
-									  text: "¡Ha ocurrido un problema enviando cambio de contraseña a '.$_POST["passEmailN"].$mail->ErrorInfo.'!",
+									  text: "¡Ha ocurrido un problema enviando cambio de contraseña a '.$_POST["passEmailP"].$mail->ErrorInfo.'!",
 									  type:"error",
 									  confirmButtonText: "Cerrar",
 									  closeOnConfirm: false
@@ -458,7 +458,7 @@ class ControladorUsuariosPaciente{
 
 								swal({
 									  title: "¡OK!",
-									  text: "¡Por favor revise la bandeja de entrada o la carpeta de SPAM de su correo electrónico '.$_POST["passEmail"].' para su cambio de contraseña!",
+									  text: "¡Por favor revise la bandeja de entrada o la carpeta de SPAM de su correo electrónico '.$_POST["passEmailP"].' para su cambio de contraseña!",
 									  type:"success",
 									  confirmButtonText: "Cerrar",
 									  closeOnConfirm: false
