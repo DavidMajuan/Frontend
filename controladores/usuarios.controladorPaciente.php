@@ -662,7 +662,7 @@ class ControladorUsuariosPaciente{
 
 	static public function ctrMostrarCompras($item, $valor){
 
-		$tabla = "suscripcion";
+		$tabla = "suscripcionpaciente";
 
 		$respuesta = ModeloUsuarios::mdlMostrarCompras($tabla, $item, $valor);
 
@@ -677,9 +677,9 @@ class ControladorUsuariosPaciente{
 
 	static public function ctrMostrarComentariosPerfil($datos){
 
-		$tabla = "comentarios";
+		$tabla = "comentariospacientes";
 
-		$respuesta = ModeloUsuarios::mdlMostrarComentariosPerfil($tabla, $datos);
+		$respuesta = ModeloUsuariosPacientes::mdlMostrarComentariosPerfil($tabla, $datos);
 
 		return $respuesta;
 
@@ -699,13 +699,13 @@ class ControladorUsuariosPaciente{
 
 				if($_POST["comentario"] != ""){
 
-					$tabla = "comentarios";
+					$tabla = "comentariospacientes";
 
 					$datos = array("id"=>$_POST["idComentario"],
-								   "calificacion"=>$_POST["puntaje"],
-								   "comentario"=>$_POST["comentario"]);
+								   "calificacion"=>$_POST["puntajeN"],
+								   "comentario"=>$_POST["comentarioP"]);
 
-					$respuesta = ModeloUsuarios::mdlActualizarComentario($tabla, $datos);
+					$respuesta = ModeloUsuariosPacientes::mdlActualizarComentario($tabla, $datos);
 
 					if($respuesta == "ok"){
 

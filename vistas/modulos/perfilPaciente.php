@@ -57,15 +57,17 @@ SECCIÓN PERFIL
 
 		<ul class="nav nav-tabs">
 
-			<li class="active"> 				
-		  		<a data-toggle="tab" href="#compras">
-		  		<i class="fa fa-cc-paypal"></i> SUSCRIPCION</a>
-	  		</li>
-
-			<li>				
+			
+			<li class="active">				
 	  			<a data-toggle="tab" href="#perfil">
 	  			<i class="fa fa-user"></i>  EDITAR PERFIL</a>
 	  		</li>
+
+			<li> 				
+		  		<a data-toggle="tab" href="#compras">
+		  		<i class="fa fa-star"></i> CALIFICACION DE NUTRICIONISTAS</a>
+	  		</li>
+
 		  
 	  		<li> 				
 		  		<a data-toggle="tab" href="#pacientes">
@@ -99,7 +101,7 @@ SECCIÓN PERFIL
 			PESTAÑA PERFIL
 			======================================-->
 		  	
-			<div id="perfil" class="tab-pane fade">
+			<div id="perfil" class="tab-pane fade in active">
 		    	
 				<div class="row">
 					
@@ -263,7 +265,7 @@ SECCIÓN PERFIL
 
 					</form>
 
-					<button class="btn btn-danger btn-md pull-right" id="eliminarUsuario">Eliminar cuenta</button>
+				<!--	<button class="btn btn-danger btn-md pull-right" id="eliminarUsuario">Eliminar cuenta</button>-->
 
 					<?php
 
@@ -281,13 +283,13 @@ SECCIÓN PERFIL
 			PESTAÑA SUSCRIPCION
 			======================================-->
 
-			<div id="compras" class="tab-pane fade in active">
+			<div id="compras" class="tab-pane fade ">
 		    
 			<div class="panel-group">
 
 			<?php
 
-				$item = "id_usuario";
+				$item = "id_paciente";
 				$valor = $_SESSION["id"];
 
 				$compras = ControladorUsuariosPaciente::ctrMostrarCompras($item, $valor);
@@ -419,7 +421,7 @@ SECCIÓN PERFIL
 
 											echo '<div class="pull-right">
 
-												<a class="calificarProducto" href="#modalComentarios" data-toggle="modal" idComentario="'.$comentarios["id"].'">
+												<a class="calificarProductoN" href="#modalComentarios" data-toggle="modal" idComentario="'.$comentarios["id"].'">
 												
 													<button class="btn btn-default backColor">Calificar al Nutricionista</button>
 
@@ -798,7 +800,7 @@ VENTANA MODAL PARA COMENTARIOS
 
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
 
-			<form method="post" onsubmit="return validarComentario()">
+			<form method="post" onsubmit="return validarComentarioP()">
 
 				<input type="hidden" value="" id="idComentario" name="idComentario">
 				
@@ -814,16 +816,16 @@ VENTANA MODAL PARA COMENTARIOS
 
 				<div class="form-group text-center">
 
-		       		<label class="radio-inline"><input type="radio" name="puntaje" value="0.5">0.5</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="1.0">1.0</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="1.5">1.5</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="2.0">2.0</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="2.5">2.5</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="3.0">3.0</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="3.5">3.5</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="4.0">4.0</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="4.5">4.5</label>
-					<label class="radio-inline"><input type="radio" name="puntaje" value="5.0" checked>5.0</label>
+		       		<label class="radio-inline"><input type="radio" name="puntajeN" value="0.5">0.5</label>
+					<label class="radio-inline"><input type="radio" name="puntajeN" value="1.0">1.0</label>
+					<label class="radio-inline"><input type="radio" name="puntajeN" value="1.5">1.5</label>
+					<label class="radio-inline"><input type="radio" name="puntajeN" value="2.0">2.0</label>
+					<label class="radio-inline"><input type="radio" name="puntajeN" value="2.5">2.5</label>
+					<label class="radio-inline"><input type="radio" name="puntajeN" value="3.0">3.0</label>
+					<label class="radio-inline"><input type="radio" name="puntajeN" value="3.5">3.5</label>
+					<label class="radio-inline"><input type="radio" name="puntajeN" value="4.0">4.0</label>
+					<label class="radio-inline"><input type="radio" name="puntajeN" value="4.5">4.5</label>
+					<label class="radio-inline"><input type="radio" name="puntajeN" value="5.0" checked>5.0</label>
 
 				</div>
 
@@ -831,7 +833,7 @@ VENTANA MODAL PARA COMENTARIOS
 			  		
 			  		<label for="comment" class="text-muted">Tu opinión acerca de este producto: <span><small>(máximo 300 caracteres)</small></span></label>
 			  		
-			  		<textarea class="form-control" rows="5" id="comentario" name="comentario" maxlength="300" required></textarea>
+			  		<textarea class="form-control" rows="5" id="comentarioP" name="comentarioP" maxlength="300" required></textarea>
 
 			  		<br>
 					
