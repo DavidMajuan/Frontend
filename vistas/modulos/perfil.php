@@ -55,12 +55,7 @@ SECCIÓN PERFIL
 
 		<ul class="nav nav-tabs">
 
-			<li class="active"> 				
-		  		<a data-toggle="tab" href="#compras">
-		  		<i class="fa fa-cc-paypal"></i> SUSCRIPCION</a>
-	  		</li>
-
-			<li>				
+			<li class="active">				
 	  			<a data-toggle="tab" href="#perfil">
 	  			<i class="fa fa-user"></i>  EDITAR PERFIL</a>
 	  		</li>
@@ -86,7 +81,10 @@ SECCIÓN PERFIL
 		  		<i class="fa fa-gift"></i> MI LISTA DE DESEOS</a>
 	  		</li>
 
-
+			<li> 				
+		  		<a data-toggle="tab" href="#compras">
+		  		<i class="fa fa-cc-paypal"></i> SUSCRIPCION</a>
+	  		</li>
 
 		
 		</ul>
@@ -97,7 +95,7 @@ SECCIÓN PERFIL
 			PESTAÑA PERFIL
 			======================================-->
 		  	
-			<div id="perfil" class="tab-pane fade">
+			<div id="perfil" class="tab-pane fade in active">
 		    	
 				<div class="row">
 					
@@ -116,6 +114,7 @@ SECCIÓN PERFIL
 								  <input type="hidden" value="'.$_SESSION["celular"].'" name="celular">
 								  <input type="hidden" value="'.$_SESSION["localTrabajo"].'" name="localTrabajo">
 								  <input type="hidden" value="'.$_SESSION["codigoCnp"].'" name="codigoCnp">
+								  <input type="hidden" value="'.$_SESSION["especialidad"].'" name="especialidad">
 							      <input type="hidden" value="'.$_SESSION["password"].'" name="passUsuario">
 							      <input type="hidden" value="'.$_SESSION["foto"].'" name="fotoUsuario" id="fotoUsuario">
 								  <input type="hidden" value="'.$_SESSION["modo"].'" name="modoUsuario" id="modoUsuario">
@@ -176,11 +175,6 @@ SECCIÓN PERFIL
 						if($_SESSION["modo"] == "directo"){
 
 							echo '
-							
-									
-
-									
-
 									<label class="control-label text-muted text-uppercase" for="editarCodigoCnp">CODIDO CNP:</label>
 
 									<div class="input-group">
@@ -200,13 +194,61 @@ SECCIÓN PERFIL
 
 									</div>
 									<br>
-									<label class="control-label text-muted text-uppercase" for="editarNombre">Cambiar Nombre:</label>
+									<label class="control-label text-muted text-uppercase" for="editarNombre">Nombre:</label>
 									
 									<div class="input-group">
 								
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 										<input type="text" class="form-control" id="editarNombre" name="editarNombre" value="'.$_SESSION["nombre"].'">
 
+									</div>
+									
+
+									<br>
+									
+									<label class="control-label text-muted text-uppercase" for="editarApepat">Apellido Paterno:</label>
+									
+									<div class="input-group">
+								
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+										<input type="text" class="form-control" id="editarApepat" name="editarApepat" value="'.$_SESSION["apellido_paterno"].'">
+
+									</div>
+									
+
+									<br>
+
+									<label class="control-label text-muted text-uppercase" for="editarApemat">Apellido Materno:</label>
+									
+									<div class="input-group">
+								
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+										<input type="text" class="form-control" id="editarApemat" name="editarApemat" value="'.$_SESSION["apellido_materno"].'">
+
+									</div>
+									
+
+									<br>
+
+									<label class="control-label text-muted text-uppercase" for="editarEspecialidad">Especialidad:</label>
+									
+									<div class="input-group">
+								
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>';
+										
+											$allsubcategorias = ControladorProductos::ctrMostrarAllSubcategorias();
+									echo'	
+										<select style="height:33px;width:809px" class="form-control" id="editarEspecialidad" name="editarEspecialidad" required>';
+											
+											for ($i=0;$i<sizeof($allsubcategorias);$i++) {
+												if($allsubcategorias[$i][1]==$_SESSION["especialidad"]){
+												echo'<option value="'.$allsubcategorias[$i][0].'" selected>'.$allsubcategorias[$i][1].'</option>';
+												}else{
+												echo'<option value="'.$allsubcategorias[$i][0].'">'.$allsubcategorias[$i][1].'</option>';
+												}
+											}
+									echo'		
+										</select>
 									</div>
 									
 
@@ -299,7 +341,7 @@ SECCIÓN PERFIL
 			PESTAÑA SUSCRIPCION
 			======================================-->
 
-			<div id="compras" class="tab-pane fade in active">
+			<div id="compras" class="tab-pane fade">
 		    
 			<div class="panel-group">
 

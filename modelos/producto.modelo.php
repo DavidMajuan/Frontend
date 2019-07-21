@@ -62,7 +62,32 @@ class ModeloProductos{
 
 
 
-    }
+	}
+
+	/*=================================================================
+    MOSTRAR ALL SUBCATEGORIAS
+    =================================================================*/
+
+
+    static public function mdlMostrarAllSubCategorias($tabla){
+
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+
+        $stmt -> execute();
+
+        return $stmt -> fetchAll();
+
+        $stmt -> close();
+
+        $stmt =null;
+
+
+
+	}
+	
+	/*=================================================================
+    MOSTRAR PRODUCTOS
+    =================================================================*/
 
     static public function mdlMostrarProductos($tabla, $ordenar, $item, $valor, $base, $tope, $modo){
 
