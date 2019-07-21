@@ -464,7 +464,7 @@ class ControladorUsuariosPaciente{
 
 								swal({
 									  title: "¡OK!",
-									  text: "¡Por favor revise la bandeja de entrada o la carpeta de SPAM de su correo electrónico '.$_POST["passEmail"].' para su cambio de contraseña!",
+									  text: "¡Por favor revise la bandeja de entrada o la carpeta de SPAM de su correo electrónico '.$_POST["passEmailP"].' para su cambio de contraseña!",
 									  type:"success",
 									  confirmButtonText: "Cerrar",
 									  closeOnConfirm: false

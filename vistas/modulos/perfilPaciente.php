@@ -153,7 +153,7 @@ SECCIÓN PERFIL
 
 							if($_SESSION["modo"] == "directo"){
 							
-							echo '<button type="button" class="btn btn-default" id="btnCambiarFotoP">
+							echo '<button type="button" class="btn btn-default" id="btnCambiarFoto">
 									
 									Cambiar foto de perfil
 									
@@ -181,6 +181,7 @@ SECCIÓN PERFIL
 
 						if($_SESSION["modo"] == "directo"){
 
+<<<<<<< HEAD
 							echo '
 							
 									
@@ -190,6 +191,9 @@ SECCIÓN PERFIL
 									
 
 									<label class="control-label text-muted text-uppercase" for="editarGeneroP">Genero:</label>
+=======
+							echo '<label class="control-label text-muted text-uppercase" for="editarGenero">Genero:</label>
+>>>>>>> 0bbbe6e9e71f551bc793799e6c1f2c8d7955cbc6
 
 									<div class="input-group">
 								
