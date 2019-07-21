@@ -60,7 +60,7 @@ SECCIÓN PERFIL
 	  			<i class="fa fa-user"></i>  EDITAR PERFIL</a>
 	  		</li>
 		  
-	  		<li> 				
+	  		<li > 				
 		  		<a data-toggle="tab" href="#pacientes">
 		  		<i class="fa fa-users"></i> PACIENTES</a>
 			</li>
@@ -323,14 +323,6 @@ SECCIÓN PERFIL
 
 					</form>
 
-					<button class="btn btn-danger btn-md pull-right" id="eliminarUsuario">Eliminar cuenta</button>
-
-					<?php
-
-					$borrarUsuario = new ControladorUsuarios();
-					$borrarUsuario->ctrEliminarUsuario();
-
-					?>	
 					
 				</div>
 
@@ -628,18 +620,47 @@ SECCIÓN PERFIL
 			PESTAÑA PACIENTES
 			======================================-->
 
-	  		<div id="pacientes" class="tab-pane fade in active">
-		    
+	  		<div id="pacientes" class="tab-pane fade"> 
 				<div class="panel-group">
-
-				
-				  
-				
-
+					<div class="row">
+    					<div class="col-lg-12 col-md-6 col-xs-12">
+							<h3>Tus Pacientes <a href="#modalCrear" data-dismiss="modal" data-toggle="modal"><button class="btn btn-success fa fa-plus-square-o"> Nuevo</button></a></h3>
+				    	</div>
+					</div>
 				</div>
-
-		  	</div>
-
+			
+			
+			<!--=====================================
+			TABLA PACIENTES
+			======================================-->
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered tablet-condensed table-hover">
+						<thead>
+								<th>ID</th>
+								<th>Nombre</th>
+								<th>Descripcion</th>
+								<th>Opciones</th>
+						</thead>
+								@foreach($categorias as $cat) 
+								<tr>
+									<td>{{$cat->idcategoria}}</td>
+									<td>{{$cat->nombre}}</td>
+									<td>{{$cat->descripcion}}</td>
+									<td>
+									<a href="{{URL::action('CategoriaController@edit',$cat->idcategoria)}}"><button class="btn btn-info">Editar</button></a>
+									<a href="" data-target="#modal-delete-{{$cat->idcategoria}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
+									</td>
+								</tr>
+								@include('almacen.categoria.modal')
+								@endforeach 
+						</table>
+					</div>
+					{{$categorias->render()}} 
+				</div>
+			</div>
+		</div>
 		  	<!--=====================================
 			PESTAÑA RECETAS
 			======================================-->
@@ -916,4 +937,51 @@ VENTANA MODAL PARA COMENTARIOS
 
 	</div>
 
+</div>
+
+
+<!--=====================================
+VENTANA MODAL PARA CREAR PACIENTE
+======================================-->
+
+<div class="modal fade modalFormulario" id="modalCrear" role="dialog">
+
+    <div class="modal-content modal-dialog">
+
+        <div class="modal-body modalTitulo">
+
+        	<h3 class="backColor">Registrar al Paciente</h3>
+
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+        	
+			<!--=====================================
+			FORMULARIO PACIENTE
+			======================================-->
+
+			<form method="post">
+			<div class="row">
+
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="form-group">	
+						<div class="input-group">	
+							<span class="input-group-addon">
+								<i class="glyphicon glyphicon-envelope"></i>
+							</span>
+							<input type="email" class="form-control" id="email" name="email" placeholder="Correo Electrónico" required>
+						</div>
+					</div>
+				</div>
+				<?php
+
+				$registroRelacion = new ControladorRelacionPN();
+				$registroRelacion -> ctrRegistroRelacionPN();
+
+				?>
+			
+					<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR SOLICITUD A UN PACIENTE" >	
+				
+			</form>
+
+        </div>
+    </div>
 </div>

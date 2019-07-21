@@ -164,9 +164,9 @@ class ModeloUsuariosPacientes{
 
 		if($datos["idUsuario"] != ""){
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id_usuario = :id_usuario AND id_producto = :id_producto");
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id_paciente = :id_paciente AND id_producto = :id_producto");
 
-			$stmt -> bindParam(":id_usuario", $datos["idUsuario"], PDO::PARAM_INT);
+			$stmt -> bindParam(":id_paciente", $datos["idUsuario"], PDO::PARAM_INT);
 			$stmt -> bindParam(":id_producto", $datos["idProducto"], PDO::PARAM_INT);
 
 			$stmt -> execute();

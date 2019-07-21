@@ -142,7 +142,7 @@ class ModeloUsuarios{
 
 
 	/*=============================================
-	MOSTRAR COMPRAS
+	MOSTRAR NUTRICIONISTAS CONTACTADOS (COMPRAS)
 	=============================================*/
 
 	static public function mdlMostrarCompras($tabla, $item, $valor){
