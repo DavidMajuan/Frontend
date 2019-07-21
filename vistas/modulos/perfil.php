@@ -55,14 +55,6 @@ SECCIÓN PERFIL
 
 		<ul class="nav nav-tabs">
 
-<<<<<<< HEAD
-			<li > 				
-		  		<a data-toggle="tab" href="#compras">
-		  		<i class="fa fa-cc-paypal"></i> SUSCRIPCION</a>
-	  		</li>
-
-=======
->>>>>>> 11b452cb999827bb84dcae3666b68f4865318eac
 			<li class="active">				
 	  			<a data-toggle="tab" href="#perfil">
 	  			<i class="fa fa-user"></i>  EDITAR PERFIL</a>
